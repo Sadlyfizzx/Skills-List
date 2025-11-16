@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills to Master Today</title>
+    <title>Skills Master 2025 - Transform Your Life</title>
     <style>
         * {
             margin: 0;
@@ -82,13 +82,18 @@
             to { opacity: 1; }
         }
         
+        .app-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        
         .filter-bar {
             display: flex;
-            justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
-            animation: fadeIn 1s ease 0.5s both;
         }
         
         .filter-btn {
@@ -114,6 +119,30 @@
             background: linear-gradient(135deg, #667eea, #764ba2);
             border-color: #667eea;
             color: white;
+        }
+        
+        .quick-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 10px 18px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            color: #10b981;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .action-btn:hover {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            transform: translateY(-2px);
         }
         
         .category {
@@ -165,16 +194,31 @@
             background-clip: text;
         }
         
+        .category-description {
+            color: #a0aec0;
+            font-size: 1.1em;
+            margin-top: 10px;
+            max-width: 800px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 25px;
+        }
+        
         .skill-card {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
             border: 1px solid rgba(102, 126, 234, 0.2);
             border-radius: 15px;
             padding: 30px;
-            margin-bottom: 25px;
             cursor: pointer;
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         
         .skill-card::before {
@@ -193,7 +237,7 @@
         }
         
         .skill-card:hover {
-            transform: translateX(10px);
+            transform: translateY(-5px);
             border-color: #667eea;
             box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
         }
@@ -242,16 +286,111 @@
             background: linear-gradient(135deg, #4facfe, #00f2fe);
         }
         
-        .why-learn {
+        .skill-description {
+            color: #a0aec0;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            flex-grow: 1;
+        }
+        
+        .roi-calculator {
             background: rgba(245, 158, 11, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
             border-left: 4px solid #f59e0b;
+        }
+        
+        .roi-title {
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.2em;
+        }
+        
+        .roi-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .roi-input-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .roi-input-group label {
+            margin-bottom: 8px;
+            color: #d1d5db;
+            font-weight: 600;
+        }
+        
+        .roi-input {
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1em;
+        }
+        
+        .roi-input:focus {
+            outline: none;
+            border-color: #f59e0b;
+        }
+        
+        .roi-results {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .roi-result-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .roi-result-value {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin: 10px 0 5px;
+        }
+        
+        .roi-positive {
+            color: #10b981;
+        }
+        
+        .roi-high {
+            color: #f59e0b;
+        }
+        
+        .roi-extreme {
+            color: #ef4444;
+        }
+        
+        .roi-result-label {
+            font-size: 0.85em;
+            color: #a0aec0;
+        }
+        
+        .why-learn {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
             padding: 15px;
             margin: 15px 0;
             border-radius: 8px;
         }
         
         .why-learn-title {
-            color: #fbbf24;
+            color: #34d399;
             font-weight: 700;
             margin-bottom: 8px;
             display: flex;
@@ -262,13 +401,6 @@
         .why-learn-text {
             color: #d1d5db;
             line-height: 1.6;
-        }
-        
-        .skill-description {
-            color: #a0aec0;
-            line-height: 1.8;
-            margin-bottom: 15px;
-            font-size: 1.05em;
         }
         
         .expandable-content {
@@ -334,8 +466,8 @@
         }
         
         .tips {
-            background: rgba(16, 185, 129, 0.1);
-            border-left: 4px solid #10b981;
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid #8b5cf6;
             padding: 15px;
             margin-top: 15px;
             border-radius: 8px;
@@ -343,7 +475,7 @@
         
         .tips-title {
             font-weight: 700;
-            color: #34d399;
+            color: #a78bfa;
             margin-bottom: 8px;
             display: flex;
             align-items: center;
@@ -381,6 +513,44 @@
         
         .expand-icon.rotated {
             transform: rotate(180deg);
+        }
+        
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 18px 50px 18px 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50px;
+            color: white;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #667eea;
+            font-size: 1.3em;
         }
         
         .final-cta {
@@ -472,44 +642,48 @@
             line-height: 1.6;
         }
         
-        .search-box {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            position: relative;
+        .progress-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .search-input {
-            width: 100%;
-            padding: 18px 50px 18px 25px;
+        .progress-bar {
+            height: 8px;
             background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(102, 126, 234, 0.3);
-            border-radius: 50px;
-            color: white;
-            font-size: 1.1em;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+        
+        .progress-btn {
+            padding: 8px 16px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            border-radius: 20px;
+            color: #10b981;
+            cursor: pointer;
+            font-size: 0.9em;
             transition: all 0.3s ease;
         }
         
-        .search-input:focus {
-            outline: none;
-            border-color: #667eea;
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        .progress-btn:hover {
+            background: rgba(16, 185, 129, 0.2);
         }
         
-        .search-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
+        .progress-btn.completed {
+            background: rgba(16, 185, 129, 0.3);
+            color: white;
         }
         
-        .search-icon {
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #667eea;
-            font-size: 1.3em;
-        }
-
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.5em;
@@ -519,12 +693,29 @@
                 padding: 25px;
             }
             
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .skill-header {
                 flex-direction: column;
             }
             
+            .roi-inputs {
+                grid-template-columns: 1fr;
+            }
+            
+            .roi-results {
+                grid-template-columns: 1fr;
+            }
+            
             .guide-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .app-controls {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -543,1024 +734,821 @@
             <span class="search-icon">🔍</span>
         </div>
 
-        <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterSkills('all')">All Skills</button>
-            <button class="filter-btn" onclick="filterSkills('quick')">Quick Wins ⚡</button>
-            <button class="filter-btn" onclick="filterSkills('medium')">Medium Term 📈</button>
-            <button class="filter-btn" onclick="filterSkills('long')">Long Term 🎯</button>
-        </div>
-
-        <div class="category" data-category="communication">
-            <div class="category-header">
-                <div class="category-icon">🗣️</div>
-                <h2 class="category-title">Communication Skills</h2>
+        <div class="app-controls">
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterSkills('all')">All Skills</button>
+                <button class="filter-btn" onclick="filterSkills('quick')">Quick Wins ⚡</button>
+                <button class="filter-btn" onclick="filterSkills('medium')">Medium Term 📈</button>
+                <button class="filter-btn" onclick="filterSkills('long')">Long Term 🎯</button>
             </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Active Listening</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ Practice daily</span>
-                            <span class="level-badge medium">Medium</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Transform conversations by truly hearing what people say. Most people listen to respond, not to understand.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Better relationships, fewer conflicts, more influence, and deeper connections. People feel valued when truly heard. This one skill can transform your personal and professional life.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Learn the basics:</strong> <a href="https://www.ccl.org/articles/leading-effectively-articles/coaching-others-use-active-listening-skills/" class="resource-link" target="_blank">Active listening guide</a></li>
-                            <li><strong>The 3-second rule:</strong> Pause 3 seconds before responding</li>
-                            <li><strong>Book:</strong> "Just Listen" by Mark Goulston</li>
-                            <li><strong>Exercise:</strong> In your next conversation, summarize what you heard before replying</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ The RASA Method</div>
-                            <p class="tips-text">Receive (pay attention), Appreciate (nod/smile), Summarize (confirm), Ask (dig deeper). Practice one conversation at a time.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Elevator Pitch</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 30 minutes</span>
-                            <span class="level-badge medium">Medium</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Describe yourself, your project, or business in 30 seconds. Essential for networking and opportunities.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">You never know when opportunity knocks. Having a polished pitch ready means you can capitalize on chance meetings, interviews, or networking events. First impressions matter.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Framework:</strong> <a href="https://www.themuse.com/advice/perfect-pitch-how-to-nail-your-elevator-speech" class="resource-link" target="_blank">The Muse guide</a></li>
-                            <li><strong>Formula:</strong> Who you are + What you do + Why it matters + Call to action</li>
-                            <li><strong>Practice:</strong> Record yourself on phone, watch it back (awkward but essential!)</li>
-                            <li><strong>Test it:</strong> Practice on 3 friends, refine based on their questions</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Professional Email Writing</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 20 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Write emails that get responses. Clear, concise, and action-oriented communication is a superpower.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Poor emails waste time and hurt your professional image. Good emails get responses, build relationships, and move things forward. This skill affects every aspect of modern work.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Guide:</strong> <a href="https://hbr.org/2016/11/how-to-write-email-with-military-precision" class="resource-link" target="_blank">Harvard Business Review email guide</a></li>
-                            <li><strong>Template library:</strong> <a href="https://www.hubspot.com/sales-email-templates" class="resource-link" target="_blank">HubSpot email templates</a></li>
-                            <li><strong>Grammar check:</strong> Use Grammarly (free) or Hemingway Editor</li>
-                            <li><strong>Rule:</strong> Subject line = clear action, first sentence = why you're writing</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ The 5-Sentence Rule</div>
-                            <p class="tips-text">Keep emails under 5 sentences. If it needs more, schedule a call instead.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="long">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Public Speaking</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ Ongoing practice</span>
-                            <span class="level-badge long">Long Term</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">The #1 fear for most people. But it's learnable and opens doors in career and life.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Lead meetings, give presentations, inspire teams, close deals. Public speaking amplifies your influence and career opportunities exponentially. Warren Buffett credits it as his most valuable skill.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Join:</strong> <a href="https://www.toastmasters.org/" class="resource-link" target="_blank">Toastmasters International</a> - Practice in safe environment</li>
-                            <li><strong>YouTube:</strong> Watch TED Talks and analyze what makes them good</li>
-                            <li><strong>Course:</strong> <a href="https://www.coursera.org/learn/public-speaking" class="resource-link" target="_blank">Coursera public speaking</a> (free to audit)</li>
-                            <li><strong>First step:</strong> Record yourself giving a 2-minute talk, watch it back</li>
-                        </ul>
-                    </div>
-                </div>
+            
+            <div class="quick-actions">
+                <button class="action-btn" onclick="showRandomSkill()">🎲 Random Skill</button>
+                <button class="action-btn" onclick="filterSkills('quick')">⏱️ 5-Minute Skills</button>
+                <button class="action-btn" onclick="showHighROI()">💰 High ROI</button>
             </div>
         </div>
 
-        <div class="category" data-category="quick-wins">
-            <div class="category-header">
-                <div class="category-icon">⚡</div>
-                <h2 class="category-title">Quick Wins (Minutes to Learn)</h2>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Micro-Memory Linking</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 5 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Connect new information to something you already know. This simple technique dramatically boosts recall speed.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Your brain remembers connections better than isolated facts. Master this and you'll remember names, concepts, and information effortlessly. Perfect for networking, studying, or impressing people.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>The technique:</strong> When learning something new, immediately think "What does this remind me of?"</li>
-                            <li><strong>Example:</strong> Meeting "Sarah who loves sailing" → Link to "Sarah sells seashells"</li>
-                            <li><strong>Read:</strong> <a href="https://www.scotthyoung.com/blog/2021/01/21/memory-hooks/" class="resource-link" target="_blank">Memory hooks guide</a></li>
-                            <li><strong>Practice:</strong> Try it right now with the next 5 people you meet</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Weirder connections = stronger memories. "Mike the accountant who looks like a pineapple" beats "Mike the accountant."</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Remember Names Instantly</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 10 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Repeat their name + attach a distinctive trait. Never forget a name again in social or professional settings.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Remembering names makes you instantly likeable and memorable. Dale Carnegie said "A person's name is the sweetest sound to them." Master this for networking, sales, relationships, and career advancement.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Step 1:</strong> Repeat their name immediately ("Nice to meet you, Jessica")</li>
-                            <li><strong>Step 2:</strong> Find ONE distinctive feature (red glasses, deep voice, tall)</li>
-                            <li><strong>Step 3:</strong> Create a link: "Jessica with the red glasses"</li>
-                            <li><strong>Step 4:</strong> Use their name 2-3 times in conversation</li>
-                            <li><strong>Video tutorial:</strong> <a href="https://www.youtube.com/watch?v=yxOGJNj_x7k" class="resource-link" target="_blank">Memory champion technique</a></li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Write it down within 5 minutes. Saying "Let me get your number" is a perfect excuse to note their name and trait.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Box Breathing Technique</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 2 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Navy SEAL technique to stay calm under pressure. Reduces anxiety and improves focus instantly.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Anxiety and stress kill productivity and happiness. This scientifically-proven method activates your parasympathetic nervous system in 2 minutes. Use before presentations, interviews, or anytime you need instant calm.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>The pattern:</strong> Inhale 4 counts → Hold 4 → Exhale 4 → Hold 4 → Repeat</li>
-                            <li><strong>Guided tool:</strong> <a href="https://www.calm.com/breathe" class="resource-link" target="_blank">Calm breathing tool</a> (free)</li>
-                            <li><strong>App:</strong> "Breathwrk" or "Prana Breath"</li>
-                            <li><strong>Try it now:</strong> Do 4 rounds right now while reading this</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ When to Use</div>
-                            <p class="tips-text">Before presentations, during anxiety, before bed, after conflict, or anytime you need to reset your nervous system.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Keyboard Shortcuts Mastery</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 15 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Stop reaching for your mouse every 5 seconds. Save hours weekly by mastering essential shortcuts.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">The average person wastes 2-3 hours weekly reaching for the mouse. Keyboard shortcuts make you look professional, save time, and reduce wrist strain. This skill pays dividends every single day for your entire career.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Essential trio:</strong> Ctrl/Cmd+F (find), Ctrl/Cmd+T (new tab), Ctrl/Cmd+Shift+T (reopen closed tab)</li>
-                            <li><strong>Windows guide:</strong> <a href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec" class="resource-link" target="_blank">Microsoft shortcuts</a></li>
-                            <li><strong>Mac guide:</strong> <a href="https://support.apple.com/en-us/HT201236" class="resource-link" target="_blank">Apple shortcuts</a></li>
-                            <li><strong>Practice tool:</strong> <a href="https://www.shortcutfoo.com/" class="resource-link" target="_blank">ShortcutFoo</a> - Gamified training</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Pick 3 shortcuts, write them on a sticky note by your screen. Force yourself to use only those for 2 days. Then add 3 more.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="category" data-category="business">
+        <!-- Career & Business Skills -->
+        <div class="category" data-category="career">
             <div class="category-header">
                 <div class="category-icon">💼</div>
-                <h2 class="category-title">Business & Money Skills</h2>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Landing Page Fundamentals</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 1-2 hours</span>
-                            <span class="level-badge medium">Medium</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Master the proven formula: Hero → Value → Proof → CTA. Turn visitors into customers.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Whether you're freelancing, building a startup, or selling products, landing pages are your 24/7 salesperson. A great landing page can be worth thousands or millions. This skill directly translates to revenue.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Study winners:</strong> <a href="https://www.landingfolio.com/" class="resource-link" target="_blank">LandingFolio</a> - Best landing page examples</li>
-                            <li><strong>Free course:</strong> <a href="https://www.youtube.com/watch?v=DhPbtGQfjwI" class="resource-link" target="_blank">Julian Shapiro's guide</a></li>
-                            <li><strong>Build one:</strong> Use Carrd.co (free) or Framer (free tier)</li>
-                            <li><strong>The formula:</strong> Compelling headline → Benefits (not features) → Social proof → Single clear CTA</li>
-                            <li><strong>Book:</strong> "Don't Make Me Think" by Steve Krug</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Your headline should pass the "grunt test" - a caveman should understand what you offer in 5 seconds. Test with friends!</p>
-                        </div>
-                    </div>
+                <div>
+                    <h2 class="category-title">Career & Business Skills</h2>
+                    <p class="category-description">Skills that directly impact your earning potential and professional growth</p>
                 </div>
             </div>
 
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Copywriting Psychology</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 2-3 hours</span>
-                            <span class="level-badge medium">Medium</span>
+            <div class="skills-grid">
+                <div class="skill-card" data-level="medium" data-roi="high">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Copywriting Psychology</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 2-3 hours</span>
+                                <span class="level-badge medium">Medium</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Master the Pain → Desire → Solution framework. Write copy that actually converts.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Good copywriting is the difference between $0 and $100k. Every email, tweet, product description, and ad needs this skill. It's not manipulation - it's understanding what people actually want and communicating clearly.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Free masterclass:</strong> <a href="https://copyhackers.com/copy-school/" class="resource-link" target="_blank">Copyhackers tutorials</a></li>
-                            <li><strong>Book:</strong> "Cashvertising" by Drew Eric Whitman (psychological triggers)</li>
-                            <li><strong>Swipe file:</strong> <a href="https://swiped.co/" class="resource-link" target="_blank">Swiped.co</a> - Study proven copy</li>
-                            <li><strong>The formula:</strong> Identify pain → Amplify desire → Present your solution as bridge</li>
-                            <li><strong>Practice:</strong> Rewrite 5 product descriptions on Amazon using this framework</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Read your copy out loud. If it sounds weird or robotic, rewrite it. Great copy sounds like a conversation with a smart friend.</p>
+                    <p class="skill-description">Master the Pain → Desire → Solution framework. Write copy that actually converts and sells.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current Income ($):</label>
+                                <input type="number" class="roi-input" value="50000" min="0" step="1000">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Expected Increase (%):</label>
+                                <input type="number" class="roi-input" value="15" min="0" max="100">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Annual Gain</div>
+                                <div class="roi-result-value roi-high">$7,500</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">5-Year Value</div>
+                                <div class="roi-result-value roi-high">$37,500</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-extreme">150x</div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">Good copywriting is the difference between $0 and $100k. Every email, tweet, product description, and ad needs this skill. It's not manipulation - it's understanding what people actually want and communicating clearly.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Free masterclass:</strong> <a href="https://copyhackers.com/copy-school/" class="resource-link" target="_blank">Copyhackers tutorials</a></li>
+                                <li><strong>Book:</strong> "Cashvertising" by Drew Eric Whitman (psychological triggers)</li>
+                                <li><strong>Swipe file:</strong> <a href="https://swiped.co/" class="resource-link" target="_blank">Swiped.co</a> - Study proven copy</li>
+                                <li><strong>The formula:</strong> Identify pain → Amplify desire → Present your solution as bridge</li>
+                                <li><strong>Practice:</strong> Rewrite 5 product descriptions on Amazon using this framework</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Read your copy out loud. If it sounds weird or robotic, rewrite it. Great copy sounds like a conversation with a smart friend.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Mini-Funnels Strategy</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 3-4 hours</span>
-                            <span class="level-badge medium">Medium</span>
+                <div class="skill-card" data-level="medium" data-roi="high">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Negotiation Mastery</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 3-4 hours</span>
+                                <span class="level-badge medium">Medium</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Build simple funnels: Free → Lite → Full. Guide customers naturally to premium offers.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">People don't buy expensive things from strangers. A funnel builds trust progressively. This is how every successful online business scales - from solopreneurs to billion-dollar companies.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>The concept:</strong> <a href="https://www.youtube.com/watch?v=8aRe72p2GKE" class="resource-link" target="_blank">Alex Hormozi's funnel breakdown</a></li>
-                            <li><strong>Book:</strong> "DotCom Secrets" by Russell Brunson</li>
-                            <li><strong>Free tier example:</strong> Free PDF/video → $7-27 starter → $97+ main product</li>
-                            <li><strong>Build tool:</strong> <a href="https://systeme.io/" class="resource-link" target="_blank">Systeme.io</a> (free plan available)</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Your free offer should be so good people would pay for it. This builds massive trust and makes the paid offer an easy yes.</p>
+                    <p class="skill-description">Learn FBI negotiation techniques to get better salaries, deals, and outcomes in any situation.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current Salary ($):</label>
+                                <input type="number" class="roi-input" value="75000" min="0" step="1000">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Expected Raise (%):</label>
+                                <input type="number" class="roi-input" value="12" min="0" max="50">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Annual Gain</div>
+                                <div class="roi-result-value roi-high">$9,000</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">10-Year Value</div>
+                                <div class="roi-result-value roi-high">$90,000</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-extreme">225x</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Pricing Strategy Basics</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 1 hour</span>
-                            <span class="level-badge quick">Quick Win</span>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">One successful salary negotiation can be worth $50k-500k over your career. Everything is negotiable - you just need to ask. Most people leave money on the table out of fear.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Book:</strong> "Never Split the Difference" by Chris Voss (FBI negotiator)</li>
+                                <li><strong>Podcast:</strong> <a href="https://www.youtube.com/watch?v=guZa7mQV1l0" class="resource-link" target="_blank">Chris Voss masterclass</a></li>
+                                <li><strong>Salary guide:</strong> <a href="https://www.kalzumeus.com/2012/01/23/salary-negotiation/" class="resource-link" target="_blank">Patrick McKenzie's guide</a></li>
+                                <li><strong>Practice:</strong> Negotiate at flea market or farmers market this weekend</li>
+                            </ul>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Master: Anchor → Value → Decision. Price psychology that actually works.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Most people undercharge by 50-300%. Pricing isn't about your costs - it's about perceived value. Learn this and instantly increase your revenue without working harder. One pricing change can double your income.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Read:</strong> "The Psychology of Price" by Leigh Caldwell</li>
-                            <li><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=QHTbVTmt1Eo" class="resource-link" target="_blank">Dan Ariely on pricing psychology</a></li>
-                            <li><strong>The anchor:</strong> Show expensive option first to make others seem reasonable</li>
-                            <li><strong>The rule:</strong> Always offer 3 tiers (people pick middle 60% of the time)</li>
-                            <li><strong>Practice:</strong> Price something at 3x what you originally thought. Test it.</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">End prices in 7 or 9 ($47, $297, $997). Research shows these convert better than round numbers. People perceive them as deals.</p>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="category" data-category="learning">
+        <!-- Productivity & Efficiency -->
+        <div class="category" data-category="productivity">
             <div class="category-header">
-                <div class="category-icon">🧠</div>
-                <h2 class="category-title">Learning & Memory</h2>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Learning How to Learn</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 15 hours course</span>
-                            <span class="level-badge medium">Medium</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Master spaced repetition, active recall, and chunking. The meta-skill that makes every other skill easier.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">This is the ultimate multiplier skill. Learn this once, benefit forever. Most people use terrible learning strategies (rereading, highlighting). Learn the science-backed methods that actually work and you'll learn 3-5x faster for life.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>The course:</strong> <a href="https://www.coursera.org/learn/learning-how-to-learn" class="resource-link" target="_blank">Learning How to Learn</a> (Coursera, free)</li>
-                            <li><strong>Book:</strong> "Ultralearning" by Scott Young</li>
-                            <li><strong>Spaced repetition app:</strong> <a href="https://apps.ankiweb.net/" class="resource-link" target="_blank">Anki</a> (proven most effective)</li>
-                            <li><strong>Key concept:</strong> Test yourself instead of rereading. Retrieval practice = best learning method</li>
-                            <li><strong>The schedule:</strong> Review at 1 day, 3 days, 1 week, 1 month intervals</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Study in different locations. Your brain encodes environmental context, so varied locations = stronger memories.</p>
-                        </div>
-                    </div>
+                <div class="category-icon">⚡</div>
+                <div>
+                    <h2 class="category-title">Productivity & Efficiency</h2>
+                    <p class="category-description">Skills that save time, reduce stress, and help you accomplish more with less effort</p>
                 </div>
             </div>
 
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">The Feynman Technique</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 20 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
+            <div class="skills-grid">
+                <div class="skill-card" data-level="quick" data-roi="medium">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Keyboard Shortcuts Mastery</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 15 minutes</span>
+                                <span class="level-badge quick">Quick Win</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Explain concepts in simple terms to truly understand them. If you can't explain it simply, you don't understand it.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Named after Nobel Prize winner Richard Feynman. This exposes knowledge gaps instantly and forces deep understanding. Use for interviews, teaching, or mastering complex topics. You'll learn faster and remember longer.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Step 1:</strong> Pick a concept you're learning</li>
-                            <li><strong>Step 2:</strong> Explain it out loud as if teaching a 10-year-old</li>
-                            <li><strong>Step 3:</strong> Identify where you got stuck or used jargon</li>
-                            <li><strong>Step 4:</strong> Go back to source material for those gaps</li>
-                            <li><strong>Step 5:</strong> Simplify your explanation further</li>
-                            <li><strong>Video guide:</strong> <a href="https://www.youtube.com/watch?v=_f-qkGJBPts" class="resource-link" target="_blank">Feynman Technique explained</a></li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Actually talk out loud (or write it down). Thinking it in your head doesn't work - you'll fool yourself into thinking you understand.</p>
+                    <p class="skill-description">Stop reaching for your mouse every 5 seconds. Save hours weekly by mastering essential shortcuts.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Hourly Rate ($):</label>
+                                <input type="number" class="roi-input" value="50" min="0" step="5">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Hours Saved/Week:</label>
+                                <input type="number" class="roi-input" value="3" min="0" max="20" step="0.5">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Weekly Value</div>
+                                <div class="roi-result-value roi-positive">$150</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Annual Value</div>
+                                <div class="roi-result-value roi-positive">$7,800</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-high">520x</div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">The average person wastes 2-3 hours weekly reaching for the mouse. Keyboard shortcuts make you look professional, save time, and reduce wrist strain. This skill pays dividends every single day for your entire career.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Essential trio:</strong> Ctrl/Cmd+F (find), Ctrl/Cmd+T (new tab), Ctrl/Cmd+Shift+T (reopen closed tab)</li>
+                                <li><strong>Windows guide:</strong> <a href="https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec" class="resource-link" target="_blank">Microsoft shortcuts</a></li>
+                                <li><strong>Mac guide:</strong> <a href="https://support.apple.com/en-us/HT201236" class="resource-link" target="_blank">Apple shortcuts</a></li>
+                                <li><strong>Practice tool:</strong> <a href="https://www.shortcutfoo.com/" class="resource-link" target="_blank">ShortcutFoo</a> - Gamified training</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Pick 3 shortcuts, write them on a sticky note by your screen. Force yourself to use only those for 2 days. Then add 3 more.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="category" data-category="tech">
-            <div class="category-header">
-                <div class="category-icon">💻</div>
-                <h2 class="category-title">Technical Skills</h2>
-            </div>
-
-            <div class="skill-card" data-level="long">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Neural Network Basics</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 20+ hours</span>
-                            <span class="level-badge long">Long Term</span>
+                <div class="skill-card" data-level="medium" data-roi="high">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Touch Typing</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 15 min/day for 3 weeks</span>
+                                <span class="level-badge medium">Medium</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Understand AI from simple to complex. Learn the fundamentals behind ChatGPT, DALL-E, and modern AI.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">AI is transforming every industry. Understanding neural networks isn't just for engineers - it's becoming as fundamental as understanding how the internet works. This knowledge will be valuable for decades and opens doors to ML careers paying $200k+.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Best beginner course:</strong> <a href="https://www.youtube.com/watch?v=aircAruvnKk" class="resource-link" target="_blank">3Blue1Brown Neural Networks</a> (visual, intuitive)</li>
-                            <li><strong>Interactive:</strong> <a href="https://playground.tensorflow.org/" class="resource-link" target="_blank">TensorFlow Playground</a> - See it in action</li>
-                            <li><strong>Course:</strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning" class="resource-link" target="_blank">Andrew Ng's Deep Learning</a> (gold standard)</li>
-                            <li><strong>Book:</strong> "Grokking Deep Learning" by Andrew Trask</li>
-                            <li><strong>Path:</strong> Linear regression → Perceptron → Multi-layer networks → CNNs → Transformers</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Don't get stuck on the math. Build something first, understand the concepts, then go back for the mathematical rigor.</p>
+                    <p class="skill-description">Double your typing speed and never look at the keyboard again. This skill pays dividends every single day.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current WPM:</label>
+                                <input type="number" class="roi-input" value="35" min="10" max="100">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Target WPM:</label>
+                                <input type="number" class="roi-input" value="65" min="30" max="150">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Time Saved/Day</div>
+                                <div class="roi-result-value roi-positive">45 min</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Annual Hours Saved</div>
+                                <div class="roi-result-value roi-positive">195 hrs</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-high">650x</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Framer Basics (No-Code Design)</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 5-8 hours</span>
-                            <span class="level-badge medium">Medium</span>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">You'll type millions of words in your lifetime. At 30 WPM vs 60 WPM, that's literally thousands of hours saved. Plus you look professional, reduce wrist strain, and can type while looking at reference material. ROI is insane.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Best free site:</strong> <a href="https://www.keybr.com/" class="resource-link" target="_blank">Keybr.com</a> - Adaptive learning algorithm</li>
+                                <li><strong>Gamified:</strong> <a href="https://www.typingclub.com/" class="resource-link" target="_blank">TypingClub</a> - Structured lessons</li>
+                                <li><strong>For coders:</strong> <a href="https://www.typing.io/" class="resource-link" target="_blank">Typing.io</a> - Practice with real code</li>
+                                <li><strong>Speed test:</strong> <a href="https://monkeytype.com/" class="resource-link" target="_blank">MonkeyType</a> - Track progress</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Cover your keyboard with a cloth for the first week. Feels awkward but forces proper technique. Go SLOW before going fast - accuracy beats speed early on.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Master layouts → components → CMS. Build beautiful, interactive websites without code.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Framer is the future of web design - used by Apple, Netflix, and top startups. Ship professional websites in hours, not weeks. Perfect for founders, designers, or anyone who wants to build modern sites without learning to code. Freelance Framer work pays $100-200/hour.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Official course:</strong> <a href="https://www.framer.com/academy/" class="resource-link" target="_blank">Framer Academy</a> (free, comprehensive)</li>
-                            <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@FluxAcademy" class="resource-link" target="_blank">Flux Academy</a> - Framer tutorials</li>
-                            <li><strong>Start simple:</strong> Clone a landing page you like using Framer's templates</li>
-                            <li><strong>Free templates:</strong> <a href="https://www.framer.com/templates/" class="resource-link" target="_blank">Framer template marketplace</a></li>
-                            <li><strong>Path:</strong> Layouts & grids → Components & variants → CMS integration → Interactive prototypes</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Build your portfolio site in Framer. You'll learn by doing and have a professional portfolio to show clients or employers.</p>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Touch Typing</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 15 min/day for 3 weeks</span>
-                            <span class="level-badge medium">Medium</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Double your typing speed and never look at the keyboard again. This skill pays dividends every single day.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">You'll type millions of words in your lifetime. At 30 WPM vs 60 WPM, that's literally thousands of hours saved. Plus you look professional, reduce wrist strain, and can type while looking at reference material. ROI is insane.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Best free site:</strong> <a href="https://www.keybr.com/" class="resource-link" target="_blank">Keybr.com</a> - Adaptive learning algorithm</li>
-                            <li><strong>Gamified:</strong> <a href="https://www.typingclub.com/" class="resource-link" target="_blank">TypingClub</a> - Structured lessons</li>
-                            <li><strong>For coders:</strong> <a href="https://www.typing.io/" class="resource-link" target="_blank">Typing.io</a> - Practice with real code</li>
-                            <li><strong>Speed test:</strong> <a href="https://monkeytype.com/" class="resource-link" target="_blank">MonkeyType</a> - Track progress</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Cover your keyboard with a cloth for the first week. Feels awkward but forces proper technique. Go SLOW before going fast - accuracy beats speed early on.</p>
-                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
                     </div>
                 </div>
             </div>
         </div>
 
+        <!-- Health & Wellness -->
         <div class="category" data-category="health">
             <div class="category-header">
                 <div class="category-icon">💪</div>
-                <h2 class="category-title">Fitness & Health</h2>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Daily Stretching Routine</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 10 min/day</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Undo damage from sitting all day. Improve flexibility, reduce pain, and feel better in just 10 minutes.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Sitting is killing your back, hips, and posture. 10 minutes of stretching daily prevents years of chronic pain and thousands in medical bills. You'll feel better immediately - more energy, less stiffness, better sleep. No equipment needed.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Follow-along video:</strong> <a href="https://www.youtube.com/watch?v=g_tea8ZNk5A" class="resource-link" target="_blank">10-minute full body stretch</a></li>
-                            <li><strong>App:</strong> "StretchIt" or "Pliability"</li>
-                            <li><strong>Focus areas:</strong> Hip flexors, hamstrings, shoulders, neck</li>
-                            <li><strong>When:</strong> Right after waking up or before bed (set a reminder!)</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Golden Rule</div>
-                            <p class="tips-text">Hold each stretch for 30 seconds, breathe deeply, never bounce. Consistency beats intensity. Do it every day for a week and you'll be hooked.</p>
-                        </div>
-                    </div>
+                <div>
+                    <h2 class="category-title">Health & Wellness</h2>
+                    <p class="category-description">Skills that improve physical and mental health, energy levels, and overall wellbeing</p>
                 </div>
             </div>
 
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Proper Posture</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ Constant practice</span>
-                            <span class="level-badge medium">Medium</span>
+            <div class="skills-grid">
+                <div class="skill-card" data-level="quick" data-roi="medium">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Box Breathing Technique</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 2 minutes</span>
+                                <span class="level-badge quick">Quick Win</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Fix your posture, fix your back pain. Most of us are slowly destroying our spine with poor posture.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Bad posture causes back pain, neck pain, headaches, reduced lung capacity, and makes you look less confident. Good posture is free, works immediately, and affects how people perceive you professionally and socially.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Video guide:</strong> <a href="https://www.youtube.com/watch?v=RqcOCBb4arc" class="resource-link" target="_blank">Perfect posture in 5 steps</a></li>
-                            <li><strong>Desk setup:</strong> <a href="https://www.osha.gov/etools/computer-workstations" class="resource-link" target="_blank">Ergonomic workstation guide</a></li>
-                            <li><strong>App reminder:</strong> "Posture Reminder" (sends alerts every hour)</li>
-                            <li><strong>Wall test:</strong> Stand with back to wall, heels touching, head/shoulders/butt against wall - that's correct posture</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Pro Tip</div>
-                            <p class="tips-text">Set hourly phone reminders. When it beeps, check and correct posture. Takes 2 weeks to become automatic.</p>
+                    <p class="skill-description">Navy SEAL technique to stay calm under pressure. Reduces anxiety and improves focus instantly.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Stress Level (1-10):</label>
+                                <input type="number" class="roi-input" value="7" min="1" max="10">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Minutes/Day:</label>
+                                <input type="number" class="roi-input" value="5" min="1" max="60">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Focus Increase</div>
+                                <div class="roi-result-value roi-positive">+42%</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Stress Reduction</div>
+                                <div class="roi-result-value roi-positive">-60%</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Productivity Gain</div>
+                                <div class="roi-result-value roi-high">+25%</div>
+                            </div>
                         </div>
                     </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">Anxiety and stress kill productivity and happiness. This scientifically-proven method activates your parasympathetic nervous system in 2 minutes. Use before presentations, interviews, or anytime you need instant calm.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>The pattern:</strong> Inhale 4 counts → Hold 4 → Exhale 4 → Hold 4 → Repeat</li>
+                                <li><strong>Guided tool:</strong> <a href="https://www.calm.com/breathe" class="resource-link" target="_blank">Calm breathing tool</a> (free)</li>
+                                <li><strong>App:</strong> "Breathwrk" or "Prana Breath"</li>
+                                <li><strong>Try it now:</strong> Do 4 rounds right now while reading this</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ When to Use</div>
+                                <p class="tips-text">Before presentations, during anxiety, before bed, after conflict, or anytime you need to reset your nervous system.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Jump Rope Cardio</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 5 min/day</span>
-                            <span class="level-badge medium">Medium</span>
+                <div class="skill-card" data-level="medium" data-roi="high">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Proper Posture</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ Constant practice</span>
+                                <span class="level-badge medium">Medium</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Best cardio exercise. Burns more calories than running, improves coordination, only needs $5 equipment.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">10 minutes of jump rope = 30 minutes of jogging. Improves footwork, coordination, cardiovascular health. Used by boxers and elite athletes. Minimal equipment, maximum results.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>YouTube:</strong> <a href="https://www.youtube.com/c/jumpropedudescom" class="resource-link" target="_blank">Jump Rope Dudes</a> - Beginner tutorials</li>
-                            <li><strong>Buy a rope:</strong> Speed rope on Amazon for $5-10</li>
-                            <li><strong>Beginner program:</strong> Start with 30 seconds on, 30 seconds rest, repeat 5 times</li>
-                            <li><strong>App:</strong> "CrossRope" app (free workouts)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="category" data-category="creative">
-            <div class="category-header">
-                <div class="category-icon">🎨</div>
-                <h2 class="category-title">Creative Skills</h2>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Basic Drawing</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 20 min/day</span>
-                            <span class="level-badge medium">Medium</span>
+                    <p class="skill-description">Fix your posture, fix your back pain. Most of us are slowly destroying our spine with poor posture.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current Back Pain (1-10):</label>
+                                <input type="number" class="roi-input" value="6" min="1" max="10">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Chiropractic Visits/Year:</label>
+                                <input type="number" class="roi-input" value="12" min="0" max="52">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Pain Reduction</div>
+                                <div class="roi-result-value roi-positive">-70%</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Annual Savings</div>
+                                <div class="roi-result-value roi-high">$1,200</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Energy Increase</div>
+                                <div class="roi-result-value roi-positive">+30%</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Learn to see and draw what you observe. You don't need talent, just practice.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Improves observation skills, creativity, and visual thinking. Useful for design, communication, and problem-solving. Plus it's meditative and fun. Anyone can learn to draw.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Free course:</strong> <a href="https://drawabox.com/" class="resource-link" target="_blank">Draw a Box</a> - Structured from zero</li>
-                            <li><strong>YouTube:</strong> <a href="https://www.youtube.com/c/ProkoTV" class="resource-link" target="_blank">Proko</a> - Professional art instruction</li>
-                            <li><strong>Book:</strong> "Drawing on the Right Side of the Brain" by Betty Edwards</li>
-                            <li><strong>First exercise:</strong> Draw your hand for 5 minutes, looking only at your hand (not the paper)</li>
-                        </ul>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">Bad posture causes back pain, neck pain, headaches, reduced lung capacity, and makes you look less confident. Good posture is free, works immediately, and affects how people perceive you professionally and socially.</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Photography Composition</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 1 hour</span>
-                            <span class="level-badge medium">Medium</span>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Video guide:</strong> <a href="https://www.youtube.com/watch?v=RqcOCBb4arc" class="resource-link" target="_blank">Perfect posture in 5 steps</a></li>
+                                <li><strong>Desk setup:</strong> <a href="https://www.osha.gov/etools/computer-workstations" class="resource-link" target="_blank">Ergonomic workstation guide</a></li>
+                                <li><strong>App reminder:</strong> "Posture Reminder" (sends alerts every hour)</li>
+                                <li><strong>Wall test:</strong> Stand with back to wall, heels touching, head/shoulders/butt against wall - that's correct posture</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Set hourly phone reminders. When it beeps, check and correct posture. Takes 2 weeks to become automatic.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Take better photos with your phone. Composition matters more than equipment.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Better photos for social media, memories, and creative expression. Can lead to freelance work or side income. Everyone has a camera now - learn to use it well.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Free course:</strong> <a href="https://www.reddit.com/r/photoclass/" class="resource-link" target="_blank">Reddit Photoclass</a></li>
-                            <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@PeterMcKinnon" class="resource-link" target="_blank">Peter McKinnon</a> - Engaging tutorials</li>
-                            <li><strong>Phone photography:</strong> <a href="https://www.youtube.com/watch?v=sXEmCup5pFk" class="resource-link" target="_blank">iPhone photography course</a></li>
-                            <li><strong>Daily challenge:</strong> Take 10 photos using rule of thirds today</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Rule of Thirds</div>
-                            <p class="tips-text">Imagine a tic-tac-toe grid on your screen. Place subjects on the intersections or lines. Enable grid in your phone camera settings!</p>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
                         </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="category" data-category="finance">
+        <!-- Technical & Digital Skills -->
+        <div class="category" data-category="technical">
             <div class="category-header">
-                <div class="category-icon">💰</div>
-                <h2 class="category-title">Financial Skills</h2>
-            </div>
-
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">50/30/20 Budget Rule</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 1 hour</span>
-                            <span class="level-badge quick">Quick Win</span>
-                        </div>
-                    </div>
-                </div>
-                <p class="skill-description">Simple budgeting: 50% needs, 30% wants, 20% savings. Start tracking your money today.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">Financial stress kills happiness and opportunity. This simple framework gives you control over your money without being restrictive. The foundation of financial health.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Learn the concept:</strong> <a href="https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator" class="resource-link" target="_blank">NerdWallet calculator</a></li>
-                            <li><strong>Free apps:</strong> Mint, YNAB (You Need A Budget)</li>
-                            <li><strong>Spreadsheet:</strong> <a href="https://www.vertex42.com/ExcelTemplates/personal-budget-spreadsheet.html" class="resource-link" target="_blank">Free budget template</a></li>
-                            <li><strong>First step:</strong> Track every expense for one week</li>
-                        </ul>
-                    </div>
+                <div class="category-icon">💻</div>
+                <div>
+                    <h2 class="category-title">Technical & Digital Skills</h2>
+                    <p class="category-description">Future-proof skills for the digital economy and AI-driven world</p>
                 </div>
             </div>
 
-            <div class="skill-card" data-level="quick">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Understanding Compound Interest</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 30 minutes</span>
-                            <span class="level-badge quick">Quick Win</span>
+            <div class="skills-grid">
+                <div class="skill-card" data-level="long" data-roi="extreme">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Neural Network Basics</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 20+ hours</span>
+                                <span class="level-badge long">Long Term</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <p class="skill-description">Einstein called it the "8th wonder." Understanding this changes how you think about saving.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">The difference between wealth and poverty. $100/month at 7% = $122k in 20 years. Time is more powerful than amount. This knowledge is worth millions over your lifetime.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Calculator:</strong> <a href="https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator" class="resource-link" target="_blank">SEC compound calculator</a></li>
-                            <li><strong>Rule of 72:</strong> Divide 72 by interest rate = years to double money</li>
-                            <li><strong>Video:</strong> <a href="https://www.youtube.com/watch?v=WEDIj9JBTC8" class="resource-link" target="_blank">Compound Interest explained</a></li>
-                            <li><strong>Practice:</strong> Calculate how much $100/month becomes in 30 years at 7%</li>
-                        </ul>
-                        <div class="tips">
-                            <div class="tips-title">✨ Mind-Blowing Fact</div>
-                            <p class="tips-text">$5/day invested at 8% return = $237,000 in 30 years. Time is more powerful than amount!</p>
+                    <p class="skill-description">Understand AI from simple to complex. Learn the fundamentals behind ChatGPT, DALL-E, and modern AI.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current Salary ($):</label>
+                                <input type="number" class="roi-input" value="80000" min="0" step="1000">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>AI Skill Premium (%):</label>
+                                <input type="number" class="roi-input" value="25" min="0" max="100">
+                            </div>
                         </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Salary Boost</div>
+                                <div class="roi-result-value roi-extreme">$20,000</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">5-Year Value</div>
+                                <div class="roi-result-value roi-extreme">$100,000</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Career Opportunities</div>
+                                <div class="roi-result-value roi-high">+300%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">AI is transforming every industry. Understanding neural networks isn't just for engineers - it's becoming as fundamental as understanding how the internet works. This knowledge will be valuable for decades and opens doors to ML careers paying $200k+.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Best beginner course:</strong> <a href="https://www.youtube.com/watch?v=aircAruvnKk" class="resource-link" target="_blank">3Blue1Brown Neural Networks</a> (visual, intuitive)</li>
+                                <li><strong>Interactive:</strong> <a href="https://playground.tensorflow.org/" class="resource-link" target="_blank">TensorFlow Playground</a> - See it in action</li>
+                                <li><strong>Course:</strong> <a href="https://www.coursera.org/learn/neural-networks-deep-learning" class="resource-link" target="_blank">Andrew Ng's Deep Learning</a> (gold standard)</li>
+                                <li><strong>Book:</strong> "Grokking Deep Learning" by Andrew Trask</li>
+                                <li><strong>Path:</strong> Linear regression → Perceptron → Multi-layer networks → CNNs → Transformers</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Don't get stuck on the math. Build something first, understand the concepts, then go back for the mathematical rigor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
+                    </div>
+                </div>
+
+                <div class="skill-card" data-level="medium" data-roi="high">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Framer Basics (No-Code Design)</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 5-8 hours</span>
+                                <span class="level-badge medium">Medium</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="skill-description">Master layouts → components → CMS. Build beautiful, interactive websites without code.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Freelance Rate ($/hr):</label>
+                                <input type="number" class="roi-input" value="75" min="0" step="5">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Projects/Month:</label>
+                                <input type="number" class="roi-input" value="2" min="0" max="20">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Monthly Income</div>
+                                <div class="roi-result-value roi-high">$2,400</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Annual Side Income</div>
+                                <div class="roi-result-value roi-high">$28,800</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-extreme">360x</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">Framer is the future of web design - used by Apple, Netflix, and top startups. Ship professional websites in hours, not weeks. Perfect for founders, designers, or anyone who wants to build modern sites without learning to code. Freelance Framer work pays $100-200/hour.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>Official course:</strong> <a href="https://www.framer.com/academy/" class="resource-link" target="_blank">Framer Academy</a> (free, comprehensive)</li>
+                                <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@FluxAcademy" class="resource-link" target="_blank">Flux Academy</a> - Framer tutorials</li>
+                                <li><strong>Start simple:</strong> Clone a landing page you like using Framer's templates</li>
+                                <li><strong>Free templates:</strong> <a href="https://www.framer.com/templates/" class="resource-link" target="_blank">Framer template marketplace</a></li>
+                                <li><strong>Path:</strong> Layouts & grids → Components & variants → CMS integration → Interactive prototypes</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Build your portfolio site in Framer. You'll learn by doing and have a professional portfolio to show clients or employers.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="skill-card" data-level="medium">
-                <div class="skill-header">
-                    <div>
-                        <h3 class="skill-title">Basic Negotiation</h3>
-                        <div class="skill-badges">
-                            <span class="time-badge">⏱️ 1 hour</span>
-                            <span class="level-badge medium">Medium</span>
+        <!-- Learning & Memory -->
+        <div class="category" data-category="learning">
+            <div class="category-header">
+                <div class="category-icon">🧠</div>
+                <div>
+                    <h2 class="category-title">Learning & Memory</h2>
+                    <p class="category-description">Meta-skills that accelerate your ability to learn any other skill faster and more effectively</p>
+                </div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card" data-level="medium" data-roi="high">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Learning How to Learn</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 15 hours course</span>
+                                <span class="level-badge medium">Medium</span>
+                            </div>
                         </div>
                     </div>
+                    <p class="skill-description">Master spaced repetition, active recall, and chunking. The meta-skill that makes every other skill easier.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current Learning Speed:</label>
+                                <input type="number" class="roi-input" value="1" min="0.1" max="5" step="0.1">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Expected Improvement (%):</label>
+                                <input type="number" class="roi-input" value="300" min="50" max="1000">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Learning Speed</div>
+                                <div class="roi-result-value roi-extreme">4x Faster</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Retention Rate</div>
+                                <div class="roi-result-value roi-high">+80%</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-extreme">∞</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">This is the ultimate multiplier skill. Learn this once, benefit forever. Most people use terrible learning strategies (rereading, highlighting). Learn the science-backed methods that actually work and you'll learn 3-5x faster for life.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>The course:</strong> <a href="https://www.coursera.org/learn/learning-how-to-learn" class="resource-link" target="_blank">Learning How to Learn</a> (Coursera, free)</li>
+                                <li><strong>Book:</strong> "Ultralearning" by Scott Young</li>
+                                <li><strong>Spaced repetition app:</strong> <a href="https://apps.ankiweb.net/" class="resource-link" target="_blank">Anki</a> (proven most effective)</li>
+                                <li><strong>Key concept:</strong> Test yourself instead of rereading. Retrieval practice = best learning method</li>
+                                <li><strong>The schedule:</strong> Review at 1 day, 3 days, 1 week, 1 month intervals</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Study in different locations. Your brain encodes environmental context, so varied locations = stronger memories.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
+                    </div>
                 </div>
-                <p class="skill-description">Negotiate salary, rent, or prices. This skill can earn you thousands with one conversation.</p>
-                
-                <div class="why-learn">
-                    <div class="why-learn-title">💡 Why Learn This</div>
-                    <p class="why-learn-text">One successful salary negotiation can be worth $50k-500k over your career. Everything is negotiable - you just need to ask. Most people leave money on the table out of fear.</p>
-                </div>
-                
-                <button class="expand-btn" onclick="toggleExpand(this)">
-                    <span>Learn How</span>
-                    <span class="expand-icon">▼</span>
-                </button>
-                
-                <div class="expandable-content">
-                    <div class="how-to-start">
-                        <div class="how-to-start-title">🚀 How to Start</div>
-                        <ul class="resource-list">
-                            <li><strong>Book:</strong> "Never Split the Difference" by Chris Voss (FBI negotiator)</li>
-                            <li><strong>Podcast:</strong> <a href="https://www.youtube.com/watch?v=guZa7mQV1l0" class="resource-link" target="_blank">Chris Voss masterclass</a></li>
-                            <li><strong>Salary guide:</strong> <a href="https://www.kalzumeus.com/2012/01/23/salary-negotiation/" class="resource-link" target="_blank">Patrick McKenzie's guide</a></li>
-                            <li><strong>Practice:</strong> Negotiate at flea market or farmers market this weekend</li>
-                        </ul>
+
+                <div class="skill-card" data-level="quick" data-roi="medium">
+                    <div class="skill-header">
+                        <div>
+                            <h3 class="skill-title">Micro-Memory Linking</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">⏱️ 5 minutes</span>
+                                <span class="level-badge quick">Quick Win</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="skill-description">Connect new information to something you already know. This simple technique dramatically boosts recall speed.</p>
+                    
+                    <div class="roi-calculator">
+                        <div class="roi-title">💰 ROI Calculator</div>
+                        <div class="roi-inputs">
+                            <div class="roi-input-group">
+                                <label>Current Recall (%):</label>
+                                <input type="number" class="roi-input" value="30" min="0" max="100">
+                            </div>
+                            <div class="roi-input-group">
+                                <label>Expected Improvement (%):</label>
+                                <input type="number" class="roi-input" value="50" min="0" max="200">
+                            </div>
+                        </div>
+                        <div class="roi-results">
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Recall Improvement</div>
+                                <div class="roi-result-value roi-positive">+80%</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">Learning Speed</div>
+                                <div class="roi-result-value roi-positive">2x Faster</div>
+                            </div>
+                            <div class="roi-result-card">
+                                <div class="roi-result-label">ROI Multiple</div>
+                                <div class="roi-result-value roi-high">100x</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="why-learn">
+                        <div class="why-learn-title">💡 Why Learn This</div>
+                        <p class="why-learn-text">Your brain remembers connections better than isolated facts. Master this and you'll remember names, concepts, and information effortlessly. Perfect for networking, studying, or impressing people.</p>
+                    </div>
+                    
+                    <button class="expand-btn" onclick="toggleExpand(this)">
+                        <span>Learn How</span>
+                        <span class="expand-icon">▼</span>
+                    </button>
+                    
+                    <div class="expandable-content">
+                        <div class="how-to-start">
+                            <div class="how-to-start-title">🚀 How to Start</div>
+                            <ul class="resource-list">
+                                <li><strong>The technique:</strong> When learning something new, immediately think "What does this remind me of?"</li>
+                                <li><strong>Example:</strong> Meeting "Sarah who loves sailing" → Link to "Sarah sells seashells"</li>
+                                <li><strong>Read:</strong> <a href="https://www.scotthyoung.com/blog/2021/01/21/memory-hooks/" class="resource-link" target="_blank">Memory hooks guide</a></li>
+                                <li><strong>Practice:</strong> Try it right now with the next 5 people you meet</li>
+                            </ul>
+                            <div class="tips">
+                                <div class="tips-title">✨ Pro Tip</div>
+                                <p class="tips-text">Weirder connections = stronger memories. "Mike the accountant who looks like a pineapple" beats "Mike the accountant."</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <button class="progress-btn" onclick="markProgress(this)">Start Learning</button>
                     </div>
                 </div>
             </div>
@@ -1586,7 +1574,7 @@
                 </div>
                 <div class="guide-card career">
                     <strong>For Career Boost</strong>
-                    <p>Copywriting, landing pages, pricing strategy, neural networks</p>
+                    <p>Copywriting, negotiation, pricing strategy, neural networks</p>
                 </div>
                 <div class="guide-card wellbeing">
                     <strong>For Well-being</strong>
@@ -1605,6 +1593,11 @@
             content.classList.toggle('expanded');
             icon.classList.toggle('rotated');
             button.querySelector('span').textContent = content.classList.contains('expanded') ? 'Show Less' : 'Learn How';
+            
+            // Update ROI calculations when expanded
+            if (content.classList.contains('expanded')) {
+                updateROICalculations(card);
+            }
         }
 
         function filterSkills(level) {
@@ -1615,14 +1608,181 @@
             event.target.classList.add('active');
             
             if (level === 'all') {
-                cards.forEach(card => card.style.display = 'block');
+                cards.forEach(card => card.style.display = 'flex');
+                document.querySelectorAll('.category').forEach(cat => cat.style.display = 'block');
             } else {
+                let hasVisibleCards = false;
+                
                 cards.forEach(card => {
                     const cardLevel = card.dataset.level;
-                    card.style.display = cardLevel === level ? 'block' : 'none';
+                    card.style.display = cardLevel === level ? 'flex' : 'none';
+                    if (cardLevel === level) hasVisibleCards = true;
+                });
+                
+                // Show/hide categories based on visible cards
+                document.querySelectorAll('.category').forEach(category => {
+                    const categoryCards = category.querySelectorAll('.skill-card');
+                    const hasVisibleCategoryCards = Array.from(categoryCards).some(card => card.style.display === 'flex');
+                    category.style.display = hasVisibleCategoryCards ? 'block' : 'none';
                 });
             }
         }
+
+        function showRandomSkill() {
+            const cards = document.querySelectorAll('.skill-card');
+            const randomSkill = cards[Math.floor(Math.random() * cards.length)];
+            randomSkill.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Highlight the random skill
+            randomSkill.style.animation = 'pulse 2s infinite';
+            setTimeout(() => {
+                randomSkill.style.animation = '';
+            }, 2000);
+        }
+
+        function showHighROI() {
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                const roiLevel = card.dataset.roi;
+                card.style.display = (roiLevel === 'high' || roiLevel === 'extreme') ? 'flex' : 'none';
+            });
+            
+            // Update filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Show/hide categories based on visible cards
+            document.querySelectorAll('.category').forEach(category => {
+                const categoryCards = category.querySelectorAll('.skill-card');
+                const hasVisibleCategoryCards = Array.from(categoryCards).some(card => card.style.display === 'flex');
+                category.style.display = hasVisibleCategoryCards ? 'block' : 'none';
+            });
+        }
+
+        function markProgress(button) {
+            const progressBar = button.previousElementSibling.querySelector('.progress-fill');
+            const currentWidth = parseInt(progressBar.style.width) || 0;
+            
+            if (currentWidth < 100) {
+                const newWidth = Math.min(currentWidth + 25, 100);
+                progressBar.style.width = `${newWidth}%`;
+                
+                if (newWidth === 100) {
+                    button.textContent = 'Completed! 🎉';
+                    button.classList.add('completed');
+                } else {
+                    button.textContent = `${newWidth}% Complete`;
+                }
+                
+                // Save progress to localStorage
+                const card = button.closest('.skill-card');
+                const skillTitle = card.querySelector('.skill-title').textContent;
+                localStorage.setItem(skillTitle, newWidth);
+            }
+        }
+
+        function updateROICalculations(card) {
+            const inputs = card.querySelectorAll('.roi-input');
+            const resultValues = card.querySelectorAll('.roi-result-value');
+            
+            if (inputs.length === 0) return;
+            
+            // Get input values
+            const input1 = parseFloat(inputs[0].value) || 0;
+            const input2 = parseFloat(inputs[1].value) || 0;
+            
+            // Calculate based on skill type
+            const skillTitle = card.querySelector('.skill-title').textContent;
+            let results = [];
+            
+            switch(skillTitle) {
+                case 'Copywriting Psychology':
+                    results = [
+                        `$${(input1 * input2 / 100).toLocaleString()}`,
+                        `$${(input1 * input2 / 100 * 5).toLocaleString()}`,
+                        `${Math.round((input1 * input2 / 100) / 50 * 100)}x`
+                    ];
+                    break;
+                case 'Negotiation Mastery':
+                    results = [
+                        `$${(input1 * input2 / 100).toLocaleString()}`,
+                        `$${(input1 * input2 / 100 * 10).toLocaleString()}`,
+                        `${Math.round((input1 * input2 / 100) / 40 * 100)}x`
+                    ];
+                    break;
+                case 'Keyboard Shortcuts Mastery':
+                    results = [
+                        `$${(input1 * input2).toLocaleString()}`,
+                        `$${(input1 * input2 * 52).toLocaleString()}`,
+                        `${Math.round((input1 * input2 * 52) / 0.25 * 100)}x`
+                    ];
+                    break;
+                case 'Touch Typing':
+                    const timeSaved = ((10000 / (input1 * 60)) - (10000 / (input2 * 60))) / 60;
+                    results = [
+                        `${Math.round(timeSaved * 60)} min`,
+                        `${Math.round(timeSaved * 365)} hrs`,
+                        `${Math.round(timeSaved * 365 * input1 / 15 * 100)}x`
+                    ];
+                    break;
+                case 'Box Breathing Technique':
+                    results = [
+                        `+${Math.round(60 - (input1 * 6))}%`,
+                        `-${Math.round(input1 * 8.57)}%`,
+                        `+${Math.round(35 - (input1 * 3.5))}%`
+                    ];
+                    break;
+                case 'Proper Posture':
+                    results = [
+                        `-${Math.round(input1 * 11.67)}%`,
+                        `$${(input2 * 100).toLocaleString()}`,
+                        `+${Math.round(40 - (input1 * 4))}%`
+                    ];
+                    break;
+                case 'Neural Network Basics':
+                    results = [
+                        `$${(input1 * input2 / 100).toLocaleString()}`,
+                        `$${(input1 * input2 / 100 * 5).toLocaleString()}`,
+                        `+${Math.round(input2 * 12)}%`
+                    ];
+                    break;
+                case 'Framer Basics (No-Code Design)':
+                    results = [
+                        `$${(input1 * 8 * input2).toLocaleString()}`,
+                        `$${(input1 * 8 * input2 * 12).toLocaleString()}`,
+                        `${Math.round((input1 * 8 * input2 * 12) / 6 * 100)}x`
+                    ];
+                    break;
+                case 'Learning How to Learn':
+                    results = [
+                        `${(input1 * (input2/100 + 1)).toFixed(1)}x Faster`,
+                        `+${Math.min(input2/2, 80)}%`,
+                        '∞'
+                    ];
+                    break;
+                case 'Micro-Memory Linking':
+                    results = [
+                        `+${Math.min(input1 + input2, 95)}%`,
+                        `${(1 + input2/100).toFixed(1)}x Faster`,
+                        `${Math.round(input2 * 2)}x`
+                    ];
+                    break;
+                default:
+                    results = ['$0', '$0', '0x'];
+            }
+            
+            // Update result values
+            resultValues.forEach((value, index) => {
+                value.textContent = results[index] || '$0';
+            });
+        }
+
+        // Initialize ROI calculators
+        document.querySelectorAll('.roi-input').forEach(input => {
+            input.addEventListener('input', function() {
+                const card = this.closest('.skill-card');
+                updateROICalculations(card);
+            });
+        });
 
         // Search functionality
         document.getElementById('searchInput').addEventListener('input', function(e) {
@@ -1634,19 +1794,44 @@
                 const title = card.querySelector('.skill-title').textContent.toLowerCase();
                 const description = card.querySelector('.skill-description').textContent.toLowerCase();
                 const matches = title.includes(searchTerm) || description.includes(searchTerm);
-                card.style.display = matches ? 'block' : 'none';
+                card.style.display = matches ? 'flex' : 'none';
             });
             
             // Hide empty categories
             categories.forEach(category => {
-                const visibleCards = category.querySelectorAll('.skill-card[style="display: block;"]');
+                const visibleCards = category.querySelectorAll('.skill-card[style="display: flex;"]');
                 category.style.display = visibleCards.length > 0 ? 'block' : 'none';
             });
+        });
+
+        // Load saved progress
+        document.querySelectorAll('.skill-card').forEach(card => {
+            const skillTitle = card.querySelector('.skill-title').textContent;
+            const savedProgress = localStorage.getItem(skillTitle);
+            
+            if (savedProgress) {
+                const progressBar = card.querySelector('.progress-fill');
+                const progressBtn = card.querySelector('.progress-btn');
+                
+                progressBar.style.width = `${savedProgress}%`;
+                
+                if (savedProgress == 100) {
+                    progressBtn.textContent = 'Completed! 🎉';
+                    progressBtn.classList.add('completed');
+                } else {
+                    progressBtn.textContent = `${savedProgress}% Complete`;
+                }
+            }
         });
 
         // Add animation delay to categories
         document.querySelectorAll('.category').forEach((category, index) => {
             category.style.animationDelay = `${index * 0.1}s`;
+        });
+
+        // Initialize all ROI calculators
+        document.querySelectorAll('.skill-card').forEach(card => {
+            updateROICalculations(card);
         });
     </script>
 </body>
