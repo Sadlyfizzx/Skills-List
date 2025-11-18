@@ -376,6 +376,35 @@
             color: var(--primary);
             font-weight: bold;
         }
+
+        .essentials-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .essentials-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .essentials-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .essentials-list li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            background: rgba(16, 185, 129, 0.1);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
         
         .first-step {
             background: rgba(6, 182, 212, 0.1);
@@ -855,72 +884,149 @@
             }
         }
 
-        .why-learn-section {
-            background: rgba(139, 92, 246, 0.1);
-            border-radius: 12px;
-            padding: 0;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--primary-light);
+        /* Improved Motivation Section for Learn More Modal */
+        .motivation-section {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(6, 182, 212, 0.1));
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
         
-        .why-learn-header {
-            padding: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .motivation-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
         
-        .why-learn-header:hover {
-            background: rgba(139, 92, 246, 0.15);
-        }
-        
-        .why-learn-title {
-            color: var(--primary-light);
-            font-weight: 600;
-            font-size: 0.9rem;
+        .motivation-header {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 5px;
+            gap: 12px;
+            margin-bottom: 15px;
         }
         
-        .why-learn-title .fa-chevron-down {
-            transition: transform 0.3s ease;
-            font-size: 0.8rem;
+        .motivation-header i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            background: rgba(124, 58, 237, 0.1);
+            padding: 10px;
+            border-radius: 10px;
         }
         
-        .why-learn-section.open .why-learn-title .fa-chevron-down {
-            transform: rotate(180deg);
+        .motivation-header h3 {
+            color: var(--primary-light);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0;
         }
         
-        .why-learn-preview {
-            color: var(--gray);
-            font-size: 0.85rem;
-            line-height: 1.4;
-            opacity: 0.8;
-        }
-        
-        .why-learn-content {
-            padding: 0 15px 15px 15px;
-            display: none;
+        .motivation-content {
             color: var(--light);
-            line-height: 1.5;
-            font-size: 0.9rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
         
-        .why-learn-section.open .why-learn-content {
-            display: block;
-            animation: fadeIn 0.3s ease;
+        /* Improved Modal Section Styling */
+        .modal-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid var(--card-border);
+            transition: all 0.3s ease;
         }
         
-        .why-learn-section.open .why-learn-preview {
-            display: none;
+        .modal-section:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.1);
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .modal-section-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .modal-section-header i {
+            font-size: 1.1rem;
+        }
+        
+        /* Enhanced Resource Links */
+        .resource-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .resource-link:hover {
+            background: rgba(124, 58, 237, 0.15);
+            transform: translateY(-2px);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
+        }
+        
+        /* Improved Tips Section */
+        .tips-section {
+            background: rgba(124, 58, 237, 0.08);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            position: relative;
+        }
+        
+        .tips-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .tips-list {
+            padding-left: 20px;
+        }
+        
+        .tips-list li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 10px;
+        }
+        
+        .tips-list li::before {
+            content: '→';
+            color: var(--primary);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
         }
     </style>
 </head>
@@ -3215,19 +3321,6 @@
                     </div>
                     <p class="skill-description">${skill.description}</p>
                     
-                    <div class="why-learn-section">
-                        <div class="why-learn-header" onclick="toggleWhyLearn(this)">
-                            <div class="why-learn-title">
-                                <i class="fas fa-chevron-down"></i>
-                                <span>Why Learn This Skill</span>
-                            </div>
-                            <div class="why-learn-preview">${skill.whyLearn.substring(0, 80)}...</div>
-                        </div>
-                        <div class="why-learn-content">
-                            <p>${skill.whyLearn}</p>
-                        </div>
-                    </div>
-                    
                     <div class="skill-meta">
                         <div class="skill-actions">
                             <button class="skill-action" onclick="openSkillModal('${skill.id}')">
@@ -3325,17 +3418,15 @@
                 
                 <p class="skill-description">${skill.description}</p>
                 
-                <div class="why-learn-section open">
-                <div class="why-learn-header" onclick="toggleWhyLearn(this)">
-                    <div class="why-learn-title">
-                        <i class="fas fa-chevron-down"></i>
-                        <span>Why Learn This Skill</span>
+                <div class="motivation-section">
+                    <div class="motivation-header">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Learning Motivation</h3>
+                    </div>
+                    <div class="motivation-content">
+                        <p>${skill.whyLearn}</p>
                     </div>
                 </div>
-                <div class="why-learn-content">
-                    <p>${skill.whyLearn}</p>
-                </div>
-            </div>
             `;
             
             // Add skill levels if they exist
@@ -3357,27 +3448,39 @@
                     </div>
                 `;
             } else {
-                // Original content for skills without levels
+                // Updated content for skills without levels with new styling
                 modalContent += `
-                    <div class="skill-essentials">
-                        <div class="essentials-title"><i class="fas fa-tools"></i> Essentials</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-tools"></i>
+                            <span>Essentials</span>
+                        </div>
                         <ul class="essentials-list">
                             ${skill.essentials.map(item => `<li>${item}</li>`).join('')}
                         </ul>
                     </div>
                     
-                    <div class="first-step">
-                        <div class="first-step-title"><i class="fas fa-play-circle"></i> First Step</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-play-circle"></i>
+                            <span>First Step</span>
+                        </div>
                         <p>${skill.firstStep}</p>
                     </div>
                     
-                    <div class="practice-task">
-                        <div class="practice-task-title"><i class="fas fa-dumbbell"></i> Practice Task</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Practice Task</span>
+                        </div>
                         <p>${skill.practiceTask}</p>
                     </div>
                     
-                    <div class="action-challenge">
-                        <div class="action-challenge-title"><i class="fas fa-flag-checkered"></i> Action Challenge</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Action Challenge</span>
+                        </div>
                         <p>${skill.actionChallenge}</p>
                     </div>
                 `;
@@ -3385,8 +3488,11 @@
                 // Add prerequisites if they exist
                 if (skill.prerequisites && skill.prerequisites.length > 0) {
                     modalContent += `
-                        <div class="prerequisites">
-                            <div class="prerequisites-title"><i class="fas fa-clipboard-list"></i> Prerequisites</div>
+                        <div class="modal-section">
+                            <div class="modal-section-header">
+                                <i class="fas fa-clipboard-list"></i>
+                                <span>Prerequisites</span>
+                            </div>
                             <ul class="essentials-list">
                                 ${skill.prerequisites.map(item => `<li>${item}</li>`).join('')}
                             </ul>
@@ -3406,8 +3512,8 @@
                 
                 // Add measurable outcomes
                 modalContent += `
-                    <div class="measurable-outcomes">
-                        <div class="measurable-outcomes-title"><i class="fas fa-chart-line"></i> Measurable Outcomes</div>
+                    <div class="tips-section">
+                        <div class="tips-title"><i class="fas fa-chart-line"></i> Measurable Outcomes</div>
                         <ul class="tips-list">
                             ${skill.measurableOutcomes.map(outcome => `<li>${outcome}</li>`).join('')}
                         </ul>
@@ -3416,9 +3522,12 @@
                 
                 // Add beginner trap
                 modalContent += `
-                    <div class="beginner-trap">
-                        <div class="beginner-trap-title"><i class="fas fa-exclamation-triangle"></i> Common Beginner Mistake</div>
-                        <p class="beginner-trap-text">${skill.beginnerTrap}</p>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Common Beginner Mistake</span>
+                        </div>
+                        <p>${skill.beginnerTrap}</p>
                     </div>
                 `;
             }
@@ -3427,8 +3536,11 @@
             if (skill.category === 'languages' && skill.languageLevels) {
                 const currentLevel = languageLevels[skill.id] || 'Not Learned';
                 modalContent += `
-                    <div class="tips-section">
-                        <div class="tips-title"><i class="fas fa-language"></i> Language Level</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-language"></i>
+                            <span>Language Level</span>
+                        </div>
                         <p>Current level: <strong>${currentLevel}</strong></p>
                         <div class="language-levels">
                             ${skill.languageLevels.map(levelInfo => `
@@ -3444,8 +3556,11 @@
                         </div>
                     </div>
                     
-                    <div class="tips-section">
-                        <div class="tips-title"><i class="fas fa-info-circle"></i> Language Level Details</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Language Level Details</span>
+                        </div>
                         <div id="languageLevelDetails">
                             ${currentLevel !== 'Not Learned' ? 
                                 skill.languageLevels.find(l => l.level === currentLevel) ? 
@@ -3461,8 +3576,11 @@
             
             // Add resources
             modalContent += `
-                <div class="tips-section">
-                    <h3 class="tips-title"><i class="fas fa-book"></i> Learning Resources</h3>
+                <div class="modal-section">
+                    <div class="modal-section-header">
+                        <i class="fas fa-book"></i>
+                        <span>Learning Resources</span>
+                    </div>
                     <div class="resource-links">
                         ${skill.resources.map(resource => `
                             <a href="${resource.url}" class="resource-link" target="_blank">
@@ -3583,23 +3701,35 @@
                     <h4>${levelInfo.level} Level</h4>
                     <p>${levelInfo.description}</p>
                     
-                    <div class="first-step">
-                        <div class="first-step-title"><i class="fas fa-play-circle"></i> First Step</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-play-circle"></i>
+                            <span>First Step</span>
+                        </div>
                         <p>${levelInfo.firstStep}</p>
                     </div>
                     
-                    <div class="practice-task">
-                        <div class="practice-task-title"><i class="fas fa-dumbbell"></i> Practice Task</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Practice Task</span>
+                        </div>
                         <p>${levelInfo.practiceTask}</p>
                     </div>
                     
-                    <div class="action-challenge">
-                        <div class="action-challenge-title"><i class="fas fa-flag-checkered"></i> Action Challenge</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-flag-checkered"></i>
+                            <span>Action Challenge</span>
+                        </div>
                         <p>${levelInfo.actionChallenge}</p>
                     </div>
                     
-                    <div class="prerequisites">
-                        <div class="prerequisites-title"><i class="fas fa-clipboard-list"></i> Prerequisites</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Prerequisites</span>
+                        </div>
                         <ul class="essentials-list">
                             ${levelInfo.prerequisites.map(item => `<li>${item}</li>`).join('')}
                         </ul>
@@ -3612,22 +3742,28 @@
                         </ul>
                     </div>
                     
-                    <div class="measurable-outcomes">
-                        <div class="measurable-outcomes-title"><i class="fas fa-chart-line"></i> Measurable Outcomes</div>
+                    <div class="tips-section">
+                        <div class="tips-title"><i class="fas fa-chart-line"></i> Measurable Outcomes</div>
                         <ul class="tips-list">
                             ${levelInfo.measurableOutcomes.map(outcome => `<li>${outcome}</li>`).join('')}
                         </ul>
                     </div>
                     
-                    <div class="beginner-trap">
-                        <div class="beginner-trap-title"><i class="fas fa-exclamation-triangle"></i> Common Mistakes</div>
-                        <ul class="tips-list">
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Common Mistakes</span>
+                        </div>
+                        <ul class="essentials-list">
                             ${levelInfo.commonMistakes.map(mistake => `<li>${mistake}</li>`).join('')}
                         </ul>
                     </div>
                     
-                    <div class="tips-section">
-                        <div class="tips-title"><i class="fas fa-book"></i> Learning Resources</div>
+                    <div class="modal-section">
+                        <div class="modal-section-header">
+                            <i class="fas fa-book"></i>
+                            <span>Learning Resources</span>
+                        </div>
                         <div class="resource-links">
                             ${levelInfo.learningResources.map(resource => `
                                 <a href="${resource.url}" class="resource-link" target="_blank">
@@ -3685,12 +3821,6 @@
             if (confirm('Are you sure you want to close the timer?')) {
                 resetTimer();
             }
-        }
-
-        // Toggle Why Learn section
-        function toggleWhyLearn(element) {
-            const section = element.closest('.why-learn-section');
-            section.classList.toggle('open');
         }
 
         // Select random skill
