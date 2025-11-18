@@ -858,19 +858,69 @@
         .why-learn-section {
             background: rgba(139, 92, 246, 0.1);
             border-radius: 12px;
-            padding: 15px;
+            padding: 0;
             margin-bottom: 15px;
             border-left: 4px solid var(--primary-light);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .why-learn-header {
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .why-learn-header:hover {
+            background: rgba(139, 92, 246, 0.15);
         }
         
         .why-learn-title {
             color: var(--primary-light);
             font-weight: 600;
-            margin-bottom: 8px;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 8px;
+            margin-bottom: 5px;
+        }
+        
+        .why-learn-title .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+        
+        .why-learn-section.open .why-learn-title .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+        
+        .why-learn-preview {
+            color: var(--gray);
+            font-size: 0.85rem;
+            line-height: 1.4;
+            opacity: 0.8;
+        }
+        
+        .why-learn-content {
+            padding: 0 15px 15px 15px;
+            display: none;
+            color: var(--light);
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        
+        .why-learn-section.open .why-learn-content {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .why-learn-section.open .why-learn-preview {
+            display: none;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -3125,64 +3175,72 @@
             return section;
         }
 
-      // Get category display info
-    function getCategoryInfo(category) {
-        const categories = {
-            'communication': { name: '🗣️ Communication Skills', icon: '🗣️' },
-            'memory': { name: '🔗 Memory Techniques', icon: '🔗' },
-            'learning': { name: '📚 Learning Methods', icon: '📚' },
-            'productivity': { name: '⚡ Productivity', icon: '⚡' },
-            'business': { name: '💼 Business Skills', icon: '💼' },
-            'technical': { name: '💻 Technical Skills', icon: '💻' },
-            'creative': { name: '🎨 Creative & Digital', icon: '🎨' },
-            'mind': { name: '🧩 Thinking Skills', icon: '🧩' },
-            'health': { name: '❤️ Health & Lifestyle', icon: '❤️' },
-            'languages': { name: '🌍 Languages', icon: '🌍' }
-        };
-        
-        return categories[category] || { name: category, icon: '📚' };
-    }
+        // Get category display info
+        function getCategoryInfo(category) {
+            const categories = {
+                'communication': { name: 'Communication Skills', icon: '🗣️' },
+                'memory': { name: 'Memory Techniques', icon: '🔗' },
+                'learning': { name: 'Learning Methods', icon: '📚' },
+                'productivity': { name: 'Productivity', icon: '⚡' },
+                'business': { name: 'Business Skills', icon: '💼' },
+                'technical': { name: 'Technical Skills', icon: '💻' },
+                'creative': { name: 'Creative & Digital', icon: '🎨' },
+                'mind': { name: 'Thinking Skills', icon: '🧩' },
+                'health': { name: 'Health & Lifestyle', icon: '❤️' },
+                'languages': { name: 'Languages', icon: '🌍' }
+            };
+            
+            return categories[category] || { name: category, icon: '📚' };
+        }
 
         // Create a skill card element
-function createSkillCard(skill) {
-    // Determine badge color based on level
-    let levelBadgeClass = '';
-    if (skill.level.toLowerCase() === 'beginner') levelBadgeClass = 'beginner';
-    if (skill.level.toLowerCase() === 'intermediate') levelBadgeClass = 'intermediate';
-    if (skill.level.toLowerCase() === 'advanced') levelBadgeClass = 'advanced';
-    
-    return `
-        <div class="skill-card" data-id="${skill.id}" data-level="${skill.level.toLowerCase()}">
-            <div class="skill-header">
-                <div class="skill-icon">${skill.icon}</div>
-                <div class="skill-title-container">
-                    <h3 class="skill-title">${skill.title}</h3>
-                    <div class="skill-badges">
-                        <span class="time-badge">${skill.timeTag}</span>
-                        <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
+        function createSkillCard(skill) {
+            // Determine badge color based on level
+            let levelBadgeClass = '';
+            if (skill.level.toLowerCase() === 'beginner') levelBadgeClass = 'beginner';
+            if (skill.level.toLowerCase() === 'intermediate') levelBadgeClass = 'intermediate';
+            if (skill.level.toLowerCase() === 'advanced') levelBadgeClass = 'advanced';
+            
+            return `
+                <div class="skill-card" data-id="${skill.id}" data-level="${skill.level.toLowerCase()}">
+                    <div class="skill-header">
+                        <div class="skill-icon">${skill.icon}</div>
+                        <div class="skill-title-container">
+                            <h3 class="skill-title">${skill.title}</h3>
+                            <div class="skill-badges">
+                                <span class="time-badge">${skill.timeTag}</span>
+                                <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="skill-description">${skill.description}</p>
+                    
+                    <div class="why-learn-section">
+                        <div class="why-learn-header" onclick="toggleWhyLearn(this)">
+                            <div class="why-learn-title">
+                                <i class="fas fa-chevron-down"></i>
+                                <span>Why Learn This Skill</span>
+                            </div>
+                            <div class="why-learn-preview">${skill.whyLearn.substring(0, 80)}...</div>
+                        </div>
+                        <div class="why-learn-content">
+                            <p>${skill.whyLearn}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meta">
+                        <div class="skill-actions">
+                            <button class="skill-action" onclick="openSkillModal('${skill.id}')">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </button>
+                            <button class="skill-action primary" onclick="startSkillSession('${skill.id}')">
+                                <i class="fas fa-play"></i> Start Learning
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <p class="skill-description">${skill.description}</p>
-            
-            <div class="why-learn-section">
-                <div class="why-learn-title"><i class="fas fa-bullseye"></i> Why Learn This Skill</div>
-                <p>${skill.whyLearn}</p>
-            </div>
-            
-            <div class="skill-meta">
-                <div class="skill-actions">
-                    <button class="skill-action" onclick="openSkillModal('${skill.id}')">
-                        <i class="fas fa-info-circle"></i> Learn More
-                    </button>
-                    <button class="skill-action primary" onclick="startSkillSession('${skill.id}')">
-                        <i class="fas fa-play"></i> Start Learning
-                    </button>
-                </div>
-            </div>
-        </div>
-    `;
-}
+            `;
+        }
 
         // Set active filter
         function setActiveFilter(activeBtn, filter) {
@@ -3267,10 +3325,17 @@ function createSkillCard(skill) {
                 
                 <p class="skill-description">${skill.description}</p>
                 
-                <div class="why-learn-section">
-                    <div class="why-learn-title"><i class="fas fa-bullseye"></i> Why Learn This Skill</div>
+                <div class="why-learn-section open">
+                <div class="why-learn-header" onclick="toggleWhyLearn(this)">
+                    <div class="why-learn-title">
+                        <i class="fas fa-chevron-down"></i>
+                        <span>Why Learn This Skill</span>
+                    </div>
+                </div>
+                <div class="why-learn-content">
                     <p>${skill.whyLearn}</p>
                 </div>
+            </div>
             `;
             
             // Add skill levels if they exist
@@ -3620,6 +3685,12 @@ function createSkillCard(skill) {
             if (confirm('Are you sure you want to close the timer?')) {
                 resetTimer();
             }
+        }
+
+        // Toggle Why Learn section
+        function toggleWhyLearn(element) {
+            const section = element.closest('.why-learn-section');
+            section.classList.toggle('open');
         }
 
         // Select random skill
