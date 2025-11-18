@@ -280,20 +280,9 @@
         
         .skill-header {
             display: flex;
+            justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 15px;
-        }
-        
-        .skill-icon {
-            font-size: 1.8rem;
-            margin-right: 15px;
-            margin-top: 5px;
-            width: 40px;
-            text-align: center;
-        }
-        
-        .skill-title-container {
-            flex: 1;
         }
         
         .skill-title {
@@ -301,6 +290,7 @@
             color: var(--light);
             margin-bottom: 8px;
             font-weight: 700;
+            flex: 1;
             line-height: 1.3;
         }
         
@@ -308,7 +298,7 @@
             display: flex;
             gap: 8px;
             flex-wrap: wrap;
-            margin-top: 5px;
+            margin-left: 10px;
         }
         
         .time-badge, .level-badge {
@@ -340,77 +330,6 @@
             line-height: 1.6;
             margin-bottom: 20px;
             flex: 1;
-        }
-        
-        .skill-essentials {
-            background: rgba(124, 58, 237, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .essentials-title {
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .essentials-list {
-            list-style-type: none;
-        }
-        
-        .essentials-list li {
-            margin-bottom: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 0.9rem;
-        }
-        
-        .essentials-list li:before {
-            content: "•";
-            color: var(--primary);
-            font-weight: bold;
-        }
-        
-        .first-step {
-            background: rgba(6, 182, 212, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--secondary);
-        }
-        
-        .first-step-title {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .practice-task {
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-left: 4px solid var(--accent);
-        }
-        
-        .practice-task-title {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         
         .skill-meta {
@@ -485,7 +404,7 @@
             border-radius: 20px;
             padding: 30px;
             width: 90%;
-            max-width: 800px;
+            max-width: 700px;
             max-height: 90vh;
             overflow-y: auto;
             transform: scale(0.9);
@@ -711,89 +630,6 @@
             color: #d1d5db;
             line-height: 1.6;
         }
-        
-        /* Language Level Selector */
-        .language-levels {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        
-        .language-level {
-            padding: 8px 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.85rem;
-        }
-        
-        .language-level:hover {
-            background: rgba(124, 58, 237, 0.2);
-        }
-        
-        .language-level.selected {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-color: var(--primary);
-        }
-        
-        /* Action Challenge */
-        .action-challenge {
-            background: rgba(16, 185, 129, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid var(--success);
-        }
-        
-        .action-challenge-title {
-            color: var(--success);
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
-        }
-        
-        /* Prerequisites */
-        .prerequisites {
-            background: rgba(59, 130, 246, 0.1);
-            border-radius: 12px;
-            padding: 15px;
-            margin: 15px 0;
-            border-left: 4px solid #3b82f6;
-        }
-        
-        .prerequisites-title {
-            color: #3b82f6;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        /* Measurable Outcomes */
-        .measurable-outcomes {
-            background: rgba(168, 85, 247, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid #a855f7;
-        }
-        
-        .measurable-outcomes-title {
-            color: #a855f7;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
-        }
     </style>
 </head>
 <body>
@@ -868,7 +704,7 @@
     </div>
 
     <script>
-        // Complete skills data with all skills from the original code and new skills
+        // Complete skills data with all skills from the original code
         const skillsData = [
             // Communication Skills
             {
@@ -876,38 +712,21 @@
                 title: 'Active Listening',
                 description: 'Transform conversations by truly hearing what people say instead of just waiting for your turn to talk.',
                 level: 'intermediate',
-                timeTag: '20 min',
+                time: 'Daily practice',
                 category: 'communication',
-                icon: '👂',
-                essentials: [
-                    'Find a quiet space for important conversations',
-                    'Prepare to focus completely on the speaker',
-                    'Clear your mind of distractions'
+                whyLearn: 'Build stronger relationships, resolve conflicts more effectively, and understand others more deeply. Active listening is foundational to effective communication.',
+                beginnerTrap: "Don't just wait for your turn to talk. Focus on understanding the speaker's perspective before formulating your response.",
+                resources: [
+                    {type: 'video', title: 'The Art of Active Listening', url: 'https://www.youtube.com/watch?v=z_-rNd7h6z8'},
+                    {type: 'course', title: 'Active Listening Skills Course', url: 'https://www.coursera.org/learn/active-listening'},
+                    {type: 'article', title: '5 Ways to Become a Better Listener', url: 'https://hbr.org/2021/11/5-ways-to-become-a-better-listener'},
+                    {type: 'exercise', title: 'Practice the RASA method: Receive, Appreciate, Summarize, Ask', url: '#'}
                 ],
-                firstStep: 'In your next conversation, focus on understanding the speaker without interrupting or planning your response.',
-                practiceTask: 'Have a 5-minute conversation where you only ask clarifying questions and summarize what the other person said.',
-                actionChallenge: 'Practice active listening in a real conversation today. Afterward, ask the person if they felt heard and understood.',
-                learningTips: [
+                tips: [
                     'Maintain eye contact and use nonverbal cues to show you\'re engaged',
                     'Avoid interrupting and wait for natural pauses before responding',
                     'Paraphrase what you heard to confirm understanding',
                     'Ask open-ended questions to encourage elaboration'
-                ],
-                prerequisites: ['Basic conversational skills', 'Patience to let others speak'],
-                measurableOutcomes: [
-                    'Build stronger relationships through better understanding',
-                    'Resolve conflicts more effectively',
-                    'Improve team collaboration at work'
-                ],
-                whyLearn: 'Build stronger relationships, resolve conflicts more effectively, and understand others more deeply. Active listening is foundational to effective communication.',
-                beginnerTrap: "Don't just wait for your turn to talk. Focus on understanding the speaker's perspective before formulating your response.",
-                resources: [
-                    {type: 'video', title: 'Kati Morton – How to Practice Active Listening', url: 'https://www.youtube.com/watch?v=H0m3Q0a4EJI'},
-                    {type: 'video', title: 'Communication Coach Alex Lyon – 5 Active Listening Skills You Must Master', url: 'https://www.youtube.com/watch?v=aosgoOAt3CM'},
-                    {type: 'course', title: 'Coursera Audit – Improving Communication Skills', url: 'https://www.coursera.org/learn/wharton-communication-skills'},
-                    {type: 'exercise', title: 'Watch a video → pause → summarize in 2 sentences', url: '#'},
-                    {type: 'exercise', title: 'In a conversation, repeat the last sentence in your own words', url: '#'},
-                    {type: 'book', title: 'Book summary: The Lost Art of Listening', url: 'https://www.youtube.com/watch?v=jRssYxS65wQ'}
                 ]
             },
             {
@@ -915,109 +734,65 @@
                 title: 'Public Speaking',
                 description: 'Overcome the fear of speaking in front of others and deliver compelling presentations.',
                 level: 'advanced',
-                timeTag: '60 min',
+                time: 'Weekly practice',
                 category: 'communication',
-                icon: '🎤',
-                essentials: [
-                    'Prepare your key message points',
-                    'Find a quiet space to practice',
-                    'Record yourself for self-review'
+                whyLearn: 'Effective public speaking boosts your confidence, enhances your professional reputation, and opens doors to leadership opportunities.',
+                beginnerTrap: 'Trying to memorize your entire speech word-for-word, which increases anxiety and makes you sound robotic.',
+                resources: [
+                    {type: 'video', title: 'How to speak so people want to listen', url: 'https://www.youtube.com/watch?v=eIho2S0ZahI'},
+                    {type: 'course', title: 'Introduction to Public Speaking', url: 'https://www.coursera.org/learn/public-speaking'},
+                    {type: 'community', title: 'Toastmasters International', url: 'https://www.toastmasters.org/'},
+                    {type: 'book', title: 'Talk Like TED by Carmine Gallo', url: 'https://www.amazon.com/Talk-Like-TED-Presentation-Anyone/dp/1250061539'}
                 ],
-                firstStep: 'Record yourself speaking for 1 minute about any topic and watch it back to identify areas for improvement.',
-                practiceTask: 'Practice your speech in front of a mirror, focusing on body language and vocal variety.',
-                actionChallenge: 'Join a local Toastmasters club or present a 5-minute talk to friends or colleagues.',
-                learningTips: [
+                tips: [
                     'Focus on your message, not on yourself',
                     'Practice in front of a small, friendly audience first',
                     'Use stories and examples to make your points memorable',
                     'Record yourself to identify areas for improvement'
-                ],
-                prerequisites: ['Basic confidence in speaking', 'Willingness to receive feedback'],
-                measurableOutcomes: [
-                    'Deliver confident presentations at work or events',
-                    'Effectively pitch ideas to stakeholders',
-                    'Build professional reputation as a confident speaker'
-                ],
-                whyLearn: 'Effective public speaking boosts your confidence, enhances your professional reputation, and opens doors to leadership opportunities.',
-                beginnerTrap: 'Trying to memorize your entire speech word-for-word, which increases anxiety and makes you sound robotic.',
-                resources: [
-                    {type: 'video', title: 'Julian Treasure – How to Speak So People Want to Listen', url: 'https://www.youtube.com/watch?v=eIho2S0ZahI'},
-                    {type: 'video', title: 'TED-Ed – The Science of Stage Fright', url: 'https://www.youtube.com/watch?v=K93fUDV4u8I'},
-                    {type: 'course', title: 'OpenLearn – Public Speaking', url: 'https://www.open.edu/openlearn/money-business/public-speaking/content-section-overview'},
-                    {type: 'exercise', title: 'Record a 1-minute talk about your day', url: '#'},
-                    {type: 'exercise', title: 'Practice "pause technique" — speak and pause every 7–10 seconds', url: '#'}
                 ]
             },
             {
-                id: 'professional-email-writing',
+                id: 'professional-email',
                 title: 'Professional Email Writing',
-                description: 'Master the art of clear, concise, and professional email communication.',
+                description: 'Write emails that get responses. Clear, concise, and action-oriented communication is a superpower.',
                 level: 'beginner',
-                timeTag: '15 min',
+                time: '20 minutes',
                 category: 'communication',
-                icon: '📧',
-                essentials: [
-                    'Clear subject line',
-                    'Professional tone',
-                    'Proofreading before sending'
-                ],
-                firstStep: 'Review your last 5 sent emails and identify areas for improvement in clarity and professionalism.',
-                practiceTask: 'Write a professional email requesting a meeting with clear agenda points.',
-                actionChallenge: 'Rewrite a poorly written email from your past to make it more professional and effective.',
-                learningTips: [
-                    'Use clear subject lines that summarize the email content',
-                    'Keep paragraphs short and focused',
-                    'Proofread for tone and clarity before sending',
-                    'Use professional closings and signatures'
-                ],
-                prerequisites: ['Basic writing skills', 'Understanding of professional context'],
-                measurableOutcomes: [
-                    'Write professional emails that get responses',
-                    'Improve communication efficiency at work',
-                    'Build professional reputation through clear communication'
-                ],
-                whyLearn: 'Professional email writing is essential for career advancement and effective business communication.',
-                beginnerTrap: 'Being too casual or using unclear language that leads to misunderstandings.',
+                whyLearn: 'Poor emails waste time and hurt your professional image. Good emails get responses, build relationships, and move things forward. This skill affects every aspect of modern work.',
+                beginnerTrap: 'Writing overly long emails or burying the main point. People skim emails, so put the most important information first.',
                 resources: [
-                    {type: 'video', title: 'Jeff Su - Professional Email Writing', url: 'https://www.youtube.com/watch?v=HT7rOa3RHsI'},
-                    {type: 'course', title: 'LinkedIn Learning - Business Writing', url: 'https://www.linkedin.com/learning/business-writing-strategies'},
-                    {type: 'template', title: 'Professional Email Templates', url: 'https://blog.hubspot.com/sales/professional-email-examples'}
+                    {type: 'article', title: 'Harvard Business Review email guide', url: 'https://hbr.org/2016/11/how-to-write-email-with-military-precision'},
+                    {type: 'template', title: 'HubSpot email templates', url: 'https://www.hubspot.com/sales-email-templates'},
+                    {type: 'tool', title: 'Use Grammarly (free) or Hemingway Editor', url: '#'},
+                    {type: 'rule', title: 'Subject line = clear action, first sentence = why you\'re writing', url: '#'}
+                ],
+                tips: [
+                    'Use the 5-Sentence Rule: Keep emails under 5 sentences',
+                    'Put your request or main point in the first paragraph',
+                    'Use bullet points for multiple requests or questions',
+                    'Always proofread before sending'
                 ]
             },
             {
                 id: 'elevator-pitch',
                 title: 'Elevator Pitch',
-                description: 'Create a compelling 30-second introduction that clearly communicates your value.',
+                description: 'Describe yourself, your project, or business in 30 seconds. Essential for networking and opportunities.',
                 level: 'intermediate',
-                timeTag: '30 min',
+                time: '30 minutes',
                 category: 'communication',
-                icon: '🚀',
-                essentials: [
-                    'Clear value proposition',
-                    'Concise delivery',
-                    'Memorable closing'
-                ],
-                firstStep: 'Write down your key skills, experiences, and what makes you unique.',
-                practiceTask: 'Create and practice a 30-second pitch introducing yourself professionally.',
-                actionChallenge: 'Deliver your elevator pitch to three different people and ask for feedback.',
-                learningTips: [
-                    'Focus on benefits you provide, not just features',
-                    'Practice until it sounds natural, not memorized',
-                    'Tailor your pitch to your audience',
-                    'Include a clear call to action'
-                ],
-                prerequisites: ['Self-awareness', 'Clear career goals'],
-                measurableOutcomes: [
-                    'Confidently introduce yourself in professional settings',
-                    'Make strong first impressions in networking situations',
-                    'Clearly communicate your professional value'
-                ],
-                whyLearn: 'A strong elevator pitch is essential for networking, interviews, and professional opportunities.',
-                beginnerTrap: 'Trying to include too much information. Focus on your most compelling points.',
+                whyLearn: 'You never know when opportunity knocks. Having a polished pitch ready means you can capitalize on chance meetings, interviews, or networking events. First impressions matter.',
+                beginnerTrap: 'Making it too long or complex. An elevator pitch should be concise and memorable.',
                 resources: [
-                    {type: 'video', title: 'Harvard Business Review - Perfect Elevator Pitch', url: 'https://www.youtube.com/watch?v=9L6kLQ3k2wA'},
-                    {type: 'template', title: 'Elevator Pitch Framework', url: 'https://www.themuse.com/advice/perfect-elevator-pitch-examples'},
-                    {type: 'exercise', title: 'Record and review your pitch delivery', url: '#'}
+                    {type: 'guide', title: 'The Muse guide to elevator pitches', url: 'https://www.themuse.com/advice/perfect-pitch-how-to-nail-your-elevator-speech'},
+                    {type: 'formula', title: 'Who you are + What you do + Why it matters + Call to action', url: '#'},
+                    {type: 'exercise', title: 'Record yourself on phone, watch it back', url: '#'},
+                    {type: 'exercise', title: 'Practice on 3 friends, refine based on their questions', url: '#'}
+                ],
+                tips: [
+                    'Keep it under 30 seconds',
+                    'Focus on the value you provide, not just your title',
+                    'Practice until it sounds natural, not memorized',
+                    'Tailor it slightly for different audiences'
                 ]
             },
 
@@ -1027,486 +802,229 @@
                 title: 'Micro-Memory Linking',
                 description: 'Connect new information to something you already know. This simple technique dramatically boosts recall speed.',
                 level: 'beginner',
-                timeTag: '5 min',
+                time: '5 minutes',
                 category: 'memory',
-                icon: '🔗',
-                essentials: [
-                    'Practice with random word pairs',
-                    'Use vivid mental imagery',
-                    'Create exaggerated connections'
+                whyLearn: 'Your brain remembers connections better than isolated facts. Master this and you\'ll remember names, concepts, and information effortlessly. Perfect for networking, studying, or impressing people.',
+                beginnerTrap: 'Creating boring or logical connections. The weirder and more vivid the connection, the better it sticks.',
+                resources: [
+                    {type: 'technique', title: 'When learning something new, immediately think "What does this remind me of?"', url: '#'},
+                    {type: 'example', title: 'Meeting "Sarah who loves sailing" → Link to "Sarah sells seashells"', url: '#'},
+                    {type: 'guide', title: 'Memory hooks guide', url: 'https://www.scotthyoung.com/blog/2021/01/21/memory-hooks/'},
+                    {type: 'exercise', title: 'Try it right now with the next 5 people you meet', url: '#'}
                 ],
-                firstStep: 'Take two unrelated words and create a vivid, exaggerated mental image connecting them.',
-                practiceTask: 'Learn 10 new vocabulary words using memory linking technique.',
-                actionChallenge: 'Use memory linking to remember your shopping list for a week without writing it down.',
-                learningTips: [
+                tips: [
                     'Weirder connections = stronger memories',
                     'Use multiple senses in your connections (sight, sound, smell)',
                     'Create vivid mental images',
                     'Review connections periodically to strengthen them'
-                ],
-                prerequisites: ['Imagination', 'Willingness to think creatively'],
-                measurableOutcomes: [
-                    'Remember names and facts more easily',
-                    'Learn new information faster',
-                    'Improve academic or professional performance',
-                    'Reduce frustration from forgetting important details'
-                ],
-                whyLearn: 'Your brain remembers connections better than isolated facts. Master this and you\'ll remember names, concepts, and information effortlessly.',
-                beginnerTrap: 'Creating boring or logical connections. The weirder and more vivid the connection, the better it sticks.',
-                resources: [
-                    {type: 'video', title: 'Ali Abdaal – Linking Memory Technique', url: 'https://www.youtube.com/watch?v=J4y7ww17jk0'},
-                    {type: 'video', title: 'Memorize Academy – Memory Palace Basics', url: 'https://www.youtube.com/watch?v=LVWbFtdkqAU'},
-                    {type: 'course', title: 'Coursera Audit – Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn'},
-                    {type: 'exercise', title: 'Link new info to objects in your room', url: '#'},
-                    {type: 'exercise', title: 'Learn 10 random words using linking', url: '#'}
                 ]
             },
             {
-                id: 'remember-names-instantly',
+                id: 'remember-names',
                 title: 'Remember Names Instantly',
-                description: 'Never forget a name again with simple techniques that make name recall automatic.',
+                description: 'Repeat their name + attach a distinctive trait. Never forget a name again in social or professional settings.',
                 level: 'beginner',
-                timeTag: '15 min',
+                time: '10 minutes',
                 category: 'memory',
-                icon: '👤',
-                essentials: [
-                    'Pay full attention when introduced',
-                    'Repeat the name immediately',
-                    'Create visual associations'
-                ],
-                firstStep: 'Next time you meet someone, repeat their name immediately and use it in conversation.',
-                practiceTask: 'Practice with fictional names by creating vivid associations for each.',
-                actionChallenge: 'Attend a networking event and remember at least 5 new names using these techniques.',
-                learningTips: [
-                    'Repeat the name immediately after hearing it',
-                    'Create a visual association with the person\'s face',
-                    'Use the name in conversation naturally',
-                    'Review names mentally after the interaction'
-                ],
-                prerequisites: ['Basic observation skills', 'Willingness to practice in social situations'],
-                measurableOutcomes: [
-                    'Remember names after hearing them just once',
-                    'Build stronger connections in professional and social settings',
-                    'Make better first impressions',
-                    'Reduce social anxiety around introductions'
-                ],
-                whyLearn: 'Remembering names makes people feel valued and builds instant rapport in both personal and professional relationships.',
-                beginnerTrap: 'Thinking about what to say next instead of focusing on the name being introduced.',
+                whyLearn: 'Remembering names makes you instantly likeable and memorable. Dale Carnegie said "A person\'s name is the sweetest sound to them." Master this for networking, sales, relationships, and career advancement.',
+                beginnerTrap: 'Not paying attention when the name is first said. The first few seconds are crucial for name retention.',
                 resources: [
-                    {type: 'video', title: 'Improvement Pill – Remember Names', url: 'https://www.youtube.com/watch?v=CHY6w9Gd7X8'},
-                    {type: 'book', title: 'How to Win Friends and Influence People', url: 'https://www.amazon.com/How-Win-Friends-Influence-People/dp/0671027034'},
-                    {type: 'exercise', title: 'Practice with TV character names', url: '#'}
+                    {type: 'step', title: 'Step 1: Repeat their name immediately ("Nice to meet you, Jessica")', url: '#'},
+                    {type: 'step', title: 'Step 2: Find ONE distinctive feature (red glasses, deep voice, tall)', url: '#'},
+                    {type: 'step', title: 'Step 3: Create a link: "Jessica with the red glasses"', url: '#'},
+                    {type: 'step', title: 'Step 4: Use their name 2-3 times in conversation', url: '#'},
+                    {type: 'video', title: 'Memory champion technique', url: 'https://www.youtube.com/watch?v=yxOGJNj_x7k'}
+                ],
+                tips: [
+                    'Write it down within 5 minutes',
+                    'If you forget, just ask again - people appreciate the effort to get it right',
+                    'Connect names to people you already know with the same name',
+                    'Use the person\'s name when saying goodbye'
                 ]
             },
             {
                 id: 'feynman-technique',
                 title: 'The Feynman Technique',
-                description: 'Learn anything deeply by explaining it in simple terms as if teaching a child.',
+                description: 'Explain concepts in simple terms to truly understand them. If you can\'t explain it simply, you don\'t understand it.',
                 level: 'intermediate',
-                timeTag: '30 min',
+                time: '20 minutes',
                 category: 'learning',
-                icon: '📚',
-                essentials: [
-                    'Choose a concept to learn',
-                    'Paper and pen for explanations',
-                    'Identify knowledge gaps'
-                ],
-                firstStep: 'Pick a concept you think you understand and try to explain it in simple terms on paper.',
-                practiceTask: 'Use the Feynman Technique to learn a new programming concept or scientific principle.',
-                actionChallenge: 'Teach a complex topic from your field to someone with no background in it.',
-                learningTips: [
-                    'Use simple language and avoid jargon',
-                    'Identify gaps in your understanding when you can\'t explain simply',
-                    'Use analogies and examples',
-                    'Review and simplify your explanation iteratively'
-                ],
-                prerequisites: ['Basic understanding of a topic', 'Willingness to identify knowledge gaps'],
-                measurableOutcomes: [
-                    'Achieve deeper understanding of complex topics',
-                    'Identify and fill knowledge gaps effectively',
-                    'Explain complex concepts clearly to others',
-                    'Improve long-term retention of learned material'
-                ],
-                whyLearn: 'The Feynman Technique ensures true understanding rather than surface-level familiarity with topics.',
-                beginnerTrap: 'Using complex language to mask lack of understanding. True mastery means being able to explain simply.',
+                whyLearn: 'Named after Nobel Prize winner Richard Feynman. This exposes knowledge gaps instantly and forces deep understanding. Use for interviews, teaching, or mastering complex topics. You\'ll learn faster and remember longer.',
+                beginnerTrap: 'Using jargon or complex language when trying to explain simply.',
                 resources: [
-                    {type: 'video', title: 'Sprouts – Feynman Technique', url: 'https://www.youtube.com/watch?v=tkm0TNFzIeg'},
-                    {type: 'article', title: 'Farnam Street – Feynman Technique', url: 'https://fs.blog/feynman-technique/'},
-                    {type: 'exercise', title: 'Explain quantum physics to a 10-year-old', url: '#'}
+                    {type: 'step', title: 'Step 1: Pick a concept you\'re learning', url: '#'},
+                    {type: 'step', title: 'Step 2: Explain it out loud as if teaching a 10-year-old', url: '#'},
+                    {type: 'step', title: 'Step 3: Identify where you got stuck or used jargon', url: '#'},
+                    {type: 'step', title: 'Step 4: Go back to source material for those gaps', url: '#'},
+                    {type: 'step', title: 'Step 5: Simplify your explanation further', url: '#'},
+                    {type: 'video', title: 'Feynman Technique explained', url: 'https://www.youtube.com/watch?v=_f-qkGJBPts'}
+                ],
+                tips: [
+                    'Actually talk out loud (or write it down)',
+                    'If you can\'t explain it simply, you\'ve found a knowledge gap to focus on',
+                    'Use analogies and simple language',
+                    'Test your explanation on someone unfamiliar with the topic'
                 ]
             },
             {
                 id: 'learning-how-to-learn',
                 title: 'Learning How to Learn',
-                description: 'Master the science-backed techniques for effective learning and knowledge retention.',
-                level: 'beginner',
-                timeTag: '45 min',
-                category: 'learning',
-                icon: '🧠',
-                essentials: [
-                    'Understanding of focused vs diffuse thinking',
-                    'Spaced repetition practice',
-                    'Interleaving different topics'
-                ],
-                firstStep: 'Take the "Learning How to Learn" course on Coursera or watch summary videos.',
-                practiceTask: 'Apply spaced repetition to learn a new skill or language.',
-                actionChallenge: 'Create a learning schedule that incorporates active recall and spaced repetition for a month.',
-                learningTips: [
-                    'Use spaced repetition for long-term retention',
-                    'Switch between focused and diffuse thinking modes',
-                    'Practice active recall instead of passive review',
-                    'Interleave different subjects for better learning'
-                ],
-                prerequisites: ['Openness to new learning methods', 'Willingness to change study habits'],
-                measurableOutcomes: [
-                    'Learn new skills faster and more effectively',
-                    'Retain information longer with less effort',
-                    'Develop lifelong learning habits',
-                    'Overcome learning plateaus and frustrations'
-                ],
-                whyLearn: 'Learning how to learn is a meta-skill that improves every other learning endeavor throughout your life.',
-                beginnerTrap: 'Rereading and highlighting as primary study methods, which research shows are ineffective for long-term learning.',
-                resources: [
-                    {type: 'course', title: 'Coursera – Learning How to Learn', url: 'https://www.coursera.org/learn/learning-how-to-learn'},
-                    {type: 'book', title: 'A Mind for Numbers by Barbara Oakley', url: 'https://www.amazon.com/Mind-Numbers-Science-Flunked-Algebra/dp/039916524X'},
-                    {type: 'video', title: 'Ali Abdaal – Evidence-Based Study Tips', url: 'https://www.youtube.com/watch?v=ukLnPbIffxE'}
-                ]
-            },
-            {
-                id: 'memory-palace',
-                title: 'Memory Palace Technique',
-                description: 'Use spatial memory to store and recall large amounts of information with the ancient method of loci.',
+                description: 'Master spaced repetition, active recall, and chunking. The meta-skill that makes every other skill easier.',
                 level: 'intermediate',
-                timeTag: '45 min',
-                category: 'memory',
-                icon: '🏰',
-                essentials: [
-                    'Familiar location for your palace',
-                    'Vivid mental imagery',
-                    'Structured information to memorize'
-                ],
-                firstStep: 'Choose a familiar location (your home) and mentally walk through it, noting specific locations.',
-                practiceTask: 'Memorize a shopping list of 10 items using your memory palace.',
-                actionChallenge: 'Memorize a deck of cards in order using the memory palace technique.',
-                learningTips: [
-                    'Use familiar locations for better recall',
-                    'Create exaggerated, unusual images',
-                    'Engage multiple senses in your mental images',
-                    'Practice regularly to strengthen the technique'
-                ],
-                prerequisites: ['Good visual imagination', 'Familiarity with a physical location'],
-                measurableOutcomes: [
-                    'Memorize lists, speeches, and complex information',
-                    'Recall information in exact order',
-                    'Compete in memory competitions',
-                    'Learn languages faster with vocabulary palaces'
-                ],
-                whyLearn: 'The memory palace is one of the most powerful memorization techniques, used by memory champions and ancient scholars alike.',
-                beginnerTrap: 'Using unfamiliar locations or creating boring images that don\'t stick in memory.',
+                time: '15 hours course',
+                category: 'learning',
+                whyLearn: 'This is the ultimate multiplier skill. Learn this once, benefit forever. Most people use terrible learning strategies (rereading, highlighting). Learn the science-backed methods that actually work and you\'ll learn 3-5x faster for life.',
+                beginnerTrap: 'Rereading and highlighting, which feel productive but don\'t actually help retention. Testing yourself is much more effective.',
                 resources: [
-                    {type: 'video', title: 'Ron White Memory Expert – Memory Palace', url: 'https://www.youtube.com/watch?v=3VGrtY-om4E'},
-                    {type: 'book', title: 'Moonwalking with Einstein by Joshua Foer', url: 'https://www.amazon.com/Moonwalking-Einstein-Science-Remembering-Everything/dp/0143120530'},
-                    {type: 'course', title: 'Memorize Academy – Memory Techniques Course', url: 'https://www.memorize.academy/'}
+                    {type: 'course', title: 'Learning How to Learn (Coursera, free)', url: 'https://www.coursera.org/learn/learning-how-to-learn'},
+                    {type: 'book', title: '"Ultralearning" by Scott Young', url: '#'},
+                    {type: 'tool', title: 'Anki - Spaced repetition app (proven most effective)', url: 'https://apps.ankiweb.net/'},
+                    {type: 'concept', title: 'Test yourself instead of rereading. Retrieval practice = best learning method', url: '#'},
+                    {type: 'schedule', title: 'Review at 1 day, 3 days, 1 week, 1 month intervals', url: '#'}
+                ],
+                tips: [
+                    'Study in different locations',
+                    'Mix up your practice (interleaving) rather than focusing on one thing for too long',
+                    'Space out your study sessions',
+                    'Test yourself regularly instead of just reviewing'
                 ]
             },
 
             // Productivity Skills
             {
                 id: 'keyboard-shortcuts',
-                title: 'Keyboard Shortcuts Mastery',
-                description: 'Dramatically increase your computer efficiency by mastering essential keyboard shortcuts.',
+                title: 'Keyboard Shortcuts',
+                description: 'Work faster and more efficiently by mastering essential keyboard shortcuts for your operating system.',
                 level: 'beginner',
-                timeTag: '30 min',
+                time: '1-2 hours',
                 category: 'productivity',
-                icon: '⌨️',
-                essentials: [
-                    'Computer with standard keyboard',
-                    'Willingness to break mouse habits',
-                    'Practice application'
-                ],
-                firstStep: 'Learn and practice the 5 most common shortcuts for your operating system (Ctrl+C, Ctrl+V, etc.).',
-                practiceTask: 'Spend one hour working without touching your mouse, using only keyboard shortcuts.',
-                actionChallenge: 'Memorize and use 20 new keyboard shortcuts in your daily work for a week.',
-                learningTips: [
-                    'Start with the most frequently used shortcuts',
-                    'Print a cheat sheet and keep it visible',
-                    'Practice one application at a time',
-                    'Use shortcut reminder apps'
-                ],
-                prerequisites: ['Basic computer literacy', 'Regular computer use'],
-                measurableOutcomes: [
-                    'Complete computer tasks 30-50% faster',
-                    'Reduce wrist strain from excessive mousing',
-                    'Work more efficiently in any software',
-                    'Appear more proficient in professional settings'
-                ],
-                whyLearn: 'Keyboard shortcuts can save hundreds of hours per year and make you significantly more productive.',
-                beginnerTrap: 'Trying to learn all shortcuts at once. Focus on the 20% that give 80% of the benefit.',
+                whyLearn: 'Save hours each week by reducing mouse dependency. Keyboard shortcuts make you more productive and reduce repetitive strain.',
+                beginnerTrap: 'Trying to learn too many shortcuts at once instead of focusing on the most useful ones for your workflow.',
                 resources: [
-                    {type: 'cheatsheet', title: 'Windows/Mac Shortcuts PDF', url: 'https://www.shortcutfoo.com/'},
-                    {type: 'app', title: 'KeyCue (Mac) or CheatSheet (Windows)', url: 'https://www.cheatsheetapp.com/'},
-                    {type: 'game', title: 'ShortcutFoo Practice Platform', url: 'https://www.shortcutfoo.com/'}
+                    {type: 'interactive', title: 'ShortcutFoo - Gamified shortcut learning', url: 'https://www.shortcutfoo.com/'},
+                    {type: 'cheatsheet', title: 'Windows Keyboard Shortcuts', url: 'https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec'},
+                    {type: 'cheatsheet', title: 'Mac Keyboard Shortcuts', url: 'https://support.apple.com/en-us/HT201236'},
+                    {type: 'video', title: 'Essential Keyboard Shortcuts Everyone Should Know', url: 'https://www.youtube.com/watch?v=m64y7hFk5a0'}
+                ],
+                tips: [
+                    'Start with 3-5 shortcuts you\'ll use daily',
+                    'Print a cheat sheet and keep it by your desk',
+                    'Force yourself to use shortcuts for a week until they become habit',
+                    'Learn browser-specific shortcuts for even greater efficiency'
                 ]
             },
             {
                 id: 'touch-typing',
                 title: 'Touch Typing',
-                description: 'Type without looking at the keyboard to dramatically increase writing speed and efficiency.',
-                level: 'beginner',
-                timeTag: '10+ Hours',
+                description: 'Double your typing speed and never look at the keyboard again. This skill pays dividends every single day.',
+                level: 'intermediate',
+                time: '15 min/day for 3 weeks',
                 category: 'productivity',
-                icon: '👆',
-                essentials: [
-                    'Computer with keyboard',
-                    'Touch typing tutorial or software',
-                    'Regular practice sessions'
-                ],
-                firstStep: 'Learn the home row position and practice typing without looking at your fingers.',
-                practiceTask: 'Complete 15 minutes of touch typing practice daily for 21 days.',
-                actionChallenge: 'Type a 1000-word document without looking at the keyboard, tracking your speed and accuracy.',
-                learningTips: [
-                    'Start slow and focus on accuracy over speed',
-                    'Practice regularly in short sessions',
-                    'Use online typing tests to measure progress',
-                    'Don\'t look at the keyboard—use keyboard covers if needed'
-                ],
-                prerequisites: ['Basic computer literacy', 'Patience for skill development'],
-                measurableOutcomes: [
-                    'Increase typing speed from 30-40 WPM to 60-80+ WPM',
-                    'Reduce eye strain from looking between screen and keyboard',
-                    'Write documents and emails faster',
-                    'Improve coding efficiency'
-                ],
-                whyLearn: 'Touch typing can save hundreds of hours per year and is a fundamental computer skill for knowledge workers.',
-                beginnerTrap: 'Reverting to hunt-and-peck when frustrated. Consistency is key to developing muscle memory.',
+                whyLearn: 'You\'ll type millions of words in your lifetime. At 30 WPM vs 60 WPM, that\'s literally thousands of hours saved. Plus you look professional, reduce wrist strain, and can type while looking at reference material. ROI is insane.',
+                beginnerTrap: 'Looking at the keyboard "just this once" which reinforces bad habits. Cover your hands if needed.',
                 resources: [
-                    {type: 'platform', title: 'TypingClub', url: 'https://www.typingclub.com/'},
-                    {type: 'platform', title: 'Keybr', url: 'https://www.keybr.com/'},
-                    {type: 'game', title: 'TypeRacer', url: 'https://play.typeracer.com/'}
-                ]
-            },
-            {
-                id: 'notion-building',
-                title: 'Notion Workspace Building',
-                description: 'Create organized digital workspaces in Notion for projects, notes, and life management.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'productivity',
-                icon: '📝',
-                essentials: [
-                    'Notion account (free)',
-                    'Basic understanding of databases and pages',
-                    'Clear organizational goals'
+                    {type: 'site', title: 'Keybr.com - Adaptive learning algorithm', url: 'https://www.keybr.com/'},
+                    {type: 'site', title: 'TypingClub - Structured lessons', url: 'https://www.typingclub.com/'},
+                    {type: 'site', title: 'Typing.io - Practice with real code (for coders)', url: 'https://www.typing.io/'},
+                    {type: 'site', title: 'MonkeyType - Track progress', url: 'https://monkeytype.com/'}
                 ],
-                firstStep: 'Create a simple task management system in Notion with databases for projects and tasks.',
-                practiceTask: 'Build a personal knowledge management system for your notes and resources.',
-                actionChallenge: 'Create a complete life management dashboard in Notion with integrated calendars, tasks, and notes.',
-                learningTips: [
-                    'Start with templates and customize them',
-                    'Learn databases and relations for powerful organization',
-                    'Use consistent naming conventions',
-                    'Regularly review and optimize your system'
-                ],
-                prerequisites: ['Basic computer skills', 'Organizational mindset'],
-                measurableOutcomes: [
-                    'Centralize all personal and work information',
-                    'Reduce time spent searching for information',
-                    'Create customized workflow solutions',
-                    'Build reusable templates for recurring projects'
-                ],
-                whyLearn: 'Notion is a powerful all-in-one workspace that can replace multiple apps and dramatically improve organization.',
-                beginnerTrap: 'Over-engineering systems before understanding basic workflows. Start simple and expand.',
-                resources: [
-                    {type: 'video', title: 'Notion Made Simple', url: 'https://www.youtube.com/watch?v=OPa2gQdPpiY'},
-                    {type: 'course', title: 'Notion Official Tutorials', url: 'https://www.notion.so/help/guides-and-tutorials'},
-                    {type: 'template', title: 'Notion Template Gallery', url: 'https://www.notion.so/notion/Notion-Template-Gallery-181e961aeb5c4ee6915307c0dfd5156d'}
+                tips: [
+                    'Cover your keyboard with a cloth for the first week',
+                    'Go SLOW before going fast - accuracy beats speed early on',
+                    'Practice daily for short periods rather than long sessions',
+                    'Focus on proper finger placement from the beginning'
                 ]
             },
 
-            // Business Skills
+            // Business & Money Skills
             {
                 id: 'negotiation-basics',
                 title: 'Negotiation Basics',
-                description: 'Learn fundamental negotiation strategies to achieve better outcomes in business and life.',
+                description: 'Learn fundamental negotiation techniques to get better outcomes in business and life.',
                 level: 'intermediate',
-                timeTag: '45 min',
+                time: '2-3 hours',
                 category: 'business',
-                icon: '🤝',
-                essentials: [
-                    'Understanding of BATNA (Best Alternative To Negotiated Agreement)',
-                    'Clear negotiation objectives',
-                    'Practice scenarios'
+                whyLearn: 'Better negotiation skills can lead to higher salaries, better deals, and improved relationships. This skill pays dividends throughout your career.',
+                beginnerTrap: 'Making the first offer without knowing the market rate, either leaving value on the table or pricing yourself out.',
+                resources: [
+                    {type: 'course', title: 'Successful Negotiation: Essential Strategies', url: 'https://www.coursera.org/learn/negotiation-skills'},
+                    {type: 'book', title: 'Never Split the Difference by Chris Voss', url: 'https://www.amazon.com/Never-Split-Difference-Negotiating-Depended/dp/0062407805'},
+                    {type: 'video', title: 'The Harvard Principles of Negotiation', url: 'https://www.youtube.com/watch?v=RT8F0o4MPCM'},
+                    {type: 'article', title: '6 Negotiation Tips from an FBI Hostage Negotiator', url: 'https://www.inc.com/jeff-haden/6-negotiation-tips-from-an-fbi-hostage-negotiator-that-will-give-you-an-edge-in-any-difficult-conversation.html'}
                 ],
-                firstStep: 'Identify your BATNA for an upcoming negotiation situation.',
-                practiceTask: 'Role-play a salary negotiation with a friend, switching sides.',
-                actionChallenge: 'Apply negotiation principles to a real situation (salary, purchase, or conflict resolution).',
-                learningTips: [
+                tips: [
+                    'Always research and know your BATNA (Best Alternative To Negotiated Agreement)',
                     'Focus on interests, not positions',
-                    'Prepare thoroughly with research and alternatives',
-                    'Practice active listening during negotiations',
-                    'Aim for win-win outcomes when possible'
-                ],
-                prerequisites: ['Basic communication skills', 'Willingness to advocate for yourself'],
-                measurableOutcomes: [
-                    'Achieve better outcomes in salary negotiations',
-                    'Save money on major purchases',
-                    'Resolve conflicts more effectively',
-                    'Build stronger business relationships'
-                ],
-                whyLearn: 'Negotiation skills can significantly impact your earnings, relationships, and overall success in business and life.',
-                beginnerTrap: 'Viewing negotiation as confrontation rather than collaborative problem-solving.',
-                resources: [
-                    {type: 'book', title: 'Getting to Yes by Fisher & Ury', url: 'https://www.amazon.com/Getting-Yes-Negotiating-Agreement-Without/dp/0143118757'},
-                    {type: 'course', title: 'Harvard Negotiation Project Concepts', url: 'https://www.pon.harvard.edu/category/daily/negotiation-skills-daily/'},
-                    {type: 'exercise', title: 'Practice identifying interests vs positions in conflicts', url: '#'}
+                    'Use silence as a strategic tool',
+                    'Practice active listening to understand the other party\'s needs'
                 ]
             },
             {
-                id: 'project-management-fundamentals',
+                id: 'project-management',
                 title: 'Project Management Fundamentals',
-                description: 'Master the basics of planning, executing, and delivering successful projects.',
+                description: 'Learn to plan, execute, and deliver projects successfully using proven methodologies.',
                 level: 'intermediate',
-                timeTag: '60 min',
+                time: '10-15 hours',
                 category: 'business',
-                icon: '📊',
-                essentials: [
-                    'Understanding of project lifecycle',
-                    'Basic planning tools',
-                    'Communication and coordination skills'
-                ],
-                firstStep: 'Break down a simple personal project into tasks with deadlines.',
-                practiceTask: 'Create a project plan for organizing an event or completing a work assignment.',
-                actionChallenge: 'Manage a small project from initiation to completion, documenting lessons learned.',
-                learningTips: [
-                    'Start with clear objectives and scope',
-                    'Break projects into manageable tasks',
-                    'Communicate regularly with stakeholders',
-                    'Adapt plans as new information emerges'
-                ],
-                prerequisites: ['Basic organizational skills', 'Experience working on projects'],
-                measurableOutcomes: [
-                    'Deliver projects on time and within scope',
-                    'Improve team coordination and communication',
-                    'Reduce project stress through better planning',
-                    'Advance into leadership roles'
-                ],
-                whyLearn: 'Project management skills are valuable in virtually every industry and can significantly boost your career prospects.',
-                beginnerTrap: 'Over-planning and under-executing. Balance planning with action.',
+                whyLearn: 'Project management skills are valuable across all industries and can significantly increase your effectiveness and career prospects.',
+                beginnerTrap: 'Trying to plan every detail upfront without allowing for adjustments as the project evolves.',
                 resources: [
-                    {type: 'methodology', title: 'PMI Project Management Basics', url: 'https://www.pmi.org/learning/library/project-management-fundamentals-7092'},
-                    {type: 'course', title: 'Google Project Management Certificate', url: 'https://grow.google/certificates/project-management/'},
-                    {type: 'tool', title: 'Trello or Asana for practice', url: 'https://trello.com/'}
+                    {type: 'course', title: 'Google Project Management Certificate', url: 'https://www.coursera.org/professional-certificates/google-project-management'},
+                    {type: 'tool', title: 'Trello - Visual project management', url: 'https://trello.com/'},
+                    {type: 'book', title: 'The Project Management Book by Richard Newton', url: 'https://www.amazon.com/Project-Management-Book-How-Manage/dp/0273749575'},
+                    {type: 'methodology', title: 'Introduction to Agile Methodology', url: 'https://www.atlassian.com/agile'}
+                ],
+                tips: [
+                    'Break large projects into smaller, manageable tasks',
+                    'Set clear milestones and celebrate small wins',
+                    'Communicate regularly with stakeholders',
+                    'Learn to use at least one project management tool effectively'
                 ]
             },
             {
-                id: 'pricing-strategy-basics',
+                id: 'pricing-strategy',
                 title: 'Pricing Strategy Basics',
-                description: 'Learn how to set optimal prices for products and services to maximize value and profit.',
-                level: 'intermediate',
-                timeTag: '45 min',
+                description: 'Master: Anchor → Value → Decision. Price psychology that actually works.',
+                level: 'beginner',
+                time: '1 hour',
                 category: 'business',
-                icon: '💰',
-                essentials: [
-                    'Understanding of costs and value',
-                    'Market research capabilities',
-                    'Testing mindset'
-                ],
-                firstStep: 'Analyze how three competitors price similar products or services.',
-                practiceTask: 'Develop pricing for a hypothetical product considering costs, value, and competition.',
-                actionChallenge: 'Test different pricing strategies for a real or side-business product.',
-                learningTips: [
-                    'Understand your cost structure thoroughly',
-                    'Research competitor pricing and positioning',
-                    'Test different price points',
-                    'Consider value-based pricing over cost-plus'
-                ],
-                prerequisites: ['Basic business understanding', 'Analytical thinking'],
-                measurableOutcomes: [
-                    'Set optimal prices for products/services',
-                    'Increase profitability through better pricing',
-                    'Understand different pricing models and when to use them',
-                    'Compete more effectively in your market'
-                ],
-                whyLearn: 'Pricing is one of the most powerful profit levers in business, yet many entrepreneurs and professionals lack formal pricing knowledge.',
-                beginnerTrap: 'Setting prices based only on costs without considering customer perceived value.',
+                whyLearn: 'Most people undercharge by 50-300%. Pricing isn\'t about your costs - it\'s about perceived value. Learn this and instantly increase your revenue without working harder. One pricing change can double your income.',
+                beginnerTrap: 'Undervaluing your offering based on your costs rather than customer perceived value.',
                 resources: [
-                    {type: 'book', title: 'Pricing With Confidence by Reed Holden', url: 'https://www.amazon.com/Pricing-Confidence-10-Ways-Stop/dp/1119357544'},
-                    {type: 'course', title: 'Pricing Strategy Optimization', url: 'https://www.coursera.org/learn/uva-darden-pricing-strategy'},
-                    {type: 'tool', title: 'Price Sensitivity Meter techniques', url: 'https://en.wikipedia.org/wiki/Van_Westendorp%27s_Price_Sensitivity_Meter'}
+                    {type: 'book', title: '"The Psychology of Price" by Leigh Caldwell', url: '#'},
+                    {type: 'video', title: 'Dan Ariely on pricing psychology', url: 'https://www.youtube.com/watch?v=QHTbVTmt1Eo'},
+                    {type: 'technique', title: 'Show expensive option first to make others seem reasonable', url: '#'},
+                    {type: 'rule', title: 'Always offer 3 tiers (people pick middle 60% of the time)', url: '#'},
+                    {type: 'exercise', title: 'Price something at 3x what you originally thought. Test it.', url: '#'}
+                ],
+                tips: [
+                    'End prices in 7 or 9 ($47, $297, $997)',
+                    'Frame prices in terms of small daily amounts ("less than a coffee per day")',
+                    'Highlight the value, not just the price',
+                    'Test different price points to find the optimal one'
                 ]
             },
             {
                 id: 'copywriting-psychology',
                 title: 'Copywriting Psychology',
-                description: 'Understand the psychological principles that make writing persuasive and compelling.',
+                description: 'Master the Pain → Desire → Solution framework. Write copy that actually converts.',
                 level: 'intermediate',
-                timeTag: '60 min',
+                time: '2-3 hours',
                 category: 'business',
-                icon: '✍️',
-                essentials: [
-                    'Understanding of basic psychology principles',
-                    'Practice writing samples',
-                    'Analysis of effective copy'
-                ],
-                firstStep: 'Analyze three advertisements or sales pages and identify the psychological principles used.',
-                practiceTask: 'Rewrite a boring product description using psychological principles to make it more compelling.',
-                actionChallenge: 'Create a complete sales page for a product using multiple psychological principles.',
-                learningTips: [
-                    'Study classic psychological principles (social proof, scarcity, etc.)',
-                    'Analyze successful copy in your industry',
-                    'Test different approaches',
-                    'Focus on benefits, not just features'
-                ],
-                prerequisites: ['Basic writing skills', 'Understanding of target audience'],
-                measurableOutcomes: [
-                    'Write more persuasive marketing materials',
-                    'Increase conversion rates on websites and ads',
-                    'Create more engaging content',
-                    'Understand what motivates customer decisions'
-                ],
-                whyLearn: 'Understanding the psychology behind persuasion makes your writing dramatically more effective in business and marketing contexts.',
-                beginnerTrap: 'Using psychological principles manipulatively rather than to create genuine value for customers.',
+                whyLearn: 'Good copywriting is the difference between $0 and $100k. Every email, tweet, product description, and ad needs this skill. It\'s not manipulation - it\'s understanding what people actually want and communicating clearly.',
+                beginnerTrap: 'Writing for yourself instead of your audience. Good copy speaks the customer\'s language, not yours.',
                 resources: [
-                    {type: 'book', title: 'Influence by Robert Cialdini', url: 'https://www.amazon.com/Influence-Psychology-Persuasion-Robert-Cialdini/dp/006124189X'},
-                    {type: 'course', title: 'Copyhackers Copywriting Course', url: 'https://copyhackers.com/'},
-                    {type: 'exercise', title: 'Rewrite weak marketing emails using psychological principles', url: '#'}
-                ]
-            },
-            {
-                id: 'finance-basics',
-                title: 'Personal Finance Basics',
-                description: 'Master fundamental money management skills for budgeting, saving, and investing.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'business',
-                icon: '📈',
-                essentials: [
-                    'Understanding of income and expenses',
-                    'Basic budgeting system',
-                    'Long-term financial goals'
+                    {type: 'course', title: 'Copyhackers tutorials', url: 'https://copyhackers.com/copy-school/'},
+                    {type: 'book', title: '"Cashvertising" by Drew Eric Whitman (psychological triggers)', url: '#'},
+                    {type: 'examples', title: 'Swiped.co - Study proven copy', url: 'https://swiped.co/'},
+                    {type: 'formula', title: 'Identify pain → Amplify desire → Present your solution as bridge', url: '#'},
+                    {type: 'exercise', title: 'Rewrite 5 product descriptions on Amazon using this framework', url: '#'}
                 ],
-                firstStep: 'Track all your expenses for one week to understand your spending patterns.',
-                practiceTask: 'Create a monthly budget based on your income and financial goals.',
-                actionChallenge: 'Set up an automated savings and investment system for three months.',
-                learningTips: [
-                    'Pay yourself first (automate savings)',
-                    'Understand the difference between assets and liabilities',
-                    'Start investing early, even with small amounts',
-                    'Live below your means while building wealth'
-                ],
-                prerequisites: ['Basic math skills', 'Regular income source'],
-                measurableOutcomes: [
-                    'Create and stick to a budget',
-                    'Build emergency savings',
-                    'Start investing for long-term wealth',
-                    'Reduce financial stress through better money management'
-                ],
-                whyLearn: 'Financial literacy is essential for long-term security and freedom, yet is rarely taught in formal education.',
-                beginnerTrap: 'Trying to implement complex financial strategies before mastering basic budgeting and saving.',
-                resources: [
-                    {type: 'book', title: 'The Simple Path to Wealth by JL Collins', url: 'https://www.amazon.com/Simple-Path-Wealth-financial-independence/dp/1533667926'},
-                    {type: 'subreddit', title: 'r/personalfinance Wiki', url: 'https://www.reddit.com/r/personalfinance/wiki/index'},
-                    {type: 'course', title: 'Khan Academy Personal Finance', url: 'https://www.khanacademy.org/college-careers-more/personal-finance'}
+                tips: [
+                    'Read your copy out loud',
+                    'Focus on benefits, not features',
+                    'Use storytelling to create emotional connections',
+                    'Test different versions to see what resonates'
                 ]
             },
 
@@ -1514,1314 +1032,204 @@
             {
                 id: 'python-basics',
                 title: 'Python Programming Basics',
-                description: 'Learn programming fundamentals with Python, one of the most versatile languages.',
+                description: 'Learn the fundamentals of Python, one of the most versatile and beginner-friendly programming languages.',
                 level: 'beginner',
-                timeTag: '2+ Hours',
+                time: '20-30 hours',
                 category: 'technical',
-                icon: '🐍',
-                essentials: [
-                    'Install Python from python.org',
-                    'Set up a code editor like VS Code',
-                    'Find beginner tutorials and exercises'
-                ],
-                firstStep: 'Write and run your first "Hello World" program in Python.',
-                practiceTask: 'Create a simple calculator that can add, subtract, multiply, and divide.',
-                actionChallenge: 'Build a number guessing game where the computer picks a random number and the user tries to guess it.',
-                learningTips: [
-                    'Practice coding every day, even for just 15-30 minutes',
-                    'Build small projects that interest you',
-                    'Don\'t just copy code - understand why it works',
-                    'Learn to read documentation and error messages'
-                ],
-                prerequisites: ['Basic computer literacy', 'Logical thinking'],
-                measurableOutcomes: [
-                    'Automate simple repetitive tasks',
-                    'Build basic applications and scripts',
-                    'Prepare for more advanced programming courses',
-                    'Qualify for entry-level programming jobs'
-                ],
                 whyLearn: 'Python is used in web development, data science, automation, and AI. Basic programming skills are increasingly valuable across many fields.',
                 beginnerTrap: 'Getting stuck in "tutorial hell" - watching tutorials without actually writing code and solving problems.',
                 resources: [
-                    {type: 'video', title: 'freeCodeCamp – Python Full Course (4 hours)', url: 'https://www.youtube.com/watch?v=rfscVS0vtbw'},
-                    {type: 'video', title: 'Corey Schafer – Python Playlist', url: 'https://www.youtube.com/watch?v=YYXdXT2l-Gg'},
-                    {type: 'course', title: 'freeCodeCamp – Scientific Computing with Python', url: 'https://www.freecodecamp.org/learn/scientific-computing-with-python/'},
-                    {type: 'exercise', title: 'Make a calculator', url: '#'},
-                    {type: 'exercise', title: 'Write a program that checks even/odd numbers', url: '#'}
+                    {type: 'course', title: 'Python for Everybody', url: 'https://www.py4e.com/'},
+                    {type: 'book', title: 'Automate the Boring Stuff with Python', url: 'https://automatetheboringstuff.com/'},
+                    {type: 'platform', title: 'Codecademy Python Course', url: 'https://www.codecademy.com/learn/learn-python-3'},
+                    {type: 'practice', title: 'Exercism Python Track', url: 'https://exercism.org/tracks/python'}
+                ],
+                tips: [
+                    'Code every day, even if it\'s just for 15 minutes',
+                    'Build small projects that interest you',
+                    'Don\'t just copy code - understand why it works',
+                    'Learn to read documentation and error messages'
                 ]
             },
             {
-                id: 'data-analysis-fundamentals',
+                id: 'data-analysis',
                 title: 'Data Analysis Fundamentals',
-                description: 'Learn to extract insights from data using basic statistical methods and visualization.',
+                description: 'Learn to extract insights from data using basic statistical techniques and visualization.',
                 level: 'intermediate',
-                timeTag: '2+ Hours',
+                time: '25-35 hours',
                 category: 'technical',
-                icon: '📊',
-                essentials: [
-                    'Spreadsheet software (Excel/Google Sheets)',
-                    'Basic statistics understanding',
-                    'Sample datasets to practice'
-                ],
-                firstStep: 'Import a dataset into Excel/Google Sheets and calculate basic descriptive statistics.',
-                practiceTask: 'Clean a messy dataset and create visualizations to identify patterns.',
-                actionChallenge: 'Complete a full data analysis project from data collection to insights presentation.',
-                learningTips: [
-                    'Start with clean, well-structured data',
-                    'Learn to ask good questions of your data',
-                    'Master basic statistical concepts (mean, median, correlation)',
-                    'Practice creating clear visualizations'
-                ],
-                prerequisites: ['Basic math skills', 'Familiarity with spreadsheets'],
-                measurableOutcomes: [
-                    'Analyze business data to inform decisions',
-                    'Create meaningful data visualizations',
-                    'Identify trends and patterns in datasets',
-                    'Communicate data insights effectively'
-                ],
-                whyLearn: 'Data analysis skills are valuable across industries and can lead to better decision-making in both business and personal contexts.',
-                beginnerTrap: 'Jumping to complex analysis before mastering data cleaning and basic statistics.',
+                whyLearn: 'Data literacy is becoming essential in many roles. Understanding how to work with data can help you make better decisions and identify opportunities.',
+                beginnerTrap: 'Focusing too much on advanced techniques before mastering the fundamentals of data cleaning and exploration.',
                 resources: [
-                    {type: 'course', title: 'Google Data Analytics Certificate', url: 'https://grow.google/certificates/data-analytics/'},
-                    {type: 'platform', title: 'Kaggle Learn', url: 'https://www.kaggle.com/learn'},
-                    {type: 'dataset', title: 'Practice datasets on Kaggle', url: 'https://www.kaggle.com/datasets'}
+                    {type: 'course', title: 'Google Data Analytics Certificate', url: 'https://www.coursera.org/professional-certificates/google-data-analytics'},
+                    {type: 'tool', title: 'Tableau Public - Free data visualization', url: 'https://public.tableau.com/'},
+                    {type: 'book', title: 'Storytelling with Data by Cole Nussbaumer Knaflic', url: 'https://www.amazon.com/Storytelling-Data-Visualization-Business-Professionals/dp/1119002257'},
+                    {type: 'dataset', title: 'Kaggle Datasets for practice', url: 'https://www.kaggle.com/datasets'}
+                ],
+                tips: [
+                    'Start with small, clean datasets to build confidence',
+                    'Learn to ask good questions of your data',
+                    'Master one visualization tool thoroughly',
+                    'Focus on communicating insights clearly, not just creating complex charts'
                 ]
             },
             {
                 id: 'neural-network-basics',
                 title: 'Neural Network Basics',
-                description: 'Understand the fundamentals of how neural networks work and their applications.',
+                description: 'Understand AI from simple to complex. Learn the fundamentals behind ChatGPT, DALL-E, and modern AI.',
                 level: 'advanced',
-                timeTag: '3+ Hours',
+                time: '20+ hours',
                 category: 'technical',
-                icon: '🧠',
-                essentials: [
-                    'Basic programming knowledge',
-                    'Understanding of linear algebra concepts',
-                    'Machine learning framework (TensorFlow/PyTorch)'
-                ],
-                firstStep: 'Build and train a simple neural network to recognize handwritten digits (MNIST dataset).',
-                practiceTask: 'Implement a basic neural network from scratch using only NumPy.',
-                actionChallenge: 'Complete a real-world machine learning project using neural networks.',
-                learningTips: [
-                    'Start with simple architectures before moving to complex ones',
-                    'Understand the mathematics behind forward and backward propagation',
-                    'Experiment with different activation functions and architectures',
-                    'Learn to diagnose and fix common training problems'
-                ],
-                prerequisites: ['Intermediate programming', 'Linear algebra basics', 'Calculus fundamentals'],
-                measurableOutcomes: [
-                    'Understand how neural networks learn and make predictions',
-                    'Build and train basic neural network models',
-                    'Prepare for more advanced AI/ML coursework',
-                    'Apply neural networks to practical problems'
-                ],
-                whyLearn: 'Neural networks are driving advances in AI and understanding them is essential for careers in machine learning and data science.',
-                beginnerTrap: 'Using complex architectures without understanding the basics of how neural networks work.',
+                whyLearn: 'AI is transforming every industry. Understanding neural networks isn\'t just for engineers - it\'s becoming as fundamental as understanding how the internet works. This knowledge will be valuable for decades and opens doors to ML careers paying $200k+.',
+                beginnerTrap: 'Getting stuck on the math instead of building intuition first. Start with concepts, then dive into mathematics.',
                 resources: [
-                    {type: 'course', title: 'Andrew Ng Deep Learning Specialization', url: 'https://www.coursera.org/specializations/deep-learning'},
-                    {type: 'book', title: 'Neural Networks and Deep Learning by Michael Nielsen', url: 'http://neuralnetworksanddeeplearning.com/'},
-                    {type: 'interactive', title: 'TensorFlow Playground', url: 'https://playground.tensorflow.org/'}
-                ]
-            },
-            {
-                id: 'cpp-programming',
-                title: 'C++ Programming',
-                description: 'Learn system-level programming for high-performance applications.',
-                level: 'intermediate',
-                timeTag: '2+ Hours',
-                category: 'technical',
-                icon: '⚙️',
-                essentials: [
-                    'Install a C++ compiler (GCC or Visual Studio)',
-                    'Set up an IDE like Code::Blocks or Visual Studio Code',
-                    'Understand basic programming concepts'
+                    {type: 'course', title: '3Blue1Brown Neural Networks (visual, intuitive)', url: 'https://www.youtube.com/watch?v=aircAruvnKk'},
+                    {type: 'interactive', title: 'TensorFlow Playground - See it in action', url: 'https://playground.tensorflow.org/'},
+                    {type: 'course', title: 'Andrew Ng\'s Deep Learning (gold standard)', url: 'https://www.coursera.org/learn/neural-networks-deep-learning'},
+                    {type: 'book', title: '"Grokking Deep Learning" by Andrew Trask', url: '#'},
+                    {type: 'path', title: 'Linear regression → Perceptron → Multi-layer networks → CNNs → Transformers', url: '#'}
                 ],
-                firstStep: 'Write and compile a simple C++ program that displays "Hello World".',
-                practiceTask: 'Create a program that manages a list of contacts with add, view, and delete functions.',
-                actionChallenge: 'Build a simple bank account management system with deposit, withdrawal, and balance inquiry features.',
-                learningTips: [
-                    'Master pointers and memory management early',
-                    'Practice object-oriented programming concepts',
-                    'Learn to read and understand compiler errors',
-                    'Work on small projects to apply concepts'
-                ],
-                prerequisites: ['Basic programming knowledge', 'Understanding of computer memory concepts'],
-                measurableOutcomes: [
-                    'Develop system-level applications',
-                    'Understand memory management and performance optimization',
-                    'Prepare for game development or embedded systems roles',
-                    'Build foundation for learning other programming languages'
-                ],
-                whyLearn: 'C++ is essential for system programming, game development, and high-performance applications where control over hardware is important.',
-                beginnerTrap: 'Not properly managing memory, leading to leaks and crashes. Always pair new with delete.',
-                resources: [
-                    {type: 'video', title: 'The Cherno - C++ Series', url: 'https://www.youtube.com/watch?v=18c3MTX0PK0&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb'},
-                    {type: 'course', title: 'LearnCPP.com', url: 'https://www.learncpp.com/'},
-                    {type: 'book', title: 'C++ Primer by Stanley Lippman', url: 'https://www.amazon.com/Primer-5th-Stanley-B-Lippman/dp/0321714113'}
-                ]
-            },
-            {
-                id: 'html-css',
-                title: 'HTML & CSS',
-                description: 'Build and style websites with the foundational technologies of the web.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'technical',
-                icon: '🌐',
-                essentials: [
-                    'A modern web browser (Chrome, Firefox)',
-                    'A text editor like VS Code',
-                    'Web development tutorial resources'
-                ],
-                firstStep: 'Create a simple HTML page with a heading, paragraph, and image.',
-                practiceTask: 'Style your HTML page with CSS to change colors, fonts, and layout.',
-                actionChallenge: 'Build a personal portfolio page with multiple sections and responsive design.',
-                learningTips: [
-                    'Learn by inspecting websites you like (right-click → Inspect)',
-                    'Practice building layouts with Flexbox and CSS Grid',
-                    'Start with mobile-first design approach',
-                    'Validate your HTML and CSS code'
-                ],
-                prerequisites: ['Basic computer skills', 'Familiarity with using websites'],
-                measurableOutcomes: [
-                    'Create static websites for personal or business use',
-                    'Understand how web pages are constructed',
-                    'Freelance as a web developer for small projects',
-                    'Build foundation for learning JavaScript and frameworks'
-                ],
-                whyLearn: 'HTML and CSS are the building blocks of the web. These skills are essential for web development, digital marketing, and content creation.',
-                beginnerTrap: 'Trying to learn everything at once. Focus on fundamentals before moving to frameworks.',
-                resources: [
-                    {type: 'video', title: 'Traversy Media - HTML & CSS Crash Course', url: 'https://www.youtube.com/watch?v=hu-q2zYwEYs'},
-                    {type: 'video', title: 'freeCodeCamp - Responsive Web Design', url: 'https://www.youtube.com/watch?v=srvUrASNj0s'},
-                    {type: 'course', title: 'MDN Web Docs - HTML & CSS', url: 'https://developer.mozilla.org/en-US/docs/Learn'}
-                ]
-            },
-            {
-                id: 'data-structures',
-                title: 'Data Structures',
-                description: 'Organize and store data efficiently for optimal algorithm performance.',
-                level: 'intermediate',
-                timeTag: '2+ Hours',
-                category: 'technical',
-                icon: '📊',
-                essentials: [
-                    'Programming language knowledge (Python, Java, or C++)',
-                    'Understanding of basic algorithms',
-                    'Practice problems and visualizations'
-                ],
-                firstStep: 'Implement a basic linked list with add, remove, and search operations.',
-                practiceTask: 'Build a binary search tree and implement insertion, deletion, and traversal methods.',
-                actionChallenge: 'Create a hash table implementation with collision handling and benchmark its performance.',
-                learningTips: [
-                    'Visualize how data structures work with online tools',
-                    'Practice implementing them from scratch',
-                    'Understand time and space complexity',
-                    'Solve coding problems on platforms like LeetCode'
-                ],
-                prerequisites: ['Programming fundamentals', 'Basic algorithm knowledge'],
-                measurableOutcomes: [
-                    'Write more efficient and optimized code',
-                    'Excel in technical coding interviews',
-                    'Design better software architecture',
-                    'Understand how databases organize data internally'
-                ],
-                whyLearn: 'Data structures are fundamental to writing efficient software and are critical for technical interviews at top tech companies.',
-                beginnerTrap: 'Memorizing implementations without understanding the trade-offs between different data structures.',
-                resources: [
-                    {type: 'video', title: 'myCodeSchool - Data Structures', url: 'https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P'},
-                    {type: 'course', title: 'Coursera - Data Structures and Algorithms', url: 'https://www.coursera.org/specializations/data-structures-algorithms'},
-                    {type: 'platform', title: 'Visualgo - Data Structure Visualizations', url: 'https://visualgo.net/en'}
-                ]
-            },
-            {
-                id: 'linux-command-line',
-                title: 'Linux Command Line',
-                description: 'Master the Linux terminal for efficient system administration and development.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'technical',
-                icon: '🐧',
-                essentials: [
-                    'Install Linux or use WSL on Windows',
-                    'Access to a terminal/command line',
-                    'Basic file system understanding'
-                ],
-                firstStep: 'Navigate through directories using cd, ls, and pwd commands.',
-                practiceTask: 'Create a bash script that organizes files in a directory by their extensions.',
-                actionChallenge: 'Set up a web server on Linux and deploy a simple HTML website.',
-                learningTips: [
-                    'Learn to use man pages for command documentation',
-                    'Practice regular expressions for powerful text processing',
-                    'Master piping and redirection',
-                    'Learn basic shell scripting for automation'
-                ],
-                prerequisites: ['Basic computer skills', 'Understanding of files and directories'],
-                measurableOutcomes: [
-                    'Efficiently manage servers and cloud instances',
-                    'Automate repetitive system tasks',
-                    'Work effectively in development environments',
-                    'Pursue careers in DevOps or system administration'
-                ],
-                whyLearn: 'Linux powers most servers, cloud infrastructure, and development environments. Command-line proficiency is essential for many tech roles.',
-                beginnerTrap: 'Trying to memorize all commands instead of learning how to find and use documentation.',
-                resources: [
-                    {type: 'video', title: 'The Net Ninja - Linux Command Line Basics', url: 'https://www.youtube.com/watch?v=IVquJh3DXUA'},
-                    {type: 'course', title: 'Linux Journey', url: 'https://linuxjourney.com/'},
-                    {type: 'book', title: 'The Linux Command Line by William Shotts', url: 'https://linuxcommand.org/tlcl.php'}
+                tips: [
+                    'Don\'t get stuck on the math',
+                    'Build something first, understand the concepts, then go back for the mathematical rigor',
+                    'Focus on understanding the intuition behind how neural networks learn',
+                    'Start with simple models before moving to complex architectures'
                 ]
             },
 
-            // Creative & Digital Skills
-            {
-                id: '3d-modeling',
-                title: '3D Modeling',
-                description: 'Create 3D objects and scenes for games, animation, or visualization.',
-                level: 'beginner',
-                timeTag: '2+ Hours',
-                category: 'creative',
-                icon: '🎮',
-                essentials: [
-                    'Install Blender (free)',
-                    'Set up a comfortable workspace with mouse',
-                    'Find beginner tutorials on YouTube'
-                ],
-                firstStep: 'Open Blender and follow a beginner tutorial to create a simple object like a cup or table.',
-                practiceTask: 'Model a simple household object like a chair or lamp from reference images.',
-                actionChallenge: 'Create a complete simple scene with 3-5 objects, add basic materials, and render it.',
-                learningTips: [
-                    'Start with simple shapes and gradually increase complexity',
-                    'Learn the basic tools: extrude, scale, and rotate',
-                    'Practice with reference images to improve accuracy',
-                    'Join online communities for feedback and inspiration'
-                ],
-                prerequisites: ['Basic computer skills', 'Patience for learning complex software'],
-                measurableOutcomes: [
-                    'Create basic 3D models for personal projects',
-                    'Build a portfolio for freelance 3D modeling work',
-                    'Understand fundamentals for game development or animation'
-                ],
-                whyLearn: '3D modeling is essential for game development, animation, product visualization, and VR/AR applications.',
-                beginnerTrap: 'Starting with complex models instead of mastering basic shapes and tools first.',
-                resources: [
-                    {type: 'video', title: 'Blender Guru - Beginner Donut Tutorial', url: 'https://www.youtube.com/watch?v=TPrnSACiTJ4'},
-                    {type: 'video', title: 'CG Fast Track - Blender Basics', url: 'https://www.youtube.com/watch?v=Yi2SksDiqgQ'},
-                    {type: 'course', title: 'Blender Official Fundamentals', url: 'https://www.blender.org/support/tutorials/'}
-                ]
-            },
-            {
-                id: 'graphic-design',
-                title: 'Graphic Design',
-                description: 'Create visually appealing designs for digital and print media.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'creative',
-                icon: '🎨',
-                essentials: [
-                    'Install Canva (free) or Adobe Illustrator',
-                    'Collect design inspiration from Pinterest or Dribbble',
-                    'Learn basic design principles'
-                ],
-                firstStep: 'Create a simple social media graphic using templates in Canva.',
-                practiceTask: 'Design a business card for yourself or a fictional company.',
-                actionChallenge: 'Redesign an existing logo or create branding for a personal project.',
-                learningTips: [
-                    'Learn and apply design principles: contrast, alignment, repetition, proximity',
-                    'Start with templates and gradually customize them',
-                    'Study successful designs to understand what works',
-                    'Get feedback on your designs from others'
-                ],
-                prerequisites: ['Basic computer skills', 'Sense of aesthetics'],
-                measurableOutcomes: [
-                    'Create professional-looking social media graphics',
-                    'Design basic marketing materials for small businesses',
-                    'Build a portfolio for freelance design work'
-                ],
-                whyLearn: 'Graphic design skills are valuable for marketing, branding, and creating visual content for businesses and personal projects.',
-                beginnerTrap: 'Using too many fonts and colors in one design. Start with 2-3 fonts and a limited color palette.',
-                resources: [
-                    {type: 'video', title: 'Canva Design School', url: 'https://www.canva.com/learn/'},
-                    {type: 'video', title: 'The Futur - Design Principles', url: 'https://www.youtube.com/watch?v=ZbrzdMaumNk'},
-                    {type: 'course', title: 'Google UX Design Certificate', url: 'https://grow.google/uxdesign/'}
-                ]
-            },
-            {
-                id: 'ui-ux-design',
-                title: 'UI/UX Design',
-                description: 'Design user-friendly interfaces and experiences for digital products.',
-                level: 'intermediate',
-                timeTag: '2+ Hours',
-                category: 'creative',
-                icon: '📱',
-                essentials: [
-                    'Install Figma (free)',
-                    'Study popular app interfaces',
-                    'Learn about user psychology'
-                ],
-                firstStep: 'Analyze 3 apps you use daily and identify what makes their interface effective or frustrating.',
-                practiceTask: 'Redesign the login screen of a popular app to improve user experience.',
-                actionChallenge: 'Create a complete user flow for a mobile app from onboarding to main task completion.',
-                learningTips: [
-                    'Focus on solving user problems, not just making things look pretty',
-                    'Learn to create user personas and journey maps',
-                    'Practice usability testing with friends',
-                    'Stay updated with design system trends'
-                ],
-                prerequisites: ['Basic design sense', 'Understanding of user behavior'],
-                measurableOutcomes: [
-                    'Design professional app interfaces',
-                    'Create portfolio pieces for UX design jobs',
-                    'Improve conversion rates through better UX'
-                ],
-                whyLearn: 'UI/UX design is crucial for creating digital products that users love and can navigate intuitively.',
-                beginnerTrap: 'Focusing only on visual design without considering user needs and workflows.',
-                resources: [
-                    {type: 'video', title: 'AJ&Smart - UX Design Basics', url: 'https://www.youtube.com/watch?v=6_zR0bNHBsc'},
-                    {type: 'course', title: 'Interaction Design Foundation', url: 'https://www.interaction-design.org/'},
-                    {type: 'book', title: 'Don\'t Make Me Think by Steve Krug', url: 'https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515'}
-                ]
-            },
-            {
-                id: 'video-editing',
-                title: 'Video Editing',
-                description: 'Create engaging videos by mastering cutting, transitions, and effects.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'creative',
-                icon: '🎬',
-                essentials: [
-                    'Install DaVinci Resolve (free)',
-                    'Collect video footage to practice with',
-                    'Watch basic editing tutorials'
-                ],
-                firstStep: 'Import 3 video clips and create a simple 30-second sequence with cuts and background music.',
-                practiceTask: 'Edit a 1-minute travel vlog with titles, transitions, and sound effects.',
-                actionChallenge: 'Create a complete 3-minute YouTube video from raw footage to final export.',
-                learningTips: [
-                    'Learn keyboard shortcuts to speed up your workflow',
-                    'Focus on storytelling through editing',
-                    'Practice color correction and audio balancing',
-                    'Study editing styles from your favorite creators'
-                ],
-                prerequisites: ['Basic computer skills', 'Creative storytelling ability'],
-                measurableOutcomes: [
-                    'Edit professional-looking videos for social media',
-                    'Create video content for businesses',
-                    'Start a freelance video editing service'
-                ],
-                whyLearn: 'Video content dominates social media and marketing. Editing skills are in high demand.',
-                beginnerTrap: 'Using too many effects and transitions. Clean, purposeful editing is more effective.',
-                resources: [
-                    {type: 'video', title: 'Casey Faris - DaVinci Resolve Beginner Guide', url: 'https://www.youtube.com/watch?v=FnijA16u7-0'},
-                    {type: 'course', title: 'LinkedIn Learning - Video Editing Fundamentals', url: 'https://www.linkedin.com/learning/'},
-                    {type: 'platform', title: 'Blackmagic Design Training', url: 'https://www.blackmagicdesign.com/products/davinciresolve/training'}
-                ]
-            },
-            {
-                id: 'basic-drawing',
-                title: 'Basic Drawing',
-                description: 'Develop fundamental drawing skills through observation and practice.',
-                level: 'beginner',
-                timeTag: '30 min',
-                category: 'creative',
-                icon: '✏️',
-                essentials: [
-                    'Paper and pencils (variety of hardness)',
-                    'Eraser and sharpener',
-                    'Simple objects to draw'
-                ],
-                firstStep: 'Practice drawing basic shapes (circles, squares, triangles) with confident lines.',
-                practiceTask: 'Draw a simple still life of 3 household objects, focusing on proportions.',
-                actionChallenge: 'Complete a 30-day drawing challenge with different subjects each day.',
-                learningTips: [
-                    'Learn to see shapes rather than objects',
-                    'Practice contour drawing to improve hand-eye coordination',
-                    'Study values (light and shadow)',
-                    'Draw regularly, even for just 10-15 minutes daily'
-                ],
-                prerequisites: ['Willingness to make imperfect drawings', 'Patience for skill development'],
-                measurableOutcomes: [
-                    'Draw recognizable objects and scenes',
-                    'Improve observation skills',
-                    'Create personal artwork',
-                    'Build foundation for other visual arts'
-                ],
-                whyLearn: 'Drawing improves observation skills, creativity, and can be a relaxing hobby or professional skill.',
-                beginnerTrap: 'Expecting perfect results immediately. Drawing is a skill that improves with consistent practice.',
-                resources: [
-                    {type: 'book', title: 'Drawing on the Right Side of the Brain', url: 'https://www.amazon.com/Drawing-Right-Side-Brain-Definitive/dp/1585429201'},
-                    {type: 'course', title: 'Proko - Drawing Basics', url: 'https://www.proko.com/'},
-                    {type: 'challenge', title: '30-day drawing challenge templates', url: 'https://www.pinterest.com/search/pins/?q=30%20day%20drawing%20challenge'}
-                ]
-            },
-            {
-                id: 'photography-composition',
-                title: 'Photography Composition',
-                description: 'Learn to create visually compelling photographs through effective composition.',
-                level: 'beginner',
-                timeTag: '45 min',
-                category: 'creative',
-                icon: '📷',
-                essentials: [
-                    'Camera or smartphone with camera',
-                    'Understanding of basic camera functions',
-                    'Subjects to photograph'
-                ],
-                firstStep: 'Take 10 photos of the same subject using different compositions and angles.',
-                practiceTask: 'Practice the rule of thirds by taking 20 photos with subjects positioned at intersection points.',
-                actionChallenge: 'Create a photo series telling a story through 5-7 carefully composed images.',
-                learningTips: [
-                    'Learn and practice composition rules (rule of thirds, leading lines, etc.)',
-                    'Study work of master photographers',
-                    'Experiment with different perspectives and angles',
-                    'Learn to see light and how it affects your composition'
-                ],
-                prerequisites: ['Access to camera', 'Basic understanding of camera operation'],
-                measurableOutcomes: [
-                    'Take more visually appealing photographs',
-                    'Develop personal photographic style',
-                    'Create compelling visual content for social media or portfolios',
-                    'Improve visual storytelling abilities'
-                ],
-                whyLearn: 'Good composition transforms ordinary photos into compelling images, valuable for personal enjoyment or professional photography.',
-                beginnerTrap: 'Focusing only on technical camera settings while neglecting composition fundamentals.',
-                resources: [
-                    {type: 'video', title: 'B&H Photo - Composition Tutorial', url: 'https://www.youtube.com/watch?v=2c6MV81J97A'},
-                    {type: 'book', title: 'The Photographer\'s Eye by Michael Freeman', url: 'https://www.amazon.com/Photographers-Eye-Composition-Design-Digital/dp/0240809343'},
-                    {type: 'exercise', title: 'Practice one composition technique per week', url: '#'}
-                ]
-            },
-            {
-                id: 'motion-graphics',
-                title: 'Motion Graphics',
-                description: 'Create animated graphics and visual effects for videos, presentations, and digital content.',
-                level: 'intermediate',
-                timeTag: '2+ Hours',
-                category: 'creative',
-                icon: '🎞️',
-                essentials: [
-                    'Adobe After Effects or similar software',
-                    'Basic understanding of animation principles',
-                    'Graphic elements to animate'
-                ],
-                firstStep: 'Create a simple animated logo using basic transform properties (position, scale, rotation).',
-                practiceTask: 'Animate an infographic with multiple elements appearing sequentially.',
-                actionChallenge: 'Create a complete motion graphics sequence for a product promotion or explainer video.',
-                learningTips: [
-                    'Master the graph editor for smooth animations',
-                    'Learn to use parenting and precompositions',
-                    'Study the 12 principles of animation',
-                    'Build a library of reusable animations and techniques'
-                ],
-                prerequisites: ['Basic graphic design knowledge', 'Understanding of video concepts'],
-                measurableOutcomes: [
-                    'Create professional animated graphics',
-                    'Enhance videos with motion design',
-                    'Freelance as a motion graphics designer',
-                    'Create engaging social media content'
-                ],
-                whyLearn: 'Motion graphics are increasingly important for video content, marketing, and user interfaces in our visual digital world.',
-                beginnerTrap: 'Overusing effects and complex animations instead of focusing on clear communication and storytelling.',
-                resources: [
-                    {type: 'video', title: 'Ben Marriott - After Effects Basics', url: 'https://www.youtube.com/watch?v=IBBkd7lqo_4'},
-                    {type: 'course', title: 'School of Motion', url: 'https://www.schoolofmotion.com/'},
-                    {type: 'community', title: 'Motion Design Slack Community', url: 'https://www.motiondesign.community/'}
-                ]
-            },
-            {
-                id: 'game-development',
-                title: 'Game Development Basics',
-                description: 'Learn the fundamentals of creating interactive games from concept to completion.',
-                level: 'intermediate',
-                timeTag: '3+ Hours',
-                category: 'creative',
-                icon: '🎮',
-                essentials: [
-                    'Game engine (Unity or Godot)',
-                    'Basic programming knowledge',
-                    'Creative ideas for simple games'
-                ],
-                firstStep: 'Follow a tutorial to create a simple game like Pong or Breakout.',
-                practiceTask: 'Design and build a complete level for a platformer game.',
-                actionChallenge: 'Create and publish a complete simple game from concept to final build.',
-                learningTips: [
-                    'Start with small, achievable projects',
-                    'Learn both programming and design fundamentals',
-                    'Play and analyze games to understand what makes them work',
-                    'Join game development communities for feedback and support'
-                ],
-                prerequisites: ['Basic programming knowledge', 'Understanding of game concepts'],
-                measurableOutcomes: [
-                    'Create complete playable games',
-                    'Understand the game development pipeline',
-                    'Build portfolio pieces for game industry jobs',
-                    'Develop problem-solving and creative thinking skills'
-                ],
-                whyLearn: 'Game development combines technical, artistic, and design skills in a rewarding creative field with professional opportunities.',
-                beginnerTrap: 'Starting with an overly ambitious project that becomes overwhelming. Begin small and complete projects.',
-                resources: [
-                    {type: 'engine', title: 'Unity Learn', url: 'https://learn.unity.com/'},
-                    {type: 'engine', title: 'Godot Documentation', url: 'https://docs.godotengine.org/en/stable/'},
-                    {type: 'community', title: 'r/gamedev subreddit', url: 'https://www.reddit.com/r/gamedev/'}
-                ]
-            },
-            {
-                id: 'social-media-content-creation',
-                title: 'Social Media Content Creation',
-                description: 'Create engaging content that grows audience and engagement across social platforms.',
-                level: 'beginner',
-                timeTag: '45 min',
-                category: 'creative',
-                icon: '📱',
-                essentials: [
-                    'Social media accounts',
-                    'Content planning tools',
-                    'Basic graphic and video editing skills'
-                ],
-                firstStep: 'Analyze 3 successful accounts in your niche and identify what makes their content effective.',
-                practiceTask: 'Create and schedule one week of content for a social media account.',
-                actionChallenge: 'Grow a social media account by 100 followers using strategic content creation.',
-                learningTips: [
-                    'Understand each platform\'s unique features and audience',
-                    'Create content that provides value to your audience',
-                    'Develop a consistent posting schedule',
-                    'Engage with your audience and other creators'
-                ],
-                prerequisites: ['Basic social media familiarity', 'Willingness to create consistently'],
-                measurableOutcomes: [
-                    'Grow social media presence and engagement',
-                    'Create content that resonates with target audiences',
-                    'Build personal or business brand online',
-                    'Monetize social media through various channels'
-                ],
-                whyLearn: 'Social media content creation is a valuable skill for personal branding, business marketing, and potential income streams.',
-                beginnerTrap: 'Trying to be on every platform at once. Focus on 1-2 platforms where your target audience is most active.',
-                resources: [
-                    {type: 'course', title: 'HubSpot Social Media Marketing Course', url: 'https://academy.hubspot.com/courses/social-media-marketing'},
-                    {type: 'tool', title: 'Canva for Social Media Graphics', url: 'https://www.canva.com/social-media-graphics/'},
-                    {type: 'community', title: 'Social Media Examiner', url: 'https://www.socialmediaexaminer.com/'}
-                ]
-            },
-
-            // Mind & Learning Skills
-            {
-                id: 'problem-solving',
-                title: 'Problem-Solving',
-                description: 'Systematically approach and solve complex problems in any domain.',
-                level: 'intermediate',
-                timeTag: '20 min',
-                category: 'mind',
-                icon: '🧩',
-                essentials: [
-                    'Practice with real-world problems',
-                    'Learn different problem-solving frameworks',
-                    'Develop critical thinking habits'
-                ],
-                firstStep: 'Identify a small problem in your daily life and break it down into smaller components.',
-                practiceTask: 'Use the 5 Whys technique to get to the root cause of a recurring issue.',
-                actionChallenge: 'Solve a complex problem at work or in your personal life using a structured approach.',
-                learningTips: [
-                    'Define the problem clearly before seeking solutions',
-                    'Break large problems into smaller, manageable parts',
-                    'Consider multiple perspectives and solutions',
-                    'Learn from both successes and failures'
-                ],
-                prerequisites: ['Analytical thinking', 'Patience for complex tasks'],
-                measurableOutcomes: [
-                    'Solve work-related problems more efficiently',
-                    'Make better decisions in personal and professional life',
-                    'Become more valuable in team environments',
-                    'Develop leadership capabilities'
-                ],
-                whyLearn: 'Effective problem-solving is one of the most valuable skills in any career. It helps you overcome obstacles and create innovative solutions.',
-                beginnerTrap: 'Jumping to solutions without fully understanding the problem.',
-                resources: [
-                    {type: 'video', title: 'McKinsey Problem Solving', url: 'https://www.youtube.com/watch?v=zVZ0eS2B1d0'},
-                    {type: 'video', title: 'Polya\'s Problem Solving Techniques', url: 'https://www.youtube.com/watch?v=6MByPkFkMps'},
-                    {type: 'course', title: 'Coursera - Creative Problem Solving', url: 'https://www.coursera.org/learn/creative-problem-solving'}
-                ]
-            },
-            {
-                id: 'critical-thinking',
-                title: 'Critical Thinking',
-                description: 'Analyze information objectively and make reasoned judgments.',
-                level: 'intermediate',
-                timeTag: '30 min',
-                category: 'mind',
-                icon: '🤔',
-                essentials: [
-                    'Practice questioning assumptions',
-                    'Learn logical fallacies',
-                    'Develop information evaluation skills'
-                ],
-                firstStep: 'Analyze a news article and identify potential biases in the reporting.',
-                practiceTask: 'Evaluate the strength of an argument by identifying its premises and conclusions.',
-                actionChallenge: 'Make an important decision using a structured critical thinking framework and document your reasoning.',
-                learningTips: [
-                    'Always consider alternative explanations',
-                    'Evaluate the quality of evidence presented',
-                    'Recognize your own cognitive biases',
-                    'Practice active listening to understand different perspectives'
-                ],
-                prerequisites: ['Open-mindedness', 'Willingness to question beliefs'],
-                measurableOutcomes: [
-                    'Make better-informed decisions',
-                    'Avoid manipulation and misinformation',
-                    'Improve analytical and reasoning skills',
-                    'Become more persuasive in arguments'
-                ],
-                whyLearn: 'Critical thinking helps you navigate complex information environments, make better decisions, and avoid being misled by poor reasoning.',
-                beginnerTrap: 'Confident thinking with critical thinking. True critical thinking involves humility and willingness to change your mind.',
-                resources: [
-                    {type: 'video', title: 'Critical Thinking Academy', url: 'https://www.youtube.com/watch?v=ZLyUHbexz04'},
-                    {type: 'course', title: 'Coursera - Critical Thinking Skills', url: 'https://www.coursera.org/learn/critical-thinking-skills'},
-                    {type: 'book', title: 'Thinking, Fast and Slow by Daniel Kahneman', url: 'https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555'}
-                ]
-            },
-
-            // Health & Lifestyle Skills
+            // Health & Wellness
             {
                 id: 'mindfulness-meditation',
                 title: 'Mindfulness Meditation',
-                description: 'Develop present-moment awareness to reduce stress and improve mental clarity.',
+                description: 'Develop the ability to stay present and reduce stress through simple meditation practices.',
                 level: 'beginner',
-                timeTag: '10 min',
-                category: 'health',
-                icon: '🧘',
-                essentials: [
-                    'Quiet space for practice',
-                    'Comfortable seating position',
-                    'Timer or meditation app'
-                ],
-                firstStep: 'Sit quietly for 2 minutes, focusing on your breath without judgment.',
-                practiceTask: 'Practice 5 minutes of mindfulness meditation daily for one week.',
-                actionChallenge: 'Complete a 21-day meditation challenge with increasing session lengths.',
-                learningTips: [
-                    'Start with short sessions and gradually increase duration',
-                    'Be patient and non-judgmental with wandering thoughts',
-                    'Try different types of meditation to find what works for you',
-                    'Incorporate mindfulness into daily activities'
-                ],
-                prerequisites: ['Willingness to sit quietly', 'Openness to mental training'],
-                measurableOutcomes: [
-                    'Reduce stress and anxiety levels',
-                    'Improve focus and concentration',
-                    'Develop greater emotional regulation',
-                    'Enhance overall well-being and life satisfaction'
-                ],
-                whyLearn: 'Mindfulness meditation has proven benefits for mental health, focus, and stress reduction in our increasingly distracted world.',
-                beginnerTrap: 'Expecting immediate results or a completely clear mind. Meditation is a practice, not a perfect state.',
+                time: '10 minutes daily',
+                category: 'wellness',
+                whyLearn: 'Regular meditation can reduce stress, improve focus, and increase emotional resilience. The benefits compound with consistent practice.',
+                beginnerTrap: 'Expecting immediate results or trying to "clear your mind" completely, which leads to frustration.',
                 resources: [
-                    {type: 'app', title: 'Headspace (free basics)', url: 'https://www.headspace.com/'},
-                    {type: 'app', title: 'Insight Timer (free)', url: 'https://insighttimer.com/'},
-                    {type: 'book', title: 'The Miracle of Mindfulness by Thich Nhat Hanh', url: 'https://www.amazon.com/Miracle-Mindfulness-Anniversary-Thich-Nhat/dp/0807012394'}
+                    {type: 'app', title: 'Headspace - Guided meditation', url: 'https://www.headspace.com/'},
+                    {type: 'app', title: 'Calm - Meditation and sleep stories', url: 'https://www.calm.com/'},
+                    {type: 'book', title: 'The Miracle of Mindfulness by Thich Nhat Hanh', url: 'https://www.amazon.com/Miracle-Mindfulness-Introduction-Practice-Meditation/dp/0807012394'},
+                    {type: 'course', title: 'Palouse Mindfulness-Based Stress Reduction', url: 'https://palousemindfulness.com/'}
+                ],
+                tips: [
+                    'Start with just 2-5 minutes daily and gradually increase',
+                    'Focus on your breath as an anchor when your mind wanders',
+                    'Be consistent rather than perfect - daily practice matters most',
+                    'Try different types of meditation to find what works for you'
                 ]
             },
             {
-                id: 'box-breathing-technique',
+                id: 'box-breathing',
                 title: 'Box Breathing Technique',
-                description: 'Master a simple breathing pattern to quickly calm your nervous system in stressful situations.',
+                description: 'Navy SEAL technique to stay calm under pressure. Reduces anxiety and improves focus instantly.',
                 level: 'beginner',
-                timeTag: '5 min',
-                category: 'health',
-                icon: '🔄',
-                essentials: [
-                    'Quiet space to focus',
-                    'Understanding of the 4-4-4-4 pattern',
-                    'Practice in non-stressful situations first'
-                ],
-                firstStep: 'Practice box breathing for 2 minutes while sitting comfortably.',
-                practiceTask: 'Use box breathing to calm yourself before a potentially stressful situation.',
-                actionChallenge: 'Incorporate box breathing into your daily routine for stress management.',
-                learningTips: [
-                    'Practice regularly so it becomes automatic when needed',
-                    'Combine with visualization for enhanced effect',
-                    'Use discreetly in stressful situations',
-                    'Experiment with different count patterns'
-                ],
-                prerequisites: ['Basic breathing awareness', 'Willingness to practice regularly'],
-                measurableOutcomes: [
-                    'Quickly reduce anxiety in stressful situations',
-                    'Improve focus and mental clarity',
-                    'Lower blood pressure and heart rate',
-                    'Develop better stress management skills'
-                ],
-                whyLearn: 'Box breathing is a powerful, portable technique for immediate stress relief that requires no equipment and can be done anywhere.',
-                beginnerTrap: 'Holding breath too long and causing discomfort. Start with comfortable intervals.',
+                time: '2 minutes',
+                category: 'wellness',
+                whyLearn: 'Anxiety and stress kill productivity and happiness. This scientifically-proven method activates your parasympathetic nervous system in 2 minutes. Use before presentations, interviews, or anytime you need instant calm.',
+                beginnerTrap: 'Not breathing deeply enough or holding breath too long. The 4-4-4-4 rhythm is key.',
                 resources: [
-                    {type: 'video', title: 'Box Breathing Guide', url: 'https://www.youtube.com/watch?v=tEmt1Znux58'},
-                    {type: 'article', title: 'Healthline Box Breathing Explanation', url: 'https://www.healthline.com/health/box-breathing'},
-                    {type: 'app', title: 'Breathe apps with visual guides', url: 'https://apps.apple.com/us/app/breathe-simple-breathing-tool/id1048512973'}
+                    {type: 'pattern', title: 'The pattern: Inhale 4 counts → Hold 4 → Exhale 4 → Hold 4 → Repeat', url: '#'},
+                    {type: 'tool', title: 'Calm breathing tool (free)', url: 'https://www.calm.com/breathe'},
+                    {type: 'app', title: '"Breathwrk" or "Prana Breath"', url: '#'},
+                    {type: 'exercise', title: 'Do 4 rounds right now while reading this', url: '#'}
+                ],
+                tips: [
+                    'Before presentations, during anxiety, before bed, after conflict',
+                    'Practice daily to make it an automatic response to stress',
+                    'Focus on the counting to distract from anxious thoughts',
+                    'Use it anytime you need to reset your nervous system'
                 ]
             },
             {
-                id: 'daily-stretching-routine',
+                id: 'daily-stretching',
                 title: 'Daily Stretching Routine',
-                description: 'Develop flexibility, reduce muscle tension, and improve mobility with consistent stretching.',
+                description: 'Undo damage from sitting all day. Improve flexibility, reduce pain, and feel better in just 10 minutes.',
                 level: 'beginner',
-                timeTag: '15 min',
-                category: 'health',
-                icon: '🤸',
-                essentials: [
-                    'Comfortable clothing',
-                    'Yoga mat or soft surface',
-                    'Consistent time each day'
-                ],
-                firstStep: 'Perform a 5-minute full-body stretch focusing on major muscle groups.',
-                practiceTask: 'Follow a guided stretching video daily for one week.',
-                actionChallenge: 'Develop and maintain a personalized 15-minute daily stretching routine for 30 days.',
-                learningTips: [
-                    'Focus on breathing deeply during stretches',
-                    'Don\'t bounce—hold stretches steadily',
-                    'Listen to your body and avoid pain',
-                    'Be consistent rather than intense'
-                ],
-                prerequisites: ['Basic mobility', 'No acute injuries'],
-                measurableOutcomes: [
-                    'Improve flexibility and range of motion',
-                    'Reduce muscle stiffness and soreness',
-                    'Improve posture',
-                    'Enhance overall physical well-being'
-                ],
-                whyLearn: 'Regular stretching improves mobility, reduces injury risk, and can alleviate chronic pain from sedentary lifestyles.',
-                beginnerTrap: 'Pushing too hard and causing injury. Flexibility develops gradually over time.',
+                time: '10 min/day',
+                category: 'wellness',
+                whyLearn: 'Sitting is killing your back, hips, and posture. 10 minutes of stretching daily prevents years of chronic pain and thousands in medical bills. You\'ll feel better immediately - more energy, less stiffness, better sleep. No equipment needed.',
+                beginnerTrap: 'Pushing too hard and causing injury. Stretching should feel good, not painful.',
                 resources: [
-                    {type: 'video', title: 'Yoga with Adriene - Foundations of Yoga', url: 'https://www.youtube.com/watch?v=v7AYKMP6rOE'},
-                    {type: 'app', title: 'Down Dog Stretching App', url: 'https://www.downdogapp.com/'},
-                    {type: 'program', title: 'Starting Stretching by Phraktured', url: 'https://drive.google.com/file/d/0BxNailN2jH8rR1p6cjJrLW9UY2c/view'}
+                    {type: 'video', title: '10-minute full body stretch', url: 'https://www.youtube.com/watch?v=g_tea8ZNk5A'},
+                    {type: 'app', title: '"StretchIt" or "Pliability"', url: '#'},
+                    {type: 'focus', title: 'Focus areas: Hip flexors, hamstrings, shoulders, neck', url: '#'},
+                    {type: 'timing', title: 'Right after waking up or before bed (set a reminder!)', url: '#'}
+                ],
+                tips: [
+                    'Hold each stretch for 30 seconds, breathe deeply, never bounce',
+                    'Consistency beats intensity',
+                    'Listen to your body - some tightness is normal, sharp pain means back off',
+                    'Make it a daily habit like brushing your teeth'
                 ]
             },
             {
                 id: 'proper-posture',
                 title: 'Proper Posture',
-                description: 'Develop body awareness and alignment habits to prevent pain and improve presence.',
-                level: 'beginner',
-                timeTag: '5 min',
-                category: 'health',
-                icon: '🚶',
-                essentials: [
-                    'Body awareness',
-                    'Ergonomic workspace setup',
-                    'Posture reminders'
-                ],
-                firstStep: 'Assess your current sitting and standing posture in a mirror.',
-                practiceTask: 'Set hourly reminders to check and correct your posture throughout the day.',
-                actionChallenge: 'Maintain conscious posture practice for one full week until habits begin to form.',
-                learningTips: [
-                    'Set up an ergonomic workspace',
-                    'Strengthen core and back muscles',
-                    'Take frequent breaks from sitting',
-                    'Practice posture checks at transition points in your day'
-                ],
-                prerequisites: ['Basic body awareness', 'Willingness to change habits'],
-                measurableOutcomes: [
-                    'Reduce back and neck pain',
-                    'Improve breathing and circulation',
-                    'Project more confidence in professional settings',
-                    'Prevent long-term postural issues'
-                ],
-                whyLearn: 'Good posture prevents chronic pain, improves breathing and digestion, and projects confidence in social and professional situations.',
-                beginnerTrap: 'Trying to maintain perfect posture constantly, which leads to tension. Good posture should feel natural and supported.',
-                resources: [
-                    {type: 'video', title: 'Athlean-X - Perfect Posture', url: 'https://www.youtube.com/watch?v=U3HlEF_E9P4'},
-                    {type: 'app', title: 'Posture reminders apps', url: 'https://apps.apple.com/us/app/posture-reminder-break-timer/id1536718198'},
-                    {type: 'exercise', title: 'Posture-correcting exercises', url: 'https://www.healthline.com/health/fitness-exercise/posture-exercises'}
-                ]
-            },
-            {
-                id: 'home-workout-fundamentals',
-                title: 'Home Workout Fundamentals',
-                description: 'Build strength and fitness without gym equipment using bodyweight exercises.',
-                level: 'beginner',
-                timeTag: '20 min',
-                category: 'health',
-                icon: '🏠',
-                essentials: [
-                    'Comfortable workout clothes',
-                    'Clear space for movement',
-                    'Water bottle',
-                    'Yoga mat (optional)'
-                ],
-                firstStep: 'Do 10 push-ups, 15 bodyweight squats, and a 30-second plank.',
-                practiceTask: 'Complete a 15-minute full-body workout with 3 rounds of basic exercises.',
-                actionChallenge: 'Follow a 30-day home workout challenge and track your progress.',
-                learningTips: [
-                    'Focus on proper form over quantity',
-                    'Start with easier variations and progress gradually',
-                    'Combine strength, cardio, and flexibility exercises',
-                    'Listen to your body and rest when needed'
-                ],
-                prerequisites: ['Basic mobility', 'Medical clearance if needed'],
-                measurableOutcomes: [
-                    'Improve overall fitness and energy levels',
-                    'Build consistent exercise habits',
-                    'Save money on gym memberships',
-                    'Develop body awareness and control'
-                ],
-                whyLearn: 'Regular exercise improves physical and mental health, boosts energy, and reduces stress. Home workouts make fitness accessible and convenient.',
-                beginnerTrap: 'Doing too much too soon and getting injured or burned out.',
-                resources: [
-                    {type: 'video', title: 'Athlean-X - Perfect Home Workout', url: 'https://www.youtube.com/watch?v=U3HlEF_E9P4'},
-                    {type: 'video', title: 'FitnessBlender - Beginner Home Workouts', url: 'https://www.youtube.com/user/FitnessBlender'},
-                    {type: 'course', title: 'NHS - Strength and Flex', url: 'https://www.nhs.uk/live-well/exercise/strength-and-flexibility-exercise-plan/'}
-                ]
-            },
-            {
-                id: 'mobility-flexibility',
-                title: 'Mobility & Flexibility',
-                description: 'Improve joint health, movement quality, and reduce injury risk through targeted mobility work.',
-                level: 'beginner',
-                timeTag: '15 min',
-                category: 'health',
-                icon: '🧘',
-                essentials: [
-                    'Comfortable clothing that allows movement',
-                    'Yoga mat or soft surface',
-                    'Foam roller (optional)'
-                ],
-                firstStep: 'Perform a simple 5-minute dynamic stretching routine focusing on major joints.',
-                practiceTask: 'Test your current flexibility in key areas (hamstrings, hips, shoulders) and track improvements.',
-                actionChallenge: 'Complete a 10-minute mobility routine daily for 21 days and document changes in movement quality.',
-                learningTips: [
-                    'Focus on controlled movements rather than forcing stretches',
-                    'Breathe deeply during stretches to enhance relaxation',
-                    'Consistency matters more than intensity',
-                    'Target tight areas but maintain full-body balance'
-                ],
-                prerequisites: ['Basic body awareness', 'No acute injuries'],
-                measurableOutcomes: [
-                    'Improve posture and movement efficiency',
-                    'Reduce muscle stiffness and pain',
-                    'Enhance sports performance and recovery',
-                    'Maintain functional independence as you age'
-                ],
-                whyLearn: 'Good mobility is foundational to movement quality, injury prevention, and long-term physical health.',
-                beginnerTrap: 'Comparing your flexibility to others instead of focusing on your own progress.',
-                resources: [
-                    {type: 'video', title: 'Tom Merrick - Full Body Mobility Routine', url: 'https://www.youtube.com/watch?v=JHn2od5kNI4'},
-                    {type: 'platform', title: 'GOWOD Mobility App', url: 'https://gowod.app/'},
-                    {type: 'book', title: 'Becoming a Supple Leopard by Kelly Starrett', url: 'https://www.amazon.com/Becoming-Supple-Leopard-2nd-Performance/dp/1628600837'}
-                ]
-            },
-            {
-                id: 'cooking-basics',
-                title: 'Cooking Basics',
-                description: 'Master fundamental cooking techniques to prepare healthy, delicious meals.',
-                level: 'beginner',
-                timeTag: '60 min',
-                category: 'health',
-                icon: '👨‍🍳',
-                essentials: [
-                    'Basic kitchen equipment (knife, cutting board, pans)',
-                    'Fresh ingredients',
-                    'Simple recipes to start'
-                ],
-                firstStep: 'Learn proper knife skills and practice dicing an onion safely.',
-                practiceTask: 'Cook a complete balanced meal (protein, vegetable, carbohydrate) from scratch.',
-                actionChallenge: 'Plan and prepare meals for an entire week, including shopping and prep.',
-                learningTips: [
-                    'Master a few basic techniques before trying complex recipes',
-                    'Taste your food as you cook and adjust seasoning',
-                    'Keep your workspace clean and organized',
-                    'Don\'t be afraid to make mistakes - it\'s part of learning'
-                ],
-                prerequisites: ['Basic food safety knowledge', 'Access to kitchen equipment'],
-                measurableOutcomes: [
-                    'Prepare healthy meals independently',
-                    'Save money by cooking at home',
-                    'Control ingredients for dietary needs',
-                    'Impress friends and family with cooking skills'
-                ],
-                whyLearn: 'Cooking is a fundamental life skill that improves health, saves money, and can be deeply satisfying.',
-                beginnerTrap: 'Starting with overly complicated recipes instead of mastering fundamentals.',
-                resources: [
-                    {type: 'video', title: 'Basics with Babish', url: 'https://www.youtube.com/watch?v=ISdKFAp8hTs'},
-                    {type: 'course', title: 'Skillshare - Cooking Fundamentals', url: 'https://www.skillshare.com/'},
-                    {type: 'book', title: 'Salt, Fat, Acid, Heat by Samin Nosrat', url: 'https://www.amazon.com/Salt-Fat-Acid-Heat-Mastering/dp/1476753830'}
-                ]
-            },
-            {
-                id: 'create-workout-routine',
-                title: 'Create Your Workout Routine',
-                description: 'Design effective exercise programs tailored to your goals, equipment, and schedule.',
+                description: 'Fix your posture, fix your back pain. Most of us are slowly destroying our spine with poor posture.',
                 level: 'intermediate',
-                timeTag: '60 min',
-                category: 'health',
-                icon: '💪',
-                essentials: [
-                    'Understand your fitness goals (strength, hypertrophy, endurance)',
-                    'Assess available equipment and time',
-                    'Learn basic exercise principles'
-                ],
-                firstStep: 'Define your primary fitness goal and choose 3-5 key exercises that support it.',
-                practiceTask: 'Create a 3-day weekly workout split targeting different muscle groups.',
-                actionChallenge: 'Design and follow a 4-week progressive overload program, tracking your results.',
-                learningTips: [
-                    'Balance push and pull movements',
-                    'Include compound exercises in every workout',
-                    'Progressively increase intensity over time',
-                    'Listen to your body and allow for recovery'
-                ],
-                prerequisites: ['Basic understanding of exercise form', 'Knowledge of your physical limitations'],
-                measurableOutcomes: [
-                    'Design personalized workout plans for any goal',
-                    'Optimize your time in the gym',
-                    'Achieve specific fitness targets efficiently',
-                    'Help others with their fitness programming'
-                ],
-                whyLearn: 'Understanding workout programming helps you train more effectively, prevent plateaus, and achieve your fitness goals faster.',
-                beginnerTrap: 'Copying advanced bodybuilder routines instead of starting with fundamentals appropriate for your level.',
+                time: 'Constant practice',
+                category: 'wellness',
+                whyLearn: 'Bad posture causes back pain, neck pain, headaches, reduced lung capacity, and makes you look less confident. Good posture is free, works immediately, and affects how people perceive you professionally and socially.',
+                beginnerTrap: 'Trying to maintain perfect posture all at once instead of building the habit gradually.',
                 resources: [
-                    {type: 'video', title: 'Jeff Nippard - Science Applied Training', url: 'https://www.youtube.com/watch?v=PB0l1kEYoE4'},
-                    {type: 'book', title: 'The Muscle & Strength Pyramids', url: 'https://www.amazon.com/Muscle-Strength-Pyramid-Training-2nd/dp/0980018406'},
-                    {type: 'platform', title: 'Stronger by Science Program Bundle', url: 'https://www.strongerbyscience.com/strength-training-programs-hypertography-training-programs/'}
-                ]
-            },
-            {
-                id: 'create-diet-plan',
-                title: 'Create Your Diet Plan',
-                description: 'Build personalized nutrition plans for weight loss, muscle gain, or performance.',
-                level: 'intermediate',
-                timeTag: '60 min',
-                category: 'health',
-                icon: '🥗',
-                essentials: [
-                    'Understand macronutrients and their functions',
-                    'Calculate your maintenance calories',
-                    'Identify food preferences and restrictions'
+                    {type: 'video', title: 'Perfect posture in 5 steps', url: 'https://www.youtube.com/watch?v=RqcOCBb4arc'},
+                    {type: 'guide', title: 'Ergonomic workstation guide', url: 'https://www.osha.gov/etools/computer-workstations'},
+                    {type: 'app', title: '"Posture Reminder" (sends alerts every hour)', url: '#'},
+                    {type: 'test', title: 'Wall test: Stand with back to wall, heels touching, head/shoulders/butt against wall - that\'s correct posture', url: '#'}
                 ],
-                firstStep: 'Calculate your daily calorie needs based on your goals and activity level.',
-                practiceTask: 'Plan 3 days of meals that hit specific macronutrient targets.',
-                actionChallenge: 'Follow your custom meal plan for 2 weeks, track results, and make adjustments based on progress.',
-                learningTips: [
-                    'Focus on whole foods for nutrient density',
-                    'Plan for flexibility to maintain adherence',
-                    'Include foods you enjoy to sustain long-term',
-                    'Adjust based on progress, not perfection'
-                ],
-                prerequisites: ['Basic understanding of nutrition', 'Knowledge of your dietary restrictions'],
-                measurableOutcomes: [
-                    'Create effective meal plans for any goal',
-                    'Understand how to adjust nutrition based on progress',
-                    'Save money by planning meals efficiently',
-                    'Develop sustainable eating habits'
-                ],
-                whyLearn: 'Proper nutrition is fundamental to achieving fitness goals, and personalized plans are more effective than generic diets.',
-                beginnerTrap: 'Being too restrictive, which leads to burnout and rebound eating. Sustainability is key.',
-                resources: [
-                    {type: 'video', title: 'Renaissance Periodization - Dieting 101', url: 'https://www.youtube.com/watch?v=6VwSvye-k-k'},
-                    {type: 'book', title: 'The Renaissance Diet 2.0', url: 'https://www.amazon.com/Renaissance-Diet-2-0-Science-Based-Fat-Loss/dp/1732541608'},
-                    {type: 'course', title: 'Precision Nutrition - Nutrition Certification', url: 'https://www.precisionnutrition.com/nutrition-certification'}
-                ]
-            },
-            {
-                id: 'sleep-optimization',
-                title: 'Sleep Optimization',
-                description: 'Improve sleep quality and duration through science-backed habits and environment adjustments.',
-                level: 'beginner',
-                timeTag: '30 min',
-                category: 'health',
-                icon: '😴',
-                essentials: [
-                    'Understanding of sleep cycles',
-                    'Consistent sleep schedule',
-                    'Sleep-conducive environment'
-                ],
-                firstStep: 'Track your current sleep patterns for one week using a sleep diary or app.',
-                practiceTask: 'Implement a consistent bedtime routine for 7 consecutive days.',
-                actionChallenge: 'Optimize your sleep environment and habits for 30 days and track changes in energy and mood.',
-                learningTips: [
-                    'Maintain consistent sleep and wake times',
-                    'Create a dark, cool, and quiet sleep environment',
-                    'Avoid screens and stimulating activities before bed',
-                    'Develop a relaxing pre-sleep routine'
-                ],
-                prerequisites: ['Willingness to change sleep habits', 'Ability to control sleep environment'],
-                measurableOutcomes: [
-                    'Improve sleep quality and duration',
-                    'Increase daytime energy and focus',
-                    'Enhance mood and emotional regulation',
-                    'Support overall health and recovery'
-                ],
-                whyLearn: 'Quality sleep is foundational to physical health, mental performance, and emotional well-being.',
-                beginnerTrap: 'Trying to implement all sleep optimization strategies at once. Focus on one or two changes at a time.',
-                resources: [
-                    {type: 'book', title: 'Why We Sleep by Matthew Walker', url: 'https://www.amazon.com/Why-We-Sleep-Unlocking-Dreams/dp/1501144316'},
-                    {type: 'app', title: 'Sleep Cycle alarm clock', url: 'https://www.sleepcycle.com/'},
-                    {type: 'guide', title: 'NIH Sleep Hygiene Guide', url: 'https://www.nhlbi.nih.gov/health-topics/sleep-deprivation-and-deficiency'}
+                tips: [
+                    'Set hourly phone reminders',
+                    'Strengthen your core muscles - they\'re the foundation of good posture',
+                    'Adjust your workstation ergonomics',
+                    'Practice mindfulness of your posture throughout the day'
                 ]
             },
 
-            // Languages
+            // Creative Skills
             {
-                id: 'english',
-                title: 'English',
-                description: 'Learn the world\'s most widely spoken second language for business and travel.',
+                id: 'basic-drawing',
+                title: 'Basic Drawing',
+                description: 'Learn to see and draw what you observe. You don\'t need talent, just practice.',
                 level: 'beginner',
-                timeTag: '24+ Hours',
-                category: 'languages',
-                icon: '🇬🇧',
-                essentials: [
-                    'Language learning app (Duolingo, Babbel)',
-                    'Notebook for vocabulary',
-                    'Access to English media (movies, music)'
-                ],
-                firstStep: 'Learn 10 basic greetings and common phrases in English.',
-                practiceTask: 'Have a simple 3-sentence conversation introducing yourself.',
-                actionChallenge: 'Watch a 5-minute English video with subtitles and try to understand the main points.',
-                learningTips: [
-                    'Practice a little every day rather than long sessions occasionally',
-                    'Listen to English music and watch movies with subtitles',
-                    'Don\'t be afraid to make mistakes - it\'s part of learning',
-                    'Find a language partner for conversation practice'
-                ],
-                prerequisites: ['Basic literacy in your native language'],
-                measurableOutcomes: [
-                    'Hold basic conversations in English',
-                    'Understand English media without translation',
-                    'Improve career opportunities in international companies',
-                    'Travel to English-speaking countries more confidently'
-                ],
-                whyLearn: 'English is the global language of business, science, and travel. Knowing English opens up opportunities worldwide.',
-                beginnerTrap: 'Trying to learn complex grammar before mastering basic conversation.',
+                time: '20 min/day',
+                category: 'creative',
+                whyLearn: 'Improves observation skills, creativity, and visual thinking. Useful for design, communication, and problem-solving. Plus it\'s meditative and fun. Anyone can learn to draw.',
+                beginnerTrap: 'Expecting to create masterpieces immediately. Drawing is a skill that develops gradually with practice.',
                 resources: [
-                    {type: 'video', title: 'BBC Learning English', url: 'https://www.youtube.com/user/bbclearningenglish'},
-                    {type: 'video', title: 'English with Lucy', url: 'https://www.youtube.com/c/EnglishwithLucy'},
-                    {type: 'course', title: 'British Council - English Online', url: 'https://learnenglish.britishcouncil.org/'}
+                    {type: 'course', title: 'Draw a Box - Structured from zero', url: 'https://drawabox.com/'},
+                    {type: 'tutorials', title: 'Proko - Professional art instruction', url: 'https://www.youtube.com/c/ProkoTV'},
+                    {type: 'book', title: '"Drawing on the Right Side of the Brain" by Betty Edwards', url: '#'},
+                    {type: 'exercise', title: 'Draw your hand for 5 minutes, looking only at your hand (not the paper)', url: '#'}
                 ],
-                languageLevels: [
-                    {level: 'A1', whyLearn: 'Basic communication for travel and simple interactions', tools: ['Duolingo', 'Phrasebook'], howToStart: 'Learn greetings, numbers, and basic questions'},
-                    {level: 'A2', whyLearn: 'Handle simple conversations and understand basic texts', tools: ['Simple stories', 'Language apps'], howToStart: 'Build vocabulary and practice simple sentences'},
-                    {level: 'B1', whyLearn: 'Communicate effectively in most everyday situations', tools: ['Graded readers', 'Conversation partners'], howToStart: 'Practice speaking and listening regularly'},
-                    {level: 'B2', whyLearn: 'Work in English-speaking environments and understand complex texts', tools: ['News articles', 'Podcasts'], howToStart: 'Engage with authentic materials and formal writing'},
-                    {level: 'C1', whyLearn: 'Function at a professional level and understand nuance', tools: ['Academic texts', 'Debates'], howToStart: 'Study specialized vocabulary and complex grammar'},
-                    {level: 'C2', whyLearn: 'Achieve near-native fluency for advanced academic or professional use', tools: ['Literature', 'Technical documents'], howToStart: 'Immerse in the language completely'}
+                tips: [
+                    'Focus on seeing, not just drawing',
+                    'Observe shapes, values, and relationships between objects',
+                    'Embrace mistakes - they\'re part of the learning process',
+                    'Practice regularly rather than in long sessions'
                 ]
             },
             {
-                id: 'spanish',
-                title: 'Spanish',
-                description: 'Learn the second most spoken native language worldwide for travel and cultural connection.',
-                level: 'beginner',
-                timeTag: '24+ Hours',
-                category: 'languages',
-                icon: '🇪🇸',
-                essentials: [
-                    'Language learning app',
-                    'Spanish music and media',
-                    'Practice with native speakers if possible'
-                ],
-                firstStep: 'Learn basic greetings and the Spanish alphabet with pronunciation.',
-                practiceTask: 'Introduce yourself in Spanish including your name, nationality, and occupation.',
-                actionChallenge: 'Have a 5-minute conversation with a native speaker or language partner.',
-                learningTips: [
-                    'Focus on pronunciation early - Spanish is phonetic',
-                    'Practice gender agreement from the beginning',
-                    'Learn high-frequency vocabulary first',
-                    'Immerse yourself with Spanish media'
-                ],
-                prerequisites: ['Basic literacy in your native language'],
-                measurableOutcomes: [
-                    'Communicate in Spanish-speaking countries',
-                    'Access Spanish literature, music, and film',
-                    'Enhance career opportunities in translation or international business',
-                    'Connect with over 500 million Spanish speakers worldwide'
-                ],
-                whyLearn: 'Spanish is spoken by over 500 million people worldwide and is valuable for business, travel, and cultural exchange.',
-                beginnerTrap: 'Getting overwhelmed by verb conjugations early on. Focus on common regular verbs first.',
+                id: 'photography-composition',
+                title: 'Photography Composition',
+                description: 'Take better photos with your phone. Composition matters more than equipment.',
+                level: 'intermediate',
+                time: '1 hour',
+                category: 'creative',
+                whyLearn: 'Better photos for social media, memories, and creative expression. Can lead to freelance work or side income. Everyone has a camera now - learn to use it well.',
+                beginnerTrap: 'Thinking you need expensive equipment to take good photos. Composition and lighting matter more than camera quality.',
                 resources: [
-                    {type: 'video', title: 'Butterfly Spanish', url: 'https://www.youtube.com/user/ButterflySpanishola'},
-                    {type: 'course', title: 'Duolingo Spanish', url: 'https://www.duolingo.com/course/es/en/Learn-Spanish'},
-                    {type: 'platform', title: 'SpanishDict', url: 'https://www.spanishdict.com/'}
+                    {type: 'course', title: 'Reddit Photoclass', url: 'https://www.reddit.com/r/photoclass/'},
+                    {type: 'tutorials', title: 'Peter McKinnon - Engaging tutorials', url: 'https://www.youtube.com/@PeterMcKinnon'},
+                    {type: 'course', title: 'iPhone photography course', url: 'https://www.youtube.com/watch?v=sXEmCup5pFk'},
+                    {type: 'challenge', title: 'Take 10 photos using rule of thirds today', url: '#'}
                 ],
-                languageLevels: [
-                    {level: 'A1', whyLearn: 'Basic travel communication and simple interactions', tools: ['Duolingo', 'Memrise'], howToStart: 'Learn greetings, numbers, and essential phrases'},
-                    {level: 'A2', whyLearn: 'Handle simple conversations about familiar topics', tools: ['Simple stories', 'Language exchange apps'], howToStart: 'Build vocabulary and practice present tense'},
-                    {level: 'B1', whyLearn: 'Travel independently and have meaningful conversations', tools: ['Graded readers', 'Conversation practice'], howToStart: 'Learn past tenses and expand vocabulary'},
-                    {level: 'B2', whyLearn: 'Work in Spanish environments and understand native content', tools: ['News', 'Podcasts', 'TV shows'], howToStart: 'Practice with authentic materials and complex grammar'},
-                    {level: 'C1', whyLearn: 'Function professionally and understand subtle nuances', tools: ['Literature', 'Academic texts'], howToStart: 'Master subjunctive and specialized vocabulary'},
-                    {level: 'C2', whyLearn: 'Achieve near-native fluency for advanced professional use', tools: ['Complex literature', 'Technical documents'], howToStart: 'Complete immersion and specialized study'}
-                ]
-            },
-            {
-                id: 'french',
-                title: 'French',
-                description: 'Learn the language of diplomacy, culture, and cuisine spoken on five continents.',
-                level: 'beginner',
-                timeTag: '24+ Hours',
-                category: 'languages',
-                icon: '🇫🇷',
-                essentials: [
-                    'Language learning app',
-                    'French music and films',
-                    'Pronunciation guide'
-                ],
-                firstStep: 'Learn basic greetings and practice French pronunciation rules.',
-                practiceTask: 'Order food in French at a restaurant or practice with a menu.',
-                actionChallenge: 'Watch a French film with subtitles and summarize the plot in French.',
-                learningTips: [
-                    'Master pronunciation early - focus on nasal sounds and the French R',
-                    'Learn gender with every new noun',
-                    'Practice common verb conjugations regularly',
-                    'Immerse yourself with French music and media'
-                ],
-                prerequisites: ['Basic literacy in your native language'],
-                measurableOutcomes: [
-                    'Travel confidently in French-speaking countries',
-                    'Access French literature, cinema, and culture',
-                    'Work in international organizations (UN, EU, UNESCO)',
-                    'Connect with over 300 million French speakers worldwide'
-                ],
-                whyLearn: 'French is an official language in 29 countries and is valuable for international relations, business, and cultural enrichment.',
-                beginnerTrap: 'Getting discouraged by complex pronunciation. Remember that even basic French is appreciated by native speakers.',
-                resources: [
-                    {type: 'video', title: 'Learn French with Alexa', url: 'https://www.youtube.com/user/learnfrenchwithalexa'},
-                    {type: 'course', title: 'Francais Authentique', url: 'https://www.francaisauthentique.com/'},
-                    {type: 'platform', title: 'TV5 Monde Apprendre', url: 'https://apprendre.tv5monde.com/'}
-                ],
-                languageLevels: [
-                    {level: 'A1', whyLearn: 'Basic travel communication and simple interactions', tools: ['Duolingo', 'Pronunciation guides'], howToStart: 'Learn greetings, numbers, and essential phrases with pronunciation'},
-                    {level: 'A2', whyLearn: 'Handle simple conversations and travel more independently', tools: ['Simple stories', 'Language apps'], howToStart: 'Build vocabulary and practice present tense conversations'},
-                    {level: 'B1', whyLearn: 'Travel comfortably and have simple conversations on familiar topics', tools: ['Graded readers', 'French media'], howToStart: 'Learn past tenses and expand everyday vocabulary'},
-                    {level: 'B2', whyLearn: 'Work in French environments and understand main ideas of complex texts', tools: ['News', 'Podcasts', 'Films'], howToStart: 'Engage with authentic materials and practice writing'},
-                    {level: 'C1', whyLearn: 'Function professionally and understand implicit meanings', tools: ['Literature', 'Academic texts'], howToStart: 'Master complex grammar and specialized vocabulary'},
-                    {level: 'C2', whyLearn: 'Achieve near-native fluency for advanced academic or diplomatic use', tools: ['Complex literature', 'Technical documents'], howToStart: 'Complete immersion and specialized domain study'}
-                ]
-            },
-            {
-                id: 'german',
-                title: 'German',
-                description: 'Learn Europe\'s most spoken native language for business, engineering, and cultural access.',
-                level: 'beginner',
-                timeTag: '24+ Hours',
-                category: 'languages',
-                icon: '🇩🇪',
-                essentials: [
-                    'Language learning app',
-                    'German music and podcasts',
-                    'Grammar reference'
-                ],
-                firstStep: 'Learn basic greetings and practice German article patterns (der, die, das).',
-                practiceTask: 'Introduce yourself and your family in German using basic sentences.',
-                actionChallenge: 'Read a short German news article and summarize the main points.',
-                learningTips: [
-                    'Master cases (nominative, accusative, dative) systematically',
-                    'Learn compound word patterns',
-                    'Practice sentence structure (V2 word order)',
-                    'Listen to German regularly for accent and rhythm'
-                ],
-                prerequisites: ['Basic literacy in your native language'],
-                measurableOutcomes: [
-                    'Work in German-speaking countries (strong economy)',
-                    'Access German literature, philosophy, and science',
-                    'Study at German universities (often tuition-free)',
-                    'Connect with over 130 million German speakers'
-                ],
-                whyLearn: 'German is the language of Europe\'s largest economy and provides access to world-class engineering, science, and philosophy.',
-                beginnerTrap: 'Being intimidated by long compound words. Break them down into components.',
-                resources: [
-                    {type: 'video', title: 'Easy German', url: 'https://www.youtube.com/c/EasyGerman'},
-                    {type: 'course', title: 'Deutsche Welle - Learn German', url: 'https://www.dw.com/en/learn-german/s-2469'},
-                    {type: 'platform', title: 'Goethe Institute Learning', url: 'https://www.goethe.de/en/spr/kup.html'}
-                ],
-                languageLevels: [
-                    {level: 'A1', whyLearn: 'Basic communication for travel and simple interactions', tools: ['Duolingo', 'Memrise'], howToStart: 'Learn greetings, numbers, and basic phrases with articles'},
-                    {level: 'A2', whyLearn: 'Handle simple conversations and understand basic texts', tools: ['Simple stories', 'Language apps'], howToStart: 'Build vocabulary and practice cases with simple sentences'},
-                    {level: 'B1', whyLearn: 'Travel independently and have conversations on familiar topics', tools: ['Graded readers', 'German media'], howToStart: 'Learn all cases and expand everyday vocabulary'},
-                    {level: 'B2', whyLearn: 'Work in German environments and understand complex texts', tools: ['News', 'Podcasts', 'German TV'], howToStart: 'Practice with authentic materials and complex grammar'},
-                    {level: 'C1', whyLearn: 'Function professionally and understand implicit cultural references', tools: ['Literature', 'Academic texts'], howToStart: 'Master complex grammar and specialized vocabulary'},
-                    {level: 'C2', whyLearn: 'Achieve near-native fluency for advanced academic or professional use', tools: ['Complex literature', 'Technical documents'], howToStart: 'Complete immersion and specialized domain study'}
-                ]
-            },
-            {
-                id: 'japanese',
-                title: 'Japanese',
-                description: 'Learn Japanese for business, technology, and deep cultural appreciation.',
-                level: 'beginner',
-                timeTag: '24+ Hours',
-                category: 'languages',
-                icon: '🇯🇵',
-                essentials: [
-                    'Hiragana and Katakana charts',
-                    'Language learning app',
-                    'Japanese media (anime, drama, music)'
-                ],
-                firstStep: 'Learn Hiragana characters and basic greetings with proper pronunciation.',
-                practiceTask: 'Write a simple self-introduction in Hiragana and read it aloud.',
-                actionChallenge: 'Watch a short Japanese video with subtitles and identify 10 words you recognize.',
-                learningTips: [
-                    'Master Hiragana and Katakana before learning Kanji',
-                    'Practice pitch accent from the beginning',
-                    'Learn sentence structure (SOV) and particles',
-                    'Immerse yourself with Japanese media regularly'
-                ],
-                prerequisites: ['Basic literacy in your native language', 'Patience for character learning'],
-                measurableOutcomes: [
-                    'Work in Japanese companies or with Japanese clients',
-                    'Access Japanese technology, gaming, and anime culture',
-                    'Travel deeply in Japan beyond tourist areas',
-                    'Understand one of the world\'s most unique cultures'
-                ],
-                whyLearn: 'Japanese provides access to a unique culture, advanced technology sectors, and business opportunities with the world\'s third-largest economy.',
-                beginnerTrap: 'Trying to learn Kanji before mastering Hiragana and Katakana. Build foundation first.',
-                resources: [
-                    {type: 'video', title: 'Japanese Ammo with Misa', url: 'https://www.youtube.com/c/JapaneseammowithMisa'},
-                    {type: 'course', title: 'Tae Kim\'s Guide to Japanese', url: 'https://guidetojapanese.org/learn/'},
-                    {type: 'platform', title: 'WaniKani (for Kanji)', url: 'https://www.wanikani.com/'}
-                ],
-                languageLevels: [
-                    {level: 'A1', whyLearn: 'Basic travel communication and read simple signs', tools: ['Hiragana/Katakana charts', 'Basic phrasebook'], howToStart: 'Learn Hiragana, Katakana and basic greetings'},
-                    {level: 'A2', whyLearn: 'Handle simple conversations and read basic texts', tools: ['Graded readers', 'Language apps'], howToStart: 'Learn basic Kanji and practice simple sentences'},
-                    {level: 'B1', whyLearn: 'Travel independently and have simple conversations', tools: ['Manga for learners', 'Japanese drama'], howToStart: 'Build Kanji knowledge and practice daily conversations'},
-                    {level: 'B2', whyLearn: 'Work in Japanese environments and understand everyday media', tools: ['News', 'Podcasts', 'TV shows'], howToStart: 'Learn Joyo Kanji and engage with authentic materials'},
-                    {level: 'C1', whyLearn: 'Function professionally and understand complex texts', tools: ['Newspapers', 'Literature', 'Academic texts'], howToStart: 'Master advanced Kanji and specialized vocabulary'},
-                    {level: 'C2', whyLearn: 'Achieve near-native fluency for advanced academic or business use', tools: ['Complex literature', 'Technical documents'], howToStart: 'Complete immersion and specialized domain study'}
-                ]
-            },
-            {
-                id: 'italian',
-                title: 'Italian',
-                description: 'Learn the language of art, music, and cuisine in one of Europe\'s most beautiful countries.',
-                level: 'beginner',
-                timeTag: '24+ Hours',
-                category: 'languages',
-                icon: '🇮🇹',
-                essentials: [
-                    'Language learning app',
-                    'Italian music and films',
-                    'Practice with pronunciation'
-                ],
-                firstStep: 'Learn basic greetings and practice Italian vowel sounds and pronunciation.',
-                practiceTask: 'Introduce yourself and describe your family in simple Italian sentences.',
-                actionChallenge: 'Order a complete meal in Italian at an Italian restaurant or practice with a menu.',
-                learningTips: [
-                    'Master pronunciation early - Italian is phonetic',
-                    'Learn gender with every noun',
-                    'Practice verb conjugations regularly',
-                    'Immerse yourself with Italian music and media'
-                ],
-                prerequisites: ['Basic literacy in your native language'],
-                measurableOutcomes: [
-                    'Travel comfortably in Italy',
-                    'Access Italian art, literature, and opera in original language',
-                    'Connect with Italian culture and heritage',
-                    'Enhance culinary experiences with Italian language knowledge'
-                ],
-                whyLearn: 'Italian opens doors to one of the world\'s richest cultural heritages in art, music, and cuisine.',
-                beginnerTrap: 'Getting confused by similar-sounding words with different meanings. Practice with context.',
-                resources: [
-                    {type: 'video', title: 'Learn Italian with Lucrezia', url: 'https://www.youtube.com/c/learnitalianwithlucrezia'},
-                    {type: 'course', title: 'Duolingo Italian', url: 'https://www.duolingo.com/course/it/en/Learn-Italian'},
-                    {type: 'platform', title: 'One World Italiano', url: 'https://oneworlditaliano.com/en/'}
-                ],
-                languageLevels: [
-                    {level: 'A1', whyLearn: 'Basic travel communication and simple interactions', tools: ['Duolingo', 'Phrasebook'], howToStart: 'Learn greetings, numbers, and essential phrases'},
-                    {level: 'A2', whyLearn: 'Handle simple conversations and understand basic texts', tools: ['Simple stories', 'Language apps'], howToStart: 'Build vocabulary and practice present tense'},
-                    {level: 'B1', whyLearn: 'Travel independently and have conversations on familiar topics', tools: ['Graded readers', 'Italian media'], howToStart: 'Learn past tenses and expand everyday vocabulary'},
-                    {level: 'B2', whyLearn: 'Work in Italian environments and understand main ideas of complex texts', tools: ['News', 'Podcasts', 'Films'], howToStart: 'Practice with authentic materials and complex grammar'},
-                    {level: 'C1', whyLearn: 'Function professionally and understand implicit meanings', tools: ['Literature', 'Academic texts'], howToStart: 'Master complex grammar and specialized vocabulary'},
-                    {level: 'C2', whyLearn: 'Achieve near-native fluency for advanced academic or professional use', tools: ['Complex literature', 'Technical documents'], howToStart: 'Complete immersion and specialized domain study'}
+                tips: [
+                    'Enable grid in your phone camera settings',
+                    'Use rule of thirds - place subjects on the intersections or lines',
+                    'Pay attention to lighting - golden hour (sunrise/sunset) provides the most flattering light',
+                    'Look for leading lines and interesting perspectives'
                 ]
             }
         ];
@@ -2847,44 +1255,11 @@
         let timerInterval;
         let timerSeconds = 0;
         let timerPaused = false;
-        let languageLevels = {}; // Store language levels
 
         // Initialize the app
         function init() {
-            loadLanguageLevels();
             renderSkillsByCategory();
             setupEventListeners();
-        }
-
-        // Load language levels from cookies
-        function loadLanguageLevels() {
-            const levelsCookie = getCookie('languageLevels');
-            if (levelsCookie) {
-                languageLevels = JSON.parse(levelsCookie);
-            }
-        }
-
-        // Save language levels to cookies
-        function saveLanguageLevels() {
-            setCookie('languageLevels', JSON.stringify(languageLevels), 365);
-        }
-
-        // Cookie helper functions
-        function setCookie(name, value, days) {
-            const expires = new Date();
-            expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
-            document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
-        }
-
-        function getCookie(name) {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for(let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
         }
 
         // Set up event listeners
@@ -2961,16 +1336,14 @@
         // Get category display info
         function getCategoryInfo(category) {
             const categories = {
-                'communication': { name: '🗣️ Communication Skills', icon: '🗣️' },
-                'memory': { name: '🧠 Memory Techniques', icon: '🧠' },
-                'learning': { name: '📚 Learning Methods', icon: '📚' },
-                'productivity': { name: '⚡ Productivity', icon: '⚡' },
-                'business': { name: '💼 Business Skills', icon: '💼' },
-                'technical': { name: '💻 Technical Skills', icon: '💻' },
-                'creative': { name: '🎨 Creative & Digital', icon: '🎨' },
-                'mind': { name: '🧠 Mind & Learning', icon: '🧠' },
-                'health': { name: '❤️ Health & Lifestyle', icon: '❤️' },
-                'languages': { name: '🌍 Languages', icon: '🌍' }
+                'communication': { name: 'Communication Skills', icon: '🗣️' },
+                'memory': { name: 'Memory Techniques', icon: '🧠' },
+                'learning': { name: 'Learning Methods', icon: '📚' },
+                'productivity': { name: 'Productivity', icon: '⚡' },
+                'business': { name: 'Business Skills', icon: '💼' },
+                'technical': { name: 'Technical Skills', icon: '💻' },
+                'wellness': { name: 'Health & Wellness', icon: '💪' },
+                'creative': { name: 'Creative Skills', icon: '🎨' }
             };
             
             return categories[category] || { name: category, icon: '📚' };
@@ -2987,34 +1360,13 @@
             return `
                 <div class="skill-card" data-id="${skill.id}" data-level="${skill.level}">
                     <div class="skill-header">
-                        <div class="skill-icon">${skill.icon}</div>
-                        <div class="skill-title-container">
-                            <h3 class="skill-title">${skill.title}</h3>
-                            <div class="skill-badges">
-                                <span class="time-badge">${skill.timeTag}</span>
-                                <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
-                            </div>
+                        <h3 class="skill-title">${skill.title}</h3>
+                        <div class="skill-badges">
+                            <span class="time-badge">${skill.time}</span>
+                            <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
                         </div>
                     </div>
                     <p class="skill-description">${skill.description}</p>
-                    
-                    <div class="skill-essentials">
-                        <div class="essentials-title"><i class="fas fa-tools"></i> Essentials</div>
-                        <ul class="essentials-list">
-                            ${skill.essentials.map(item => `<li>${item}</li>`).join('')}
-                        </ul>
-                    </div>
-                    
-                    <div class="first-step">
-                        <div class="first-step-title"><i class="fas fa-play-circle"></i> First Step</div>
-                        <p>${skill.firstStep}</p>
-                    </div>
-                    
-                    <div class="practice-task">
-                        <div class="practice-task-title"><i class="fas fa-dumbbell"></i> Practice Task</div>
-                        <p>${skill.practiceTask}</p>
-                    </div>
-                    
                     <div class="skill-meta">
                         <div class="skill-actions">
                             <button class="skill-action" onclick="openSkillModal('${skill.id}')">
@@ -3101,118 +1453,33 @@
             if (skill.level === 'intermediate') levelBadgeClass = 'intermediate';
             if (skill.level === 'advanced') levelBadgeClass = 'advanced';
             
-            // Build modal content
-            let modalContent = `
+            modalSkillContent.innerHTML = `
                 <div class="skill-header">
                     <div class="skill-badges">
-                        <span class="time-badge">${skill.timeTag}</span>
+                        <span class="time-badge">${skill.time}</span>
                         <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
                     </div>
                 </div>
                 
                 <p class="skill-description">${skill.description}</p>
                 
-                <div class="skill-essentials">
-                    <div class="essentials-title"><i class="fas fa-tools"></i> Essentials</div>
-                    <ul class="essentials-list">
-                        ${skill.essentials.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                </div>
-                
-                <div class="first-step">
-                    <div class="first-step-title"><i class="fas fa-play-circle"></i> First Step</div>
-                    <p>${skill.firstStep}</p>
-                </div>
-                
-                <div class="practice-task">
-                    <div class="practice-task-title"><i class="fas fa-dumbbell"></i> Practice Task</div>
-                    <p>${skill.practiceTask}</p>
-                </div>
-                
-                <div class="action-challenge">
-                    <div class="action-challenge-title"><i class="fas fa-flag-checkered"></i> Action Challenge</div>
-                    <p>${skill.actionChallenge}</p>
-                </div>
-            `;
-            
-            // Add prerequisites if they exist
-            if (skill.prerequisites && skill.prerequisites.length > 0) {
-                modalContent += `
-                    <div class="prerequisites">
-                        <div class="prerequisites-title"><i class="fas fa-clipboard-list"></i> Prerequisites</div>
-                        <ul class="essentials-list">
-                            ${skill.prerequisites.map(item => `<li>${item}</li>`).join('')}
-                        </ul>
-                    </div>
-                `;
-            }
-            
-            // Add learning tips
-            modalContent += `
-                <div class="tips-section">
-                    <div class="tips-title"><i class="fas fa-lightbulb"></i> Learning Tips</div>
-                    <ul class="tips-list">
-                        ${skill.learningTips.map(tip => `<li>${tip}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            
-            // Add measurable outcomes
-            modalContent += `
-                <div class="measurable-outcomes">
-                    <div class="measurable-outcomes-title"><i class="fas fa-chart-line"></i> Measurable Outcomes</div>
-                    <ul class="tips-list">
-                        ${skill.measurableOutcomes.map(outcome => `<li>${outcome}</li>`).join('')}
-                    </ul>
-                </div>
-            `;
-            
-            // Add beginner trap
-            modalContent += `
                 <div class="beginner-trap">
                     <div class="beginner-trap-title"><i class="fas fa-exclamation-triangle"></i> Common Beginner Mistake</div>
                     <p class="beginner-trap-text">${skill.beginnerTrap}</p>
                 </div>
-            `;
-            
-            // Add language level selector for language skills
-            if (skill.category === 'languages' && skill.languageLevels) {
-                const currentLevel = languageLevels[skill.id] || 'Not Learned';
-                modalContent += `
-                    <div class="tips-section">
-                        <div class="tips-title"><i class="fas fa-language"></i> Language Level</div>
-                        <p>Current level: <strong>${currentLevel}</strong></p>
-                        <div class="language-levels">
-                            ${skill.languageLevels.map(levelInfo => `
-                                <div class="language-level ${currentLevel === levelInfo.level ? 'selected' : ''}" 
-                                     onclick="setLanguageLevel('${skill.id}', '${levelInfo.level}')">
-                                    ${levelInfo.level}
-                                </div>
-                            `).join('')}
-                            <div class="language-level ${currentLevel === 'Not Learned' ? 'selected' : ''}" 
-                                 onclick="setLanguageLevel('${skill.id}', 'Not Learned')">
-                                Not Learned
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tips-section">
-                        <div class="tips-title"><i class="fas fa-info-circle"></i> Language Level Details</div>
-                        <div id="languageLevelDetails">
-                            ${currentLevel !== 'Not Learned' ? 
-                                skill.languageLevels.find(l => l.level === currentLevel) ? 
-                                    `<p><strong>Why learn ${currentLevel}:</strong> ${skill.languageLevels.find(l => l.level === currentLevel).whyLearn}</p>
-                                     <p><strong>How to start:</strong> ${skill.languageLevels.find(l => l.level === currentLevel).howToStart}</p>
-                                     <p><strong>Required tools:</strong> ${skill.languageLevels.find(l => l.level === currentLevel).tools.join(', ')}</p>` 
-                                : '' 
-                            : '<p>Select a level to see details</p>'}
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Add resources
-            modalContent += `
+                
+                <div class="tips-section">
+                    <div class="tips-title"><i class="fas fa-lightbulb"></i> Why Learn This</div>
+                    <p>${skill.whyLearn}</p>
+                </div>
+                
+                <div class="tips-section">
+                    <div class="tips-title"><i class="fas fa-star"></i> Learning Tips</div>
+                    <ul class="tips-list">
+                        ${skill.tips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                </div>
+                
                 <div class="tips-section">
                     <h3 class="tips-title"><i class="fas fa-book"></i> Learning Resources</h3>
                     <div class="resource-links">
@@ -3232,15 +1499,7 @@
                 </div>
             `;
             
-            modalSkillContent.innerHTML = modalContent;
             skillModal.classList.add('active');
-        }
-
-        // Set language level
-        function setLanguageLevel(skillId, level) {
-            languageLevels[skillId] = level;
-            saveLanguageLevels();
-            openSkillModal(skillId); // Refresh the modal to show updated level
         }
 
         // Close skill modal
@@ -3274,9 +1533,7 @@
                 'timing': 'clock',
                 'test': 'vial',
                 'tutorials': 'chalkboard-teacher',
-                'challenge': 'trophy',
-                'subreddit': 'reddit',
-                'engine': 'cogs'
+                'challenge': 'trophy'
             };
             
             return icons[type] || 'link';
