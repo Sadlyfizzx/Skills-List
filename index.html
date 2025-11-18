@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills Master 2025</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <style>
         * {
             margin: 0;
@@ -13,26 +15,30 @@
         }
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --accent: #f093fb;
-            --dark: #0a0e27;
-            --darker: #05071c;
+            --primary: #7c3aed;
+            --primary-light: #8b5cf6;
+            --primary-dark: #6d28d9;
+            --secondary: #06b6d4;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --darker: #0a0f1c;
             --light: #f8fafc;
-            --gray: #a0aec0;
+            --gray: #94a3b8;
             --success: #10b981;
             --warning: #f59e0b;
             --danger: #ef4444;
             --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(255, 255, 255, 0.1);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover: rgba(255, 255, 255, 0.08);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: var(--dark);
             color: var(--light);
             overflow-x: hidden;
             line-height: 1.6;
+            font-weight: 400;
         }
         
         .bg-animation {
@@ -54,7 +60,7 @@
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
             position: relative;
@@ -69,13 +75,15 @@
         }
         
         header h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             margin-bottom: 10px;
             animation: fadeInDown 0.8s ease;
+            letter-spacing: -0.02em;
         }
         
         @keyframes fadeInDown {
@@ -90,9 +98,12 @@
         }
         
         header p {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
             color: var(--gray);
             animation: fadeIn 1s ease 0.3s both;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         @keyframes fadeIn {
@@ -106,6 +117,9 @@
             flex-direction: column;
             gap: 15px;
             margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .search-box {
@@ -116,19 +130,20 @@
         .search-input {
             width: 100%;
             padding: 15px 50px 15px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(124, 58, 237, 0.3);
             border-radius: 50px;
             color: white;
             font-size: 1rem;
             transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
         }
         
         .search-input:focus {
             outline: none;
             border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
         }
         
         .search-input::placeholder {
@@ -153,8 +168,8 @@
         
         .control-btn {
             padding: 12px 20px;
-            background: rgba(102, 126, 234, 0.1);
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            background: rgba(124, 58, 237, 0.1);
+            border: 2px solid rgba(124, 58, 237, 0.3);
             border-radius: 25px;
             color: var(--primary);
             cursor: pointer;
@@ -167,21 +182,24 @@
             flex: 1;
             min-width: 150px;
             justify-content: center;
+            font-family: 'Inter', sans-serif;
         }
         
         .control-btn:hover {
-            background: rgba(102, 126, 234, 0.2);
+            background: rgba(124, 58, 237, 0.2);
             transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
         }
         
         .control-btn.primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
         }
         
         .control-btn.primary:hover {
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+            transform: translateY(-2px);
         }
         
         /* Filter Bar */
@@ -196,163 +214,44 @@
         
         .filter-btn {
             padding: 10px 20px;
-            background: rgba(102, 126, 234, 0.1);
-            border: 2px solid rgba(102, 126, 234, 0.3);
+            background: rgba(124, 58, 237, 0.1);
+            border: 2px solid rgba(124, 58, 237, 0.3);
             border-radius: 20px;
             color: var(--primary);
             cursor: pointer;
             transition: all 0.3s ease;
             font-weight: 600;
             font-size: 0.85rem;
+            font-family: 'Inter', sans-serif;
         }
         
         .filter-btn:hover {
-            background: rgba(102, 126, 234, 0.2);
+            background: rgba(124, 58, 237, 0.2);
             transform: translateY(-2px);
         }
         
         .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-color: var(--primary);
             color: white;
         }
         
-        /* Main Content Grid - UPDATED to single column */
+        /* Main Content */
         .main-content {
             display: flex;
             flex-direction: column;
-            gap: 25px;
-        }
-        
-        /* Sidebar - Now positioned at top */
-        .sidebar {
-            background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 20px;
-        }
-        
-        .sidebar-sections {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .sidebar-section {
-            margin-bottom: 0;
-        }
-        
-        .sidebar-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .sidebar-title {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .framework-steps {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .framework-step {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            padding: 15px;
-        }
-        
-        .framework-step h4 {
-            color: var(--accent);
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-        
-        .framework-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 8px;
-        }
-        
-        .framework-option {
-            padding: 8px 14px;
-            background: rgba(102, 126, 234, 0.1);
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            border-radius: 15px;
-            color: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.8rem;
-        }
-        
-        .framework-option:hover, .framework-option.selected {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .sidebar-btn {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border: none;
-            border-radius: 12px;
-            color: white;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
-        
-        .sidebar-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .quick-links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        
-        .quick-link {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            color: var(--light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .quick-link:hover {
-            background: rgba(102, 126, 234, 0.2);
-            transform: translateX(5px);
+            gap: 30px;
         }
         
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
         }
         
         @media (max-width: 768px) {
             .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar-sections {
                 grid-template-columns: 1fr;
             }
         }
@@ -361,7 +260,7 @@
             background: var(--card-bg);
             backdrop-filter: blur(10px);
             border: 1px solid var(--card-border);
-            border-radius: 15px;
+            border-radius: 16px;
             padding: 25px;
             transition: all 0.4s ease;
             position: relative;
@@ -369,27 +268,14 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-        }
-        
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .skill-card:hover::before {
-            left: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .skill-card:hover {
             transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+            background: var(--card-hover);
         }
         
         .skill-header {
@@ -405,6 +291,7 @@
             margin-bottom: 8px;
             font-weight: 700;
             flex: 1;
+            line-height: 1.3;
         }
         
         .skill-badges {
@@ -414,7 +301,7 @@
             margin-left: 10px;
         }
         
-        .time-badge, .level-badge, .type-badge {
+        .time-badge, .level-badge {
             padding: 5px 10px;
             border-radius: 15px;
             font-size: 0.75rem;
@@ -423,29 +310,25 @@
         }
         
         .time-badge {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
         }
         
-        .level-badge.quick {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
+        .level-badge.beginner {
+            background: linear-gradient(135deg, #10b981, #34d399);
         }
         
-        .level-badge.medium {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-        }
-        
-        .level-badge.long {
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-        }
-        
-        .type-badge {
+        .level-badge.intermediate {
             background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+        
+        .level-badge.advanced {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
         }
         
         .skill-description {
             color: var(--gray);
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             flex: 1;
         }
         
@@ -465,8 +348,8 @@
         
         .skill-action {
             padding: 8px 12px;
-            background: rgba(102, 126, 234, 0.1);
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.3);
             border-radius: 12px;
             color: var(--primary);
             cursor: pointer;
@@ -475,20 +358,21 @@
             display: flex;
             align-items: center;
             gap: 5px;
+            font-weight: 500;
         }
         
         .skill-action:hover {
-            background: rgba(102, 126, 234, 0.2);
+            background: rgba(124, 58, 237, 0.2);
         }
         
         .skill-action.primary {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             border: none;
         }
         
         .skill-action.primary:hover {
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
         }
         
         /* Modals & Overlays */
@@ -520,11 +404,12 @@
             border-radius: 20px;
             padding: 30px;
             width: 90%;
-            max-width: 600px;
+            max-width: 700px;
             max-height: 90vh;
             overflow-y: auto;
             transform: scale(0.9);
             transition: transform 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
         .modal.active .modal-content {
@@ -541,6 +426,7 @@
         .modal-title {
             font-size: 1.5rem;
             color: var(--primary);
+            font-weight: 700;
         }
         
         .close-modal {
@@ -561,7 +447,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             border-radius: 15px;
             padding: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -631,7 +517,7 @@
             align-items: center;
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+            border-bottom: 2px solid rgba(124, 58, 237, 0.3);
         }
         
         .category-icon {
@@ -641,10 +527,11 @@
         
         .category-title {
             font-size: 1.8rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--primary-light), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-weight: 700;
         }
         
         /* Utility Classes */
@@ -668,74 +555,42 @@
             animation: fadeIn 0.5s ease;
         }
         
-        .tag {
-            display: inline-block;
-            padding: 3px 8px;
-            background: rgba(102, 126, 234, 0.1);
-            border-radius: 10px;
-            font-size: 0.7rem;
-            color: var(--primary);
-            margin-right: 5px;
+        /* Resource Links */
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
         }
         
-        /* TED Section */
-        .ted-section {
-            background: rgba(245, 158, 11, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid var(--warning);
-        }
-        
-        .ted-title {
-            color: var(--warning);
-            font-weight: 700;
-            margin-bottom: 15px;
+        .resource-link {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .ted-levels {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .ted-level {
-            flex: 1;
-            min-width: 180px;
-            padding: 15px;
+            padding: 12px 15px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
-            cursor: pointer;
+            color: var(--light);
+            text-decoration: none;
             transition: all 0.3s ease;
         }
         
-        .ted-level:hover {
-            transform: translateY(-5px);
-            background: rgba(245, 158, 11, 0.2);
+        .resource-link:hover {
+            background: rgba(124, 58, 237, 0.2);
+            transform: translateX(5px);
         }
         
-        .ted-level h5 {
-            color: var(--warning);
-            margin-bottom: 8px;
-            font-size: 1rem;
-        }
-        
-        /* Chunking Section */
-        .chunking-section {
-            background: rgba(16, 185, 129, 0.1);
+        /* Tips Section */
+        .tips-section {
+            background: rgba(124, 58, 237, 0.1);
             border-radius: 12px;
             padding: 20px;
             margin: 20px 0;
-            border-left: 4px solid var(--success);
+            border-left: 4px solid var(--primary);
         }
         
-        .chunking-title {
-            color: var(--success);
+        .tips-title {
+            color: var(--primary);
             font-weight: 700;
             margin-bottom: 15px;
             display: flex;
@@ -744,65 +599,13 @@
             font-size: 1.2rem;
         }
         
-        .chunking-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
+        .tips-list {
+            padding-left: 20px;
         }
         
-        .chunking-option {
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        
-        .chunking-option h5 {
-            color: var(--success);
+        .tips-list li {
             margin-bottom: 8px;
-        }
-        
-        /* Recall Section */
-        .recall-section {
-            background: rgba(239, 68, 68, 0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid var(--danger);
-        }
-        
-        .recall-title {
-            color: var(--danger);
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .recall-questions {
-            margin-top: 15px;
-        }
-        
-        .recall-question {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
-        
-        .recall-answer {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
-            background: rgba(239, 68, 68, 0.2);
-            border-radius: 8px;
-            color: #fecaca;
-        }
-        
-        .recall-answer.active {
-            display: block;
+            line-height: 1.5;
         }
         
         /* Beginner Trap */
@@ -834,25 +637,22 @@
 
     <div class="container">
         <header>
-            <h1><i class="fas fa-rocket"></i> Skills Master 2025</h1>
-            <p>Transform yourself one skill at a time</p>
+            <h1><i class="fas fa-graduation-cap"></i> Skills Master 2025</h1>
+            <p>Master essential skills with guided learning paths</p>
         </header>
 
         <!-- App Controls -->
         <div class="app-controls">
             <div class="search-box">
-                <input type="text" class="search-input" id="searchInput" placeholder="Search skills...">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search for skills...">
                 <span class="search-icon"><i class="fas fa-search"></i></span>
             </div>
             <div class="control-buttons">
-                <button class="control-btn primary" id="frameworkBtn">
-                    <i class="fas fa-bullseye"></i> Skill Helper
-                </button>
-                <button class="control-btn" id="randomSkillBtn">
-                    <i class="fas fa-dice"></i> I'm Feeling Lucky
+                <button class="control-btn primary" id="randomSkillBtn">
+                    <i class="fas fa-random"></i> Random Skill
                 </button>
                 <button class="control-btn" id="timerBtn">
-                    <i class="fas fa-clock"></i> 15-Min Timer
+                    <i class="fas fa-hourglass-half"></i> Practice Timer
                 </button>
             </div>
         </div>
@@ -860,84 +660,13 @@
         <!-- Filter Bar -->
         <div class="filter-bar">
             <button class="filter-btn active" data-filter="all">All Skills</button>
-            <button class="filter-btn" data-filter="quick">Quick Wins</button>
-            <button class="filter-btn" data-filter="medium">Medium Term</button>
-            <button class="filter-btn" data-filter="long">Long Term</button>
-            <button class="filter-btn" data-filter="cheating">Feels Like Cheating</button>
+            <button class="filter-btn" data-filter="beginner">Beginner</button>
+            <button class="filter-btn" data-filter="intermediate">Intermediate</button>
+            <button class="filter-btn" data-filter="advanced">Advanced</button>
         </div>
 
-        <!-- Main Content - UPDATED: Single column layout -->
+        <!-- Main Content -->
         <div class="main-content">
-            <!-- Sidebar - Now positioned at top as a guidance section -->
-            <aside class="sidebar">
-                <div class="sidebar-sections">
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-compass"></i> Quick Start</h3>
-                        <div class="quick-links">
-                            <a href="#" class="quick-link" data-skill="active-listening">
-                                <i class="fas fa-comment-dots"></i>
-                                <span>Active Listening</span>
-                            </a>
-                            <a href="#" class="quick-link" data-skill="box-breathing">
-                                <i class="fas fa-wind"></i>
-                                <span>Box Breathing</span>
-                            </a>
-                            <a href="#" class="quick-link" data-skill="keyboard-shortcuts">
-                                <i class="fas fa-keyboard"></i>
-                                <span>Keyboard Shortcuts</span>
-                            </a>
-                            <a href="#" class="quick-link" data-skill="two-minute-rule">
-                                <i class="fas fa-hourglass-start"></i>
-                                <span>2-Minute Rule</span>
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-fire"></i> Today's Focus</h3>
-                        <div class="framework-steps">
-                            <div class="framework-step">
-                                <h4>Time Available</h4>
-                                <div class="framework-options">
-                                    <div class="framework-option" data-type="time" data-value="5">5min</div>
-                                    <div class="framework-option" data-type="time" data-value="30">30min</div>
-                                    <div class="framework-option" data-type="time" data-value="60">1hr+</div>
-                                </div>
-                            </div>
-                            
-                            <div class="framework-step">
-                                <h4>Energy Level</h4>
-                                <div class="framework-options">
-                                    <div class="framework-option" data-type="energy" data-value="low">Low</div>
-                                    <div class="framework-option" data-type="energy" data-value="medium">Medium</div>
-                                    <div class="framework-option" data-type="energy" data-value="high">High</div>
-                                </div>
-                            </div>
-                            
-                            <div class="framework-step">
-                                <h4>Learning Style</h4>
-                                <div class="framework-options">
-                                    <div class="framework-option" data-type="style" data-value="ted">TED Quick</div>
-                                    <div class="framework-option" data-type="style" data-value="chunked">Chunked</div>
-                                    <div class="framework-option" data-type="style" data-value="recall">Recall-focused</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button class="sidebar-btn" id="findSkillsBtn">
-                            <i class="fas fa-magic"></i> Find My Skills
-                        </button>
-                    </div>
-                    
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title"><i class="fas fa-history"></i> Recent Skills</h3>
-                        <div class="quick-links" id="recentSkills">
-                            <!-- Recent skills will be dynamically added here -->
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
             <!-- Skills Content -->
             <main id="skillsContent">
                 <!-- Skills will be dynamically loaded here by category -->
@@ -946,8 +675,8 @@
 
         <!-- Footer -->
         <footer>
-            <p>Skills Master 2025 • Transform your life one skill at a time</p>
-            <p class="mt-20">"The best time to start was yesterday. The second best time is now."</p>
+            <p>Skills Master 2025 • Build your future one skill at a time</p>
+            <p class="mt-20">"The expert in anything was once a beginner." - Helen Hayes</p>
         </footer>
     </div>
 
@@ -981,64 +710,75 @@
             {
                 id: 'active-listening',
                 title: 'Active Listening',
-                description: 'Transform conversations by truly hearing what people say. Most people listen to respond, not to understand.',
-                level: 'medium',
-                time: 'Practice daily',
-                tags: ['communication', 'soft-skills', 'high-impact'],
+                description: 'Transform conversations by truly hearing what people say instead of just waiting for your turn to talk.',
+                level: 'intermediate',
+                time: 'Daily practice',
                 category: 'communication',
-                whyLearn: 'Better relationships, fewer conflicts, more influence, and deeper connections. People feel valued when truly heard. This one skill can transform your personal and professional life.',
-                beginnerTrap: "Don't just wait for your turn to talk. Actually process what the other person is saying and respond to their points, not just your prepared response.",
+                whyLearn: 'Build stronger relationships, resolve conflicts more effectively, and understand others more deeply. Active listening is foundational to effective communication.',
+                beginnerTrap: "Don't just wait for your turn to talk. Focus on understanding the speaker's perspective before formulating your response.",
                 resources: [
-                    {type: 'guide', title: 'Active listening guide', url: 'https://www.ccl.org/articles/leading-effectively-articles/coaching-others-use-active-listening-skills/'},
-                    {type: 'technique', title: 'The 3-second rule: Pause 3 seconds before responding', url: '#'},
-                    {type: 'book', title: '"Just Listen" by Mark Goulston', url: '#'},
-                    {type: 'exercise', title: 'In your next conversation, summarize what you heard before replying', url: '#'}
+                    {type: 'video', title: 'The Art of Active Listening', url: 'https://www.youtube.com/watch?v=z_-rNd7h6z8'},
+                    {type: 'course', title: 'Active Listening Skills Course', url: 'https://www.coursera.org/learn/active-listening'},
+                    {type: 'article', title: '5 Ways to Become a Better Listener', url: 'https://hbr.org/2021/11/5-ways-to-become-a-better-listener'},
+                    {type: 'exercise', title: 'Practice the RASA method: Receive, Appreciate, Summarize, Ask', url: '#'}
                 ],
-                tips: ['Use the RASA method: Receive (pay attention), Appreciate (nod/smile), Summarize (confirm), Ask (dig deeper)', 'Practice one conversation at a time'],
-                tedLevels: {
-                    quick: {
-                        trial: 'Watch 2-min video on RASA method',
-                        error: 'Try it in your next conversation',
-                        document: 'Write one sentence about what worked'
-                    },
-                    standard: {
-                        trial: 'Watch/read about active listening techniques',
-                        error: 'Practice in 3 different conversations → note failures',
-                        document: 'Bullet point lessons learned'
-                    },
-                    deep: {
-                        trial: 'Take a full course on active listening',
-                        error: 'Apply in important meetings/conversations',
-                        document: 'Detailed notes on what worked and improvements'
-                    }
-                },
-                chunking: {
-                    micro: 'Practice one conversation using RASA method',
-                    mini: 'Full practice session with multiple techniques',
-                    mega: 'Deep learning and real-world application'
-                },
-                recallQuestions: [
-                    {
-                        question: "What's the core technique of active listening?",
-                        answer: "The RASA method: Receive, Appreciate, Summarize, Ask"
-                    },
-                    {
-                        question: "When would you use active listening?",
-                        answer: "In important conversations, conflicts, or when you need to truly understand someone"
-                    },
-                    {
-                        question: "What's one common mistake to avoid?",
-                        answer: "Thinking about your response instead of focusing on what the person is saying"
-                    }
+                tips: [
+                    'Maintain eye contact and use nonverbal cues to show you\'re engaged',
+                    'Avoid interrupting and wait for natural pauses before responding',
+                    'Paraphrase what you heard to confirm understanding',
+                    'Ask open-ended questions to encourage elaboration'
+                ]
+            },
+            {
+                id: 'public-speaking',
+                title: 'Public Speaking',
+                description: 'Overcome the fear of speaking in front of others and deliver compelling presentations.',
+                level: 'advanced',
+                time: 'Weekly practice',
+                category: 'communication',
+                whyLearn: 'Effective public speaking boosts your confidence, enhances your professional reputation, and opens doors to leadership opportunities.',
+                beginnerTrap: 'Trying to memorize your entire speech word-for-word, which increases anxiety and makes you sound robotic.',
+                resources: [
+                    {type: 'video', title: 'How to speak so people want to listen', url: 'https://www.youtube.com/watch?v=eIho2S0ZahI'},
+                    {type: 'course', title: 'Introduction to Public Speaking', url: 'https://www.coursera.org/learn/public-speaking'},
+                    {type: 'community', title: 'Toastmasters International', url: 'https://www.toastmasters.org/'},
+                    {type: 'book', title: 'Talk Like TED by Carmine Gallo', url: 'https://www.amazon.com/Talk-Like-TED-Presentation-Anyone/dp/1250061539'}
+                ],
+                tips: [
+                    'Focus on your message, not on yourself',
+                    'Practice in front of a small, friendly audience first',
+                    'Use stories and examples to make your points memorable',
+                    'Record yourself to identify areas for improvement'
+                ]
+            },
+            {
+                id: 'professional-email',
+                title: 'Professional Email Writing',
+                description: 'Write emails that get responses. Clear, concise, and action-oriented communication is a superpower.',
+                level: 'beginner',
+                time: '20 minutes',
+                category: 'communication',
+                whyLearn: 'Poor emails waste time and hurt your professional image. Good emails get responses, build relationships, and move things forward. This skill affects every aspect of modern work.',
+                beginnerTrap: 'Writing overly long emails or burying the main point. People skim emails, so put the most important information first.',
+                resources: [
+                    {type: 'article', title: 'Harvard Business Review email guide', url: 'https://hbr.org/2016/11/how-to-write-email-with-military-precision'},
+                    {type: 'template', title: 'HubSpot email templates', url: 'https://www.hubspot.com/sales-email-templates'},
+                    {type: 'tool', title: 'Use Grammarly (free) or Hemingway Editor', url: '#'},
+                    {type: 'rule', title: 'Subject line = clear action, first sentence = why you\'re writing', url: '#'}
+                ],
+                tips: [
+                    'Use the 5-Sentence Rule: Keep emails under 5 sentences',
+                    'Put your request or main point in the first paragraph',
+                    'Use bullet points for multiple requests or questions',
+                    'Always proofread before sending'
                 ]
             },
             {
                 id: 'elevator-pitch',
                 title: 'Elevator Pitch',
                 description: 'Describe yourself, your project, or business in 30 seconds. Essential for networking and opportunities.',
-                level: 'medium',
+                level: 'intermediate',
                 time: '30 minutes',
-                tags: ['communication', 'business', 'career'],
                 category: 'communication',
                 whyLearn: 'You never know when opportunity knocks. Having a polished pitch ready means you can capitalize on chance meetings, interviews, or networking events. First impressions matter.',
                 beginnerTrap: 'Making it too long or complex. An elevator pitch should be concise and memorable.',
@@ -1048,54 +788,22 @@
                     {type: 'exercise', title: 'Record yourself on phone, watch it back', url: '#'},
                     {type: 'exercise', title: 'Practice on 3 friends, refine based on their questions', url: '#'}
                 ],
-                tips: ['Keep it under 30 seconds', 'Focus on the value you provide, not just your title', 'Practice until it sounds natural, not memorized']
-            },
-            {
-                id: 'professional-email',
-                title: 'Professional Email Writing',
-                description: 'Write emails that get responses. Clear, concise, and action-oriented communication is a superpower.',
-                level: 'quick',
-                time: '20 minutes',
-                tags: ['communication', 'productivity', 'career', 'quick-win'],
-                category: 'communication',
-                whyLearn: 'Poor emails waste time and hurt your professional image. Good emails get responses, build relationships, and move things forward. This skill affects every aspect of modern work.',
-                beginnerTrap: 'Writing overly long emails or burying the main point. People skim emails, so put the most important information first.',
-                resources: [
-                    {type: 'guide', title: 'Harvard Business Review email guide', url: 'https://hbr.org/2016/11/how-to-write-email-with-military-precision'},
-                    {type: 'template', title: 'HubSpot email templates', url: 'https://www.hubspot.com/sales-email-templates'},
-                    {type: 'tool', title: 'Use Grammarly (free) or Hemingway Editor', url: '#'},
-                    {type: 'rule', title: 'Subject line = clear action, first sentence = why you\'re writing', url: '#'}
-                ],
-                tips: ['Use the 5-Sentence Rule: Keep emails under 5 sentences. If it needs more, schedule a call instead.', 'Put your request or main point in the first paragraph']
-            },
-            {
-                id: 'public-speaking',
-                title: 'Public Speaking',
-                description: 'The #1 fear for most people. But it\'s learnable and opens doors in career and life.',
-                level: 'long',
-                time: 'Ongoing practice',
-                tags: ['communication', 'career', 'high-impact'],
-                category: 'communication',
-                whyLearn: 'Lead meetings, give presentations, inspire teams, close deals. Public speaking amplifies your influence and career opportunities exponentially. Warren Buffett credits it as his most valuable skill.',
-                beginnerTrap: 'Trying to memorize your entire speech word-for-word, which makes you sound robotic and increases anxiety if you forget something.',
-                resources: [
-                    {type: 'community', title: 'Toastmasters International - Practice in safe environment', url: 'https://www.toastmasters.org/'},
-                    {type: 'example', title: 'Watch TED Talks and analyze what makes them good', url: '#'},
-                    {type: 'course', title: 'Coursera public speaking (free to audit)', url: 'https://www.coursera.org/learn/public-speaking'},
-                    {type: 'exercise', title: 'Record yourself giving a 2-minute talk, watch it back', url: '#'}
-                ],
-                tips: ['Focus on your message, not on yourself', 'Practice in front of a small, friendly audience first', 'Use stories and examples to make your points memorable']
+                tips: [
+                    'Keep it under 30 seconds',
+                    'Focus on the value you provide, not just your title',
+                    'Practice until it sounds natural, not memorized',
+                    'Tailor it slightly for different audiences'
+                ]
             },
 
-            // Quick Wins
+            // Memory & Learning Skills
             {
                 id: 'micro-memory-linking',
                 title: 'Micro-Memory Linking',
                 description: 'Connect new information to something you already know. This simple technique dramatically boosts recall speed.',
-                level: 'quick',
+                level: 'beginner',
                 time: '5 minutes',
-                tags: ['memory', 'learning', 'quick-win', 'cheating'],
-                category: 'quick-wins',
+                category: 'memory',
                 whyLearn: 'Your brain remembers connections better than isolated facts. Master this and you\'ll remember names, concepts, and information effortlessly. Perfect for networking, studying, or impressing people.',
                 beginnerTrap: 'Creating boring or logical connections. The weirder and more vivid the connection, the better it sticks.',
                 resources: [
@@ -1104,16 +812,20 @@
                     {type: 'guide', title: 'Memory hooks guide', url: 'https://www.scotthyoung.com/blog/2021/01/21/memory-hooks/'},
                     {type: 'exercise', title: 'Try it right now with the next 5 people you meet', url: '#'}
                 ],
-                tips: ['Weirder connections = stronger memories. "Mike the accountant who looks like a pineapple" beats "Mike the accountant."', 'Use multiple senses in your connections (sight, sound, smell)']
+                tips: [
+                    'Weirder connections = stronger memories',
+                    'Use multiple senses in your connections (sight, sound, smell)',
+                    'Create vivid mental images',
+                    'Review connections periodically to strengthen them'
+                ]
             },
             {
                 id: 'remember-names',
                 title: 'Remember Names Instantly',
                 description: 'Repeat their name + attach a distinctive trait. Never forget a name again in social or professional settings.',
-                level: 'quick',
+                level: 'beginner',
                 time: '10 minutes',
-                tags: ['memory', 'social', 'quick-win', 'cheating'],
-                category: 'quick-wins',
+                category: 'memory',
                 whyLearn: 'Remembering names makes you instantly likeable and memorable. Dale Carnegie said "A person\'s name is the sweetest sound to them." Master this for networking, sales, relationships, and career advancement.',
                 beginnerTrap: 'Not paying attention when the name is first said. The first few seconds are crucial for name retention.',
                 resources: [
@@ -1123,149 +835,19 @@
                     {type: 'step', title: 'Step 4: Use their name 2-3 times in conversation', url: '#'},
                     {type: 'video', title: 'Memory champion technique', url: 'https://www.youtube.com/watch?v=yxOGJNj_x7k'}
                 ],
-                tips: ['Write it down within 5 minutes. Saying "Let me get your number" is a perfect excuse to note their name and trait.', 'If you forget, just ask again - people appreciate the effort to get it right']
-            },
-            {
-                id: 'box-breathing',
-                title: 'Box Breathing Technique',
-                description: 'Navy SEAL technique to stay calm under pressure. Reduces anxiety and improves focus instantly.',
-                level: 'quick',
-                time: '2 minutes',
-                tags: ['wellness', 'focus', 'quick-win', 'cheating'],
-                category: 'quick-wins',
-                whyLearn: 'Anxiety and stress kill productivity and happiness. This scientifically-proven method activates your parasympathetic nervous system in 2 minutes. Use before presentations, interviews, or anytime you need instant calm.',
-                beginnerTrap: 'Not breathing deeply enough or holding breath too long. The 4-4-4-4 rhythm is key.',
-                resources: [
-                    {type: 'pattern', title: 'The pattern: Inhale 4 counts → Hold 4 → Exhale 4 → Hold 4 → Repeat', url: '#'},
-                    {type: 'tool', title: 'Calm breathing tool (free)', url: 'https://www.calm.com/breathe'},
-                    {type: 'app', title: '"Breathwrk" or "Prana Breath"', url: '#'},
-                    {type: 'exercise', title: 'Do 4 rounds right now while reading this', url: '#'}
-                ],
-                tips: ['Before presentations, during anxiety, before bed, after conflict, or anytime you need to reset your nervous system.', 'Practice daily to make it an automatic response to stress']
-            },
-            {
-                id: 'keyboard-shortcuts',
-                title: 'Keyboard Shortcuts Mastery',
-                description: 'Stop reaching for your mouse every 5 seconds. Save hours weekly by mastering essential shortcuts.',
-                level: 'quick',
-                time: '15 minutes',
-                tags: ['productivity', 'tech', 'quick-win', 'cheating'],
-                category: 'quick-wins',
-                whyLearn: 'The average person wastes 2-3 hours weekly reaching for the mouse. Keyboard shortcuts make you look professional, save time, and reduce wrist strain. This skill pays dividends every single day for your entire career.',
-                beginnerTrap: 'Trying to learn too many at once instead of focusing on the most useful ones.',
-                resources: [
-                    {type: 'essential', title: 'Essential trio: Ctrl/Cmd+F (find), Ctrl/Cmd+T (new tab), Ctrl/Cmd+Shift+T (reopen closed tab)', url: '#'},
-                    {type: 'guide', title: 'Microsoft shortcuts', url: 'https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec'},
-                    {type: 'guide', title: 'Apple shortcuts', url: 'https://support.apple.com/en-us/HT201236'},
-                    {type: 'tool', title: 'ShortcutFoo - Gamified training', url: 'https://www.shortcutfoo.com/'}
-                ],
-                tips: ['Pick 3 shortcuts, write them on a sticky note by your screen. Force yourself to use only those for 2 days. Then add 3 more.', 'Focus on shortcuts for your most frequent actions first']
-            },
-
-            // Business & Money Skills
-            {
-                id: 'landing-page-fundamentals',
-                title: 'Landing Page Fundamentals',
-                description: 'Master the proven formula: Hero → Value → Proof → CTA. Turn visitors into customers.',
-                level: 'medium',
-                time: '1-2 hours',
-                tags: ['business', 'marketing', 'online'],
-                category: 'business',
-                whyLearn: 'Whether you\'re freelancing, building a startup, or selling products, landing pages are your 24/7 salesperson. A great landing page can be worth thousands or millions. This skill directly translates to revenue.',
-                beginnerTrap: 'Focusing on features instead of benefits. Customers care about what your product does for them, not what it is.',
-                resources: [
-                    {type: 'examples', title: 'LandingFolio - Best landing page examples', url: 'https://www.landingfolio.com/'},
-                    {type: 'course', title: 'Julian Shapiro\'s guide to landing pages', url: 'https://www.youtube.com/watch?v=DhPbtGQfjwI'},
-                    {type: 'tool', title: 'Use Carrd.co (free) or Framer (free tier) to build one', url: '#'},
-                    {type: 'formula', title: 'Compelling headline → Benefits (not features) → Social proof → Single clear CTA', url: '#'},
-                    {type: 'book', title: '"Don\'t Make Me Think" by Steve Krug', url: '#'}
-                ],
-                tips: ['Your headline should pass the "grunt test" - a caveman should understand what you offer in 5 seconds. Test with friends!', 'Use social proof (testimonials, logos) to build trust quickly']
-            },
-            {
-                id: 'copywriting-psychology',
-                title: 'Copywriting Psychology',
-                description: 'Master the Pain → Desire → Solution framework. Write copy that actually converts.',
-                level: 'medium',
-                time: '2-3 hours',
-                tags: ['business', 'marketing', 'writing'],
-                category: 'business',
-                whyLearn: 'Good copywriting is the difference between $0 and $100k. Every email, tweet, product description, and ad needs this skill. It\'s not manipulation - it\'s understanding what people actually want and communicating clearly.',
-                beginnerTrap: 'Writing for yourself instead of your audience. Good copy speaks the customer\'s language, not yours.',
-                resources: [
-                    {type: 'course', title: 'Copyhackers tutorials', url: 'https://copyhackers.com/copy-school/'},
-                    {type: 'book', title: '"Cashvertising" by Drew Eric Whitman (psychological triggers)', url: '#'},
-                    {type: 'examples', title: 'Swiped.co - Study proven copy', url: 'https://swiped.co/'},
-                    {type: 'formula', title: 'Identify pain → Amplify desire → Present your solution as bridge', url: '#'},
-                    {type: 'exercise', title: 'Rewrite 5 product descriptions on Amazon using this framework', url: '#'}
-                ],
-                tips: ['Read your copy out loud. If it sounds weird or robotic, rewrite it. Great copy sounds like a conversation with a smart friend.', 'Focus on benefits, not features. "Save 5 hours a week" not "Automated workflow tool"']
-            },
-            {
-                id: 'mini-funnels-strategy',
-                title: 'Mini-Funnels Strategy',
-                description: 'Build simple funnels: Free → Lite → Full. Guide customers naturally to premium offers.',
-                level: 'medium',
-                time: '3-4 hours',
-                tags: ['business', 'marketing', 'online'],
-                category: 'business',
-                whyLearn: 'People don\'t buy expensive things from strangers. A funnel builds trust progressively. This is how every successful online business scales - from solopreneurs to billion-dollar companies.',
-                beginnerTrap: 'Making the free offer too weak. Your free content should be so good people would almost pay for it.',
-                resources: [
-                    {type: 'video', title: 'Alex Hormozi\'s funnel breakdown', url: 'https://www.youtube.com/watch?v=8aRe72p2GKE'},
-                    {type: 'book', title: '"DotCom Secrets" by Russell Brunson', url: '#'},
-                    {type: 'example', title: 'Free tier example: Free PDF/video → $7-27 starter → $97+ main product', url: '#'},
-                    {type: 'tool', title: 'Systeme.io (free plan available)', url: 'https://systeme.io/'}
-                ],
-                tips: ['Your free offer should be so good people would pay for it. This builds massive trust and makes the paid offer an easy yes.', 'Test different entry points to find what resonates with your audience']
-            },
-            {
-                id: 'pricing-strategy',
-                title: 'Pricing Strategy Basics',
-                description: 'Master: Anchor → Value → Decision. Price psychology that actually works.',
-                level: 'quick',
-                time: '1 hour',
-                tags: ['business', 'psychology', 'quick-win', 'cheating'],
-                category: 'business',
-                whyLearn: 'Most people undercharge by 50-300%. Pricing isn\'t about your costs - it\'s about perceived value. Learn this and instantly increase your revenue without working harder. One pricing change can double your income.',
-                beginnerTrap: 'Undervaluing your offering based on your costs rather than customer perceived value.',
-                resources: [
-                    {type: 'book', title: '"The Psychology of Price" by Leigh Caldwell', url: '#'},
-                    {type: 'video', title: 'Dan Ariely on pricing psychology', url: 'https://www.youtube.com/watch?v=QHTbVTmt1Eo'},
-                    {type: 'technique', title: 'Show expensive option first to make others seem reasonable', url: '#'},
-                    {type: 'rule', title: 'Always offer 3 tiers (people pick middle 60% of the time)', url: '#'},
-                    {type: 'exercise', title: 'Price something at 3x what you originally thought. Test it.', url: '#'}
-                ],
-                tips: ['End prices in 7 or 9 ($47, $297, $997). Research shows these convert better than round numbers. People perceive them as deals.', 'Frame prices in terms of small daily amounts ("less than a coffee per day") rather than large yearly totals']
-            },
-
-            // Learning & Memory
-            {
-                id: 'learning-how-to-learn',
-                title: 'Learning How to Learn',
-                description: 'Master spaced repetition, active recall, and chunking. The meta-skill that makes every other skill easier.',
-                level: 'medium',
-                time: '15 hours course',
-                tags: ['learning', 'meta-skill', 'high-impact'],
-                category: 'learning',
-                whyLearn: 'This is the ultimate multiplier skill. Learn this once, benefit forever. Most people use terrible learning strategies (rereading, highlighting). Learn the science-backed methods that actually work and you\'ll learn 3-5x faster for life.',
-                beginnerTrap: 'Rereading and highlighting, which feel productive but don\'t actually help retention. Testing yourself is much more effective.',
-                resources: [
-                    {type: 'course', title: 'Learning How to Learn (Coursera, free)', url: 'https://www.coursera.org/learn/learning-how-to-learn'},
-                    {type: 'book', title: '"Ultralearning" by Scott Young', url: '#'},
-                    {type: 'tool', title: 'Anki - Spaced repetition app (proven most effective)', url: 'https://apps.ankiweb.net/'},
-                    {type: 'concept', title: 'Test yourself instead of rereading. Retrieval practice = best learning method', url: '#'},
-                    {type: 'schedule', title: 'Review at 1 day, 3 days, 1 week, 1 month intervals', url: '#'}
-                ],
-                tips: ['Study in different locations. Your brain encodes environmental context, so varied locations = stronger memories.', 'Mix up your practice (interleaving) rather than focusing on one thing for too long']
+                tips: [
+                    'Write it down within 5 minutes',
+                    'If you forget, just ask again - people appreciate the effort to get it right',
+                    'Connect names to people you already know with the same name',
+                    'Use the person\'s name when saying goodbye'
+                ]
             },
             {
                 id: 'feynman-technique',
                 title: 'The Feynman Technique',
                 description: 'Explain concepts in simple terms to truly understand them. If you can\'t explain it simply, you don\'t understand it.',
-                level: 'quick',
+                level: 'intermediate',
                 time: '20 minutes',
-                tags: ['learning', 'understanding', 'quick-win'],
                 category: 'learning',
                 whyLearn: 'Named after Nobel Prize winner Richard Feynman. This exposes knowledge gaps instantly and forces deep understanding. Use for interviews, teaching, or mastering complex topics. You\'ll learn faster and remember longer.',
                 beginnerTrap: 'Using jargon or complex language when trying to explain simply.',
@@ -1277,18 +859,227 @@
                     {type: 'step', title: 'Step 5: Simplify your explanation further', url: '#'},
                     {type: 'video', title: 'Feynman Technique explained', url: 'https://www.youtube.com/watch?v=_f-qkGJBPts'}
                 ],
-                tips: ['Actually talk out loud (or write it down). Thinking it in your head doesn\'t work - you\'ll fool yourself into thinking you understand.', 'If you can\'t explain it simply, you\'ve found a knowledge gap to focus on']
+                tips: [
+                    'Actually talk out loud (or write it down)',
+                    'If you can\'t explain it simply, you\'ve found a knowledge gap to focus on',
+                    'Use analogies and simple language',
+                    'Test your explanation on someone unfamiliar with the topic'
+                ]
+            },
+            {
+                id: 'learning-how-to-learn',
+                title: 'Learning How to Learn',
+                description: 'Master spaced repetition, active recall, and chunking. The meta-skill that makes every other skill easier.',
+                level: 'intermediate',
+                time: '15 hours course',
+                category: 'learning',
+                whyLearn: 'This is the ultimate multiplier skill. Learn this once, benefit forever. Most people use terrible learning strategies (rereading, highlighting). Learn the science-backed methods that actually work and you\'ll learn 3-5x faster for life.',
+                beginnerTrap: 'Rereading and highlighting, which feel productive but don\'t actually help retention. Testing yourself is much more effective.',
+                resources: [
+                    {type: 'course', title: 'Learning How to Learn (Coursera, free)', url: 'https://www.coursera.org/learn/learning-how-to-learn'},
+                    {type: 'book', title: '"Ultralearning" by Scott Young', url: '#'},
+                    {type: 'tool', title: 'Anki - Spaced repetition app (proven most effective)', url: 'https://apps.ankiweb.net/'},
+                    {type: 'concept', title: 'Test yourself instead of rereading. Retrieval practice = best learning method', url: '#'},
+                    {type: 'schedule', title: 'Review at 1 day, 3 days, 1 week, 1 month intervals', url: '#'}
+                ],
+                tips: [
+                    'Study in different locations',
+                    'Mix up your practice (interleaving) rather than focusing on one thing for too long',
+                    'Space out your study sessions',
+                    'Test yourself regularly instead of just reviewing'
+                ]
+            },
+
+            // Productivity Skills
+            {
+                id: 'keyboard-shortcuts',
+                title: 'Keyboard Shortcuts',
+                description: 'Work faster and more efficiently by mastering essential keyboard shortcuts for your operating system.',
+                level: 'beginner',
+                time: '1-2 hours',
+                category: 'productivity',
+                whyLearn: 'Save hours each week by reducing mouse dependency. Keyboard shortcuts make you more productive and reduce repetitive strain.',
+                beginnerTrap: 'Trying to learn too many shortcuts at once instead of focusing on the most useful ones for your workflow.',
+                resources: [
+                    {type: 'interactive', title: 'ShortcutFoo - Gamified shortcut learning', url: 'https://www.shortcutfoo.com/'},
+                    {type: 'cheatsheet', title: 'Windows Keyboard Shortcuts', url: 'https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec'},
+                    {type: 'cheatsheet', title: 'Mac Keyboard Shortcuts', url: 'https://support.apple.com/en-us/HT201236'},
+                    {type: 'video', title: 'Essential Keyboard Shortcuts Everyone Should Know', url: 'https://www.youtube.com/watch?v=m64y7hFk5a0'}
+                ],
+                tips: [
+                    'Start with 3-5 shortcuts you\'ll use daily',
+                    'Print a cheat sheet and keep it by your desk',
+                    'Force yourself to use shortcuts for a week until they become habit',
+                    'Learn browser-specific shortcuts for even greater efficiency'
+                ]
+            },
+            {
+                id: 'touch-typing',
+                title: 'Touch Typing',
+                description: 'Double your typing speed and never look at the keyboard again. This skill pays dividends every single day.',
+                level: 'intermediate',
+                time: '15 min/day for 3 weeks',
+                category: 'productivity',
+                whyLearn: 'You\'ll type millions of words in your lifetime. At 30 WPM vs 60 WPM, that\'s literally thousands of hours saved. Plus you look professional, reduce wrist strain, and can type while looking at reference material. ROI is insane.',
+                beginnerTrap: 'Looking at the keyboard "just this once" which reinforces bad habits. Cover your hands if needed.',
+                resources: [
+                    {type: 'site', title: 'Keybr.com - Adaptive learning algorithm', url: 'https://www.keybr.com/'},
+                    {type: 'site', title: 'TypingClub - Structured lessons', url: 'https://www.typingclub.com/'},
+                    {type: 'site', title: 'Typing.io - Practice with real code (for coders)', url: 'https://www.typing.io/'},
+                    {type: 'site', title: 'MonkeyType - Track progress', url: 'https://monkeytype.com/'}
+                ],
+                tips: [
+                    'Cover your keyboard with a cloth for the first week',
+                    'Go SLOW before going fast - accuracy beats speed early on',
+                    'Practice daily for short periods rather than long sessions',
+                    'Focus on proper finger placement from the beginning'
+                ]
+            },
+
+            // Business & Money Skills
+            {
+                id: 'negotiation-basics',
+                title: 'Negotiation Basics',
+                description: 'Learn fundamental negotiation techniques to get better outcomes in business and life.',
+                level: 'intermediate',
+                time: '2-3 hours',
+                category: 'business',
+                whyLearn: 'Better negotiation skills can lead to higher salaries, better deals, and improved relationships. This skill pays dividends throughout your career.',
+                beginnerTrap: 'Making the first offer without knowing the market rate, either leaving value on the table or pricing yourself out.',
+                resources: [
+                    {type: 'course', title: 'Successful Negotiation: Essential Strategies', url: 'https://www.coursera.org/learn/negotiation-skills'},
+                    {type: 'book', title: 'Never Split the Difference by Chris Voss', url: 'https://www.amazon.com/Never-Split-Difference-Negotiating-Depended/dp/0062407805'},
+                    {type: 'video', title: 'The Harvard Principles of Negotiation', url: 'https://www.youtube.com/watch?v=RT8F0o4MPCM'},
+                    {type: 'article', title: '6 Negotiation Tips from an FBI Hostage Negotiator', url: 'https://www.inc.com/jeff-haden/6-negotiation-tips-from-an-fbi-hostage-negotiator-that-will-give-you-an-edge-in-any-difficult-conversation.html'}
+                ],
+                tips: [
+                    'Always research and know your BATNA (Best Alternative To Negotiated Agreement)',
+                    'Focus on interests, not positions',
+                    'Use silence as a strategic tool',
+                    'Practice active listening to understand the other party\'s needs'
+                ]
+            },
+            {
+                id: 'project-management',
+                title: 'Project Management Fundamentals',
+                description: 'Learn to plan, execute, and deliver projects successfully using proven methodologies.',
+                level: 'intermediate',
+                time: '10-15 hours',
+                category: 'business',
+                whyLearn: 'Project management skills are valuable across all industries and can significantly increase your effectiveness and career prospects.',
+                beginnerTrap: 'Trying to plan every detail upfront without allowing for adjustments as the project evolves.',
+                resources: [
+                    {type: 'course', title: 'Google Project Management Certificate', url: 'https://www.coursera.org/professional-certificates/google-project-management'},
+                    {type: 'tool', title: 'Trello - Visual project management', url: 'https://trello.com/'},
+                    {type: 'book', title: 'The Project Management Book by Richard Newton', url: 'https://www.amazon.com/Project-Management-Book-How-Manage/dp/0273749575'},
+                    {type: 'methodology', title: 'Introduction to Agile Methodology', url: 'https://www.atlassian.com/agile'}
+                ],
+                tips: [
+                    'Break large projects into smaller, manageable tasks',
+                    'Set clear milestones and celebrate small wins',
+                    'Communicate regularly with stakeholders',
+                    'Learn to use at least one project management tool effectively'
+                ]
+            },
+            {
+                id: 'pricing-strategy',
+                title: 'Pricing Strategy Basics',
+                description: 'Master: Anchor → Value → Decision. Price psychology that actually works.',
+                level: 'beginner',
+                time: '1 hour',
+                category: 'business',
+                whyLearn: 'Most people undercharge by 50-300%. Pricing isn\'t about your costs - it\'s about perceived value. Learn this and instantly increase your revenue without working harder. One pricing change can double your income.',
+                beginnerTrap: 'Undervaluing your offering based on your costs rather than customer perceived value.',
+                resources: [
+                    {type: 'book', title: '"The Psychology of Price" by Leigh Caldwell', url: '#'},
+                    {type: 'video', title: 'Dan Ariely on pricing psychology', url: 'https://www.youtube.com/watch?v=QHTbVTmt1Eo'},
+                    {type: 'technique', title: 'Show expensive option first to make others seem reasonable', url: '#'},
+                    {type: 'rule', title: 'Always offer 3 tiers (people pick middle 60% of the time)', url: '#'},
+                    {type: 'exercise', title: 'Price something at 3x what you originally thought. Test it.', url: '#'}
+                ],
+                tips: [
+                    'End prices in 7 or 9 ($47, $297, $997)',
+                    'Frame prices in terms of small daily amounts ("less than a coffee per day")',
+                    'Highlight the value, not just the price',
+                    'Test different price points to find the optimal one'
+                ]
+            },
+            {
+                id: 'copywriting-psychology',
+                title: 'Copywriting Psychology',
+                description: 'Master the Pain → Desire → Solution framework. Write copy that actually converts.',
+                level: 'intermediate',
+                time: '2-3 hours',
+                category: 'business',
+                whyLearn: 'Good copywriting is the difference between $0 and $100k. Every email, tweet, product description, and ad needs this skill. It\'s not manipulation - it\'s understanding what people actually want and communicating clearly.',
+                beginnerTrap: 'Writing for yourself instead of your audience. Good copy speaks the customer\'s language, not yours.',
+                resources: [
+                    {type: 'course', title: 'Copyhackers tutorials', url: 'https://copyhackers.com/copy-school/'},
+                    {type: 'book', title: '"Cashvertising" by Drew Eric Whitman (psychological triggers)', url: '#'},
+                    {type: 'examples', title: 'Swiped.co - Study proven copy', url: 'https://swiped.co/'},
+                    {type: 'formula', title: 'Identify pain → Amplify desire → Present your solution as bridge', url: '#'},
+                    {type: 'exercise', title: 'Rewrite 5 product descriptions on Amazon using this framework', url: '#'}
+                ],
+                tips: [
+                    'Read your copy out loud',
+                    'Focus on benefits, not features',
+                    'Use storytelling to create emotional connections',
+                    'Test different versions to see what resonates'
+                ]
             },
 
             // Technical Skills
             {
+                id: 'python-basics',
+                title: 'Python Programming Basics',
+                description: 'Learn the fundamentals of Python, one of the most versatile and beginner-friendly programming languages.',
+                level: 'beginner',
+                time: '20-30 hours',
+                category: 'technical',
+                whyLearn: 'Python is used in web development, data science, automation, and AI. Basic programming skills are increasingly valuable across many fields.',
+                beginnerTrap: 'Getting stuck in "tutorial hell" - watching tutorials without actually writing code and solving problems.',
+                resources: [
+                    {type: 'course', title: 'Python for Everybody', url: 'https://www.py4e.com/'},
+                    {type: 'book', title: 'Automate the Boring Stuff with Python', url: 'https://automatetheboringstuff.com/'},
+                    {type: 'platform', title: 'Codecademy Python Course', url: 'https://www.codecademy.com/learn/learn-python-3'},
+                    {type: 'practice', title: 'Exercism Python Track', url: 'https://exercism.org/tracks/python'}
+                ],
+                tips: [
+                    'Code every day, even if it\'s just for 15 minutes',
+                    'Build small projects that interest you',
+                    'Don\'t just copy code - understand why it works',
+                    'Learn to read documentation and error messages'
+                ]
+            },
+            {
+                id: 'data-analysis',
+                title: 'Data Analysis Fundamentals',
+                description: 'Learn to extract insights from data using basic statistical techniques and visualization.',
+                level: 'intermediate',
+                time: '25-35 hours',
+                category: 'technical',
+                whyLearn: 'Data literacy is becoming essential in many roles. Understanding how to work with data can help you make better decisions and identify opportunities.',
+                beginnerTrap: 'Focusing too much on advanced techniques before mastering the fundamentals of data cleaning and exploration.',
+                resources: [
+                    {type: 'course', title: 'Google Data Analytics Certificate', url: 'https://www.coursera.org/professional-certificates/google-data-analytics'},
+                    {type: 'tool', title: 'Tableau Public - Free data visualization', url: 'https://public.tableau.com/'},
+                    {type: 'book', title: 'Storytelling with Data by Cole Nussbaumer Knaflic', url: 'https://www.amazon.com/Storytelling-Data-Visualization-Business-Professionals/dp/1119002257'},
+                    {type: 'dataset', title: 'Kaggle Datasets for practice', url: 'https://www.kaggle.com/datasets'}
+                ],
+                tips: [
+                    'Start with small, clean datasets to build confidence',
+                    'Learn to ask good questions of your data',
+                    'Master one visualization tool thoroughly',
+                    'Focus on communicating insights clearly, not just creating complex charts'
+                ]
+            },
+            {
                 id: 'neural-network-basics',
                 title: 'Neural Network Basics',
                 description: 'Understand AI from simple to complex. Learn the fundamentals behind ChatGPT, DALL-E, and modern AI.',
-                level: 'long',
+                level: 'advanced',
                 time: '20+ hours',
-                tags: ['tech', 'ai', 'future', 'high-impact'],
-                category: 'tech',
+                category: 'technical',
                 whyLearn: 'AI is transforming every industry. Understanding neural networks isn\'t just for engineers - it\'s becoming as fundamental as understanding how the internet works. This knowledge will be valuable for decades and opens doors to ML careers paying $200k+.',
                 beginnerTrap: 'Getting stuck on the math instead of building intuition first. Start with concepts, then dive into mathematics.',
                 resources: [
@@ -1298,55 +1089,66 @@
                     {type: 'book', title: '"Grokking Deep Learning" by Andrew Trask', url: '#'},
                     {type: 'path', title: 'Linear regression → Perceptron → Multi-layer networks → CNNs → Transformers', url: '#'}
                 ],
-                tips: ['Don\'t get stuck on the math. Build something first, understand the concepts, then go back for the mathematical rigor.', 'Focus on understanding the intuition behind how neural networks learn rather than memorizing formulas']
-            },
-            {
-                id: 'framer-basics',
-                title: 'Framer Basics (No-Code Design)',
-                description: 'Master layouts → components → CMS. Build beautiful, interactive websites without code.',
-                level: 'medium',
-                time: '5-8 hours',
-                tags: ['tech', 'design', 'no-code', 'career'],
-                category: 'tech',
-                whyLearn: 'Framer is the future of web design - used by Apple, Netflix, and top startups. Ship professional websites in hours, not weeks. Perfect for founders, designers, or anyone who wants to build modern sites without learning to code. Freelance Framer work pays $100-200/hour.',
-                beginnerTrap: 'Trying to build something complex immediately instead of starting with templates and simple projects.',
-                resources: [
-                    {type: 'course', title: 'Framer Academy (free, comprehensive)', url: 'https://www.framer.com/academy/'},
-                    {type: 'tutorials', title: 'Flux Academy - Framer tutorials', url: 'https://www.youtube.com/@FluxAcademy'},
-                    {type: 'exercise', title: 'Clone a landing page you like using Framer\'s templates', url: '#'},
-                    {type: 'templates', title: 'Framer template marketplace', url: 'https://www.framer.com/templates/'},
-                    {type: 'path', title: 'Layouts & grids → Components & variants → CMS integration → Interactive prototypes', url: '#'}
-                ],
-                tips: ['Build your portfolio site in Framer. You\'ll learn by doing and have a professional portfolio to show clients or employers.', 'Start with mobile design first - it\'s easier to scale up to desktop than vice versa']
-            },
-            {
-                id: 'touch-typing',
-                title: 'Touch Typing',
-                description: 'Double your typing speed and never look at the keyboard again. This skill pays dividends every single day.',
-                level: 'medium',
-                time: '15 min/day for 3 weeks',
-                tags: ['tech', 'productivity', 'career'],
-                category: 'tech',
-                whyLearn: 'You\'ll type millions of words in your lifetime. At 30 WPM vs 60 WPM, that\'s literally thousands of hours saved. Plus you look professional, reduce wrist strain, and can type while looking at reference material. ROI is insane.',
-                beginnerTrap: 'Looking at the keyboard "just this once" which reinforces bad habits. Cover your hands if needed.',
-                resources: [
-                    {type: 'site', title: 'Keybr.com - Adaptive learning algorithm', url: 'https://www.keybr.com/'},
-                    {type: 'site', title: 'TypingClub - Structured lessons', url: 'https://www.typingclub.com/'},
-                    {type: 'site', title: 'Typing.io - Practice with real code (for coders)', url: 'https://www.typing.io/'},
-                    {type: 'site', title: 'MonkeyType - Track progress', url: 'https://monkeytype.com/'}
-                ],
-                tips: ['Cover your keyboard with a cloth for the first week. Feels awkward but forces proper technique.', 'Go SLOW before going fast - accuracy beats speed early on. Speed comes naturally with practice.']
+                tips: [
+                    'Don\'t get stuck on the math',
+                    'Build something first, understand the concepts, then go back for the mathematical rigor',
+                    'Focus on understanding the intuition behind how neural networks learn',
+                    'Start with simple models before moving to complex architectures'
+                ]
             },
 
-            // Fitness & Health
+            // Health & Wellness
+            {
+                id: 'mindfulness-meditation',
+                title: 'Mindfulness Meditation',
+                description: 'Develop the ability to stay present and reduce stress through simple meditation practices.',
+                level: 'beginner',
+                time: '10 minutes daily',
+                category: 'wellness',
+                whyLearn: 'Regular meditation can reduce stress, improve focus, and increase emotional resilience. The benefits compound with consistent practice.',
+                beginnerTrap: 'Expecting immediate results or trying to "clear your mind" completely, which leads to frustration.',
+                resources: [
+                    {type: 'app', title: 'Headspace - Guided meditation', url: 'https://www.headspace.com/'},
+                    {type: 'app', title: 'Calm - Meditation and sleep stories', url: 'https://www.calm.com/'},
+                    {type: 'book', title: 'The Miracle of Mindfulness by Thich Nhat Hanh', url: 'https://www.amazon.com/Miracle-Mindfulness-Introduction-Practice-Meditation/dp/0807012394'},
+                    {type: 'course', title: 'Palouse Mindfulness-Based Stress Reduction', url: 'https://palousemindfulness.com/'}
+                ],
+                tips: [
+                    'Start with just 2-5 minutes daily and gradually increase',
+                    'Focus on your breath as an anchor when your mind wanders',
+                    'Be consistent rather than perfect - daily practice matters most',
+                    'Try different types of meditation to find what works for you'
+                ]
+            },
+            {
+                id: 'box-breathing',
+                title: 'Box Breathing Technique',
+                description: 'Navy SEAL technique to stay calm under pressure. Reduces anxiety and improves focus instantly.',
+                level: 'beginner',
+                time: '2 minutes',
+                category: 'wellness',
+                whyLearn: 'Anxiety and stress kill productivity and happiness. This scientifically-proven method activates your parasympathetic nervous system in 2 minutes. Use before presentations, interviews, or anytime you need instant calm.',
+                beginnerTrap: 'Not breathing deeply enough or holding breath too long. The 4-4-4-4 rhythm is key.',
+                resources: [
+                    {type: 'pattern', title: 'The pattern: Inhale 4 counts → Hold 4 → Exhale 4 → Hold 4 → Repeat', url: '#'},
+                    {type: 'tool', title: 'Calm breathing tool (free)', url: 'https://www.calm.com/breathe'},
+                    {type: 'app', title: '"Breathwrk" or "Prana Breath"', url: '#'},
+                    {type: 'exercise', title: 'Do 4 rounds right now while reading this', url: '#'}
+                ],
+                tips: [
+                    'Before presentations, during anxiety, before bed, after conflict',
+                    'Practice daily to make it an automatic response to stress',
+                    'Focus on the counting to distract from anxious thoughts',
+                    'Use it anytime you need to reset your nervous system'
+                ]
+            },
             {
                 id: 'daily-stretching',
                 title: 'Daily Stretching Routine',
                 description: 'Undo damage from sitting all day. Improve flexibility, reduce pain, and feel better in just 10 minutes.',
-                level: 'quick',
+                level: 'beginner',
                 time: '10 min/day',
-                tags: ['wellness', 'health', 'quick-win'],
-                category: 'health',
+                category: 'wellness',
                 whyLearn: 'Sitting is killing your back, hips, and posture. 10 minutes of stretching daily prevents years of chronic pain and thousands in medical bills. You\'ll feel better immediately - more energy, less stiffness, better sleep. No equipment needed.',
                 beginnerTrap: 'Pushing too hard and causing injury. Stretching should feel good, not painful.',
                 resources: [
@@ -1355,16 +1157,20 @@
                     {type: 'focus', title: 'Focus areas: Hip flexors, hamstrings, shoulders, neck', url: '#'},
                     {type: 'timing', title: 'Right after waking up or before bed (set a reminder!)', url: '#'}
                 ],
-                tips: ['Hold each stretch for 30 seconds, breathe deeply, never bounce. Consistency beats intensity. Do it every day for a week and you\'ll be hooked.', 'Listen to your body - some tightness is normal, sharp pain means back off']
+                tips: [
+                    'Hold each stretch for 30 seconds, breathe deeply, never bounce',
+                    'Consistency beats intensity',
+                    'Listen to your body - some tightness is normal, sharp pain means back off',
+                    'Make it a daily habit like brushing your teeth'
+                ]
             },
             {
                 id: 'proper-posture',
                 title: 'Proper Posture',
                 description: 'Fix your posture, fix your back pain. Most of us are slowly destroying our spine with poor posture.',
-                level: 'medium',
+                level: 'intermediate',
                 time: 'Constant practice',
-                tags: ['wellness', 'health', 'productivity'],
-                category: 'health',
+                category: 'wellness',
                 whyLearn: 'Bad posture causes back pain, neck pain, headaches, reduced lung capacity, and makes you look less confident. Good posture is free, works immediately, and affects how people perceive you professionally and socially.',
                 beginnerTrap: 'Trying to maintain perfect posture all at once instead of building the habit gradually.',
                 resources: [
@@ -1373,25 +1179,12 @@
                     {type: 'app', title: '"Posture Reminder" (sends alerts every hour)', url: '#'},
                     {type: 'test', title: 'Wall test: Stand with back to wall, heels touching, head/shoulders/butt against wall - that\'s correct posture', url: '#'}
                 ],
-                tips: ['Set hourly phone reminders. When it beeps, check and correct posture. Takes 2 weeks to become automatic.', 'Strengthen your core muscles - they\'re the foundation of good posture']
-            },
-            {
-                id: 'jump-rope-cardio',
-                title: 'Jump Rope Cardio',
-                description: 'Best cardio exercise. Burns more calories than running, improves coordination, only needs $5 equipment.',
-                level: 'medium',
-                time: '5 min/day',
-                tags: ['fitness', 'health', 'quick-win'],
-                category: 'health',
-                whyLearn: '10 minutes of jump rope = 30 minutes of jogging. Improves footwork, coordination, cardiovascular health. Used by boxers and elite athletes. Minimal equipment, maximum results.',
-                beginnerTrap: 'Starting with a rope that\'s too long or too short, making it difficult to learn proper form.',
-                resources: [
-                    {type: 'tutorials', title: 'Jump Rope Dudes - Beginner tutorials', url: 'https://www.youtube.com/c/jumpropedudescom'},
-                    {type: 'equipment', title: 'Speed rope on Amazon for $5-10', url: '#'},
-                    {type: 'program', title: 'Beginner program: Start with 30 seconds on, 30 seconds rest, repeat 5 times', url: '#'},
-                    {type: 'app', title: 'CrossRope app (free workouts)', url: '#'}
-                ],
-                tips: ['Start on a forgiving surface like grass or a yoga mat to reduce impact', 'Focus on form first - light jumps, relaxed shoulders, minimal arm movement']
+                tips: [
+                    'Set hourly phone reminders',
+                    'Strengthen your core muscles - they\'re the foundation of good posture',
+                    'Adjust your workstation ergonomics',
+                    'Practice mindfulness of your posture throughout the day'
+                ]
             },
 
             // Creative Skills
@@ -1399,9 +1192,8 @@
                 id: 'basic-drawing',
                 title: 'Basic Drawing',
                 description: 'Learn to see and draw what you observe. You don\'t need talent, just practice.',
-                level: 'medium',
+                level: 'beginner',
                 time: '20 min/day',
-                tags: ['creative', 'art', 'observation'],
                 category: 'creative',
                 whyLearn: 'Improves observation skills, creativity, and visual thinking. Useful for design, communication, and problem-solving. Plus it\'s meditative and fun. Anyone can learn to draw.',
                 beginnerTrap: 'Expecting to create masterpieces immediately. Drawing is a skill that develops gradually with practice.',
@@ -1411,15 +1203,19 @@
                     {type: 'book', title: '"Drawing on the Right Side of the Brain" by Betty Edwards', url: '#'},
                     {type: 'exercise', title: 'Draw your hand for 5 minutes, looking only at your hand (not the paper)', url: '#'}
                 ],
-                tips: ['Focus on seeing, not just drawing. Observe shapes, values, and relationships between objects.', 'Embrace mistakes - they\'re part of the learning process']
+                tips: [
+                    'Focus on seeing, not just drawing',
+                    'Observe shapes, values, and relationships between objects',
+                    'Embrace mistakes - they\'re part of the learning process',
+                    'Practice regularly rather than in long sessions'
+                ]
             },
             {
                 id: 'photography-composition',
                 title: 'Photography Composition',
                 description: 'Take better photos with your phone. Composition matters more than equipment.',
-                level: 'medium',
+                level: 'intermediate',
                 time: '1 hour',
-                tags: ['creative', 'photography', 'art'],
                 category: 'creative',
                 whyLearn: 'Better photos for social media, memories, and creative expression. Can lead to freelance work or side income. Everyone has a camera now - learn to use it well.',
                 beginnerTrap: 'Thinking you need expensive equipment to take good photos. Composition and lighting matter more than camera quality.',
@@ -1429,98 +1225,12 @@
                     {type: 'course', title: 'iPhone photography course', url: 'https://www.youtube.com/watch?v=sXEmCup5pFk'},
                     {type: 'challenge', title: 'Take 10 photos using rule of thirds today', url: '#'}
                 ],
-                tips: ['Enable grid in your phone camera settings! Use rule of thirds - place subjects on the intersections or lines.', 'Pay attention to lighting - golden hour (sunrise/sunset) provides the most flattering light']
-            },
-
-            // Financial Skills
-            {
-                id: 'budget-rule',
-                title: '50/30/20 Budget Rule',
-                description: 'Simple budgeting: 50% needs, 30% wants, 20% savings. Start tracking your money today.',
-                level: 'quick',
-                time: '1 hour',
-                tags: ['finance', 'money', 'quick-win'],
-                category: 'finance',
-                whyLearn: 'Financial stress kills happiness and opportunity. This simple framework gives you control over your money without being restrictive. The foundation of financial health.',
-                beginnerTrap: 'Being too restrictive and giving up entirely. The 50/30/20 rule is flexible enough to work for most people.',
-                resources: [
-                    {type: 'calculator', title: 'NerdWallet budget calculator', url: 'https://www.nerdwallet.com/article/finance/nerdwallet-budget-calculator'},
-                    {type: 'app', title: 'Mint, YNAB (You Need A Budget) - Free apps', url: '#'},
-                    {type: 'template', title: 'Free budget spreadsheet template', url: 'https://www.vertex42.com/ExcelTemplates/personal-budget-spreadsheet.html'},
-                    {type: 'exercise', title: 'Track every expense for one week', url: '#'}
-                ],
-                tips: ['Start by just tracking for a week without changing anything. Awareness is the first step to control.', 'Automate your savings - set up automatic transfers so you don\'t have to think about it']
-            },
-            {
-                id: 'compound-interest',
-                title: 'Understanding Compound Interest',
-                description: 'Einstein called it the "8th wonder." Understanding this changes how you think about saving.',
-                level: 'quick',
-                time: '30 minutes',
-                tags: ['finance', 'money', 'investing', 'quick-win'],
-                category: 'finance',
-                whyLearn: 'The difference between wealth and poverty. $100/month at 7% = $122k in 20 years. Time is more powerful than amount. This knowledge is worth millions over your lifetime.',
-                beginnerTrap: 'Thinking you need large amounts to start investing. Small amounts invested regularly grow dramatically over time.',
-                resources: [
-                    {type: 'calculator', title: 'SEC compound calculator', url: 'https://www.investor.gov/financial-tools-calculators/calculators/compound-interest-calculator'},
-                    {type: 'rule', title: 'Rule of 72: Divide 72 by interest rate = years to double money', url: '#'},
-                    {type: 'video', title: 'Compound Interest explained', url: 'https://www.youtube.com/watch?v=WEDIj9JBTC8'},
-                    {type: 'exercise', title: 'Calculate how much $100/month becomes in 30 years at 7%', url: '#'}
-                ],
-                tips: ['$5/day invested at 8% return = $237,000 in 30 years. Time is more powerful than amount!', 'Start early - the longer your money compounds, the less you need to contribute overall']
-            },
-            {
-                id: 'basic-negotiation',
-                title: 'Basic Negotiation',
-                description: 'Negotiate salary, rent, or prices. This skill can earn you thousands with one conversation.',
-                level: 'medium',
-                time: '1 hour',
-                tags: ['finance', 'career', 'communication'],
-                category: 'finance',
-                whyLearn: 'One successful salary negotiation can be worth $50k-500k over your career. Everything is negotiable - you just need to ask. Most people leave money on the table out of fear.',
-                beginnerTrap: 'Making the first offer without knowing the market rate, either leaving money on the table or pricing yourself out.',
-                resources: [
-                    {type: 'book', title: '"Never Split the Difference" by Chris Voss (FBI negotiator)', url: '#'},
-                    {type: 'podcast', title: 'Chris Voss masterclass on negotiation', url: 'https://www.youtube.com/watch?v=guZa7mQV1l0'},
-                    {type: 'guide', title: 'Patrick McKenzie\'s salary negotiation guide', url: 'https://www.kalzumeus.com/2012/01/23/salary-negotiation/'},
-                    {type: 'exercise', title: 'Negotiate at flea market or farmers market this weekend', url: '#'}
-                ],
-                tips: ['Always let the other side make the first offer when possible', 'Prepare your BATNA (Best Alternative To Negotiated Agreement) - know your walk-away point']
-            },
-
-            // Additional "Feels Like Cheating" Skills
-            {
-                id: 'two-minute-rule',
-                title: '2-Minute Rule',
-                description: 'If a task takes less than 2 minutes, do it immediately. Prevents procrastination and clutter.',
-                level: 'quick',
-                time: '2 minutes',
-                tags: ['productivity', 'quick-win', 'cheating'],
-                category: 'quick-wins',
-                whyLearn: 'Eliminates decision fatigue, reduces mental clutter, and creates momentum. You\'ll be amazed how many tasks you\'ve been putting off that actually take less than 2 minutes.',
-                beginnerTrap: 'Applying it to tasks that actually take longer, causing frustration.',
-                resources: [
-                    {type: 'concept', title: 'From "Getting Things Done" by David Allen', url: '#'},
-                    {type: 'exercise', title: 'Identify 5 tasks you can do right now in 2 minutes', url: '#'}
-                ],
-                tips: ['Use it to build momentum for larger tasks', 'Combine with "eat the frog" for maximum productivity']
-            },
-            {
-                id: 'parkinsons-law-hack',
-                title: 'Parkinson\'s Law Hack',
-                description: 'Work expands to fill the time available. Set artificial deadlines to complete tasks faster.',
-                level: 'quick',
-                time: '5 minutes',
-                tags: ['productivity', 'psychology', 'quick-win', 'cheating'],
-                category: 'quick-wins',
-                whyLearn: 'Cut your work time in half by setting tighter deadlines. You\'ll be just as effective but much faster. This one mental shift can save you hours every week.',
-                beginnerTrap: 'Setting unrealistically short deadlines that cause stress without improving productivity.',
-                resources: [
-                    {type: 'concept', title: 'Parkinson\'s Law: "Work expands to fill the time available for its completion"', url: '#'},
-                    {type: 'technique', title: 'Timeboxing: Assign specific time blocks for tasks', url: '#'},
-                    {type: 'tool', title: 'Use a timer to enforce your deadlines', url: '#'}
-                ],
-                tips: ['Set deadlines that are 25-50% shorter than you normally would', 'Use the Pomodoro Technique: 25 minutes focused work, 5 minutes break']
+                tips: [
+                    'Enable grid in your phone camera settings',
+                    'Use rule of thirds - place subjects on the intersections or lines',
+                    'Pay attention to lighting - golden hour (sunrise/sunset) provides the most flattering light',
+                    'Look for leading lines and interesting perspectives'
+                ]
             }
         ];
 
@@ -1528,10 +1238,8 @@
         const skillsContent = document.getElementById('skillsContent');
         const searchInput = document.getElementById('searchInput');
         const filterBtns = document.querySelectorAll('.filter-btn');
-        const frameworkBtn = document.getElementById('frameworkBtn');
         const randomSkillBtn = document.getElementById('randomSkillBtn');
         const timerBtn = document.getElementById('timerBtn');
-        const findSkillsBtn = document.getElementById('findSkillsBtn');
         const skillModal = document.getElementById('skillModal');
         const closeModalBtn = document.getElementById('closeModalBtn');
         const modalSkillTitle = document.getElementById('modalSkillTitle');
@@ -1541,27 +1249,17 @@
         const pauseTimerBtn = document.getElementById('pauseTimerBtn');
         const resetTimerBtn = document.getElementById('resetTimerBtn');
         const closeTimerBtn = document.getElementById('closeTimerBtn');
-        const quickLinks = document.querySelectorAll('.quick-link');
-        const frameworkOptions = document.querySelectorAll('.framework-option');
-        const recentSkillsContainer = document.getElementById('recentSkills');
 
         // State
         let currentFilter = 'all';
         let timerInterval;
         let timerSeconds = 0;
         let timerPaused = false;
-        let selectedOptions = {
-            time: null,
-            energy: null,
-            style: null
-        };
-        let recentSkills = JSON.parse(localStorage.getItem('recentSkills')) || [];
 
         // Initialize the app
         function init() {
             renderSkillsByCategory();
             setupEventListeners();
-            updateRecentSkills();
         }
 
         // Set up event listeners
@@ -1578,7 +1276,6 @@
             searchInput.addEventListener('input', handleSearch);
 
             // Control buttons
-            frameworkBtn.addEventListener('click', openFrameworkHelper);
             randomSkillBtn.addEventListener('click', selectRandomSkill);
             timerBtn.addEventListener('click', () => startTimer(15 * 60));
 
@@ -1592,36 +1289,6 @@
             pauseTimerBtn.addEventListener('click', toggleTimerPause);
             resetTimerBtn.addEventListener('click', resetTimer);
             closeTimerBtn.addEventListener('click', closeTimer);
-
-            // Quick links
-            quickLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const skillId = link.dataset.skill;
-                    openSkillModal(skillId);
-                });
-            });
-
-            // Framework options
-            frameworkOptions.forEach(option => {
-                option.addEventListener('click', () => {
-                    const type = option.dataset.type;
-                    const value = option.dataset.value;
-                    
-                    // Remove selected class from siblings
-                    const siblings = document.querySelectorAll(`.framework-option[data-type="${type}"]`);
-                    siblings.forEach(sib => sib.classList.remove('selected'));
-                    
-                    // Add selected class to clicked option
-                    option.classList.add('selected');
-                    
-                    // Store selection
-                    selectedOptions[type] = value;
-                });
-            });
-
-            // Find skills button
-            findSkillsBtn.addEventListener('click', findRecommendedSkills);
         }
 
         // Render skills by category
@@ -1670,13 +1337,13 @@
         function getCategoryInfo(category) {
             const categories = {
                 'communication': { name: 'Communication Skills', icon: '🗣️' },
-                'quick-wins': { name: 'Quick Wins', icon: '⚡' },
-                'business': { name: 'Business & Money Skills', icon: '💼' },
-                'learning': { name: 'Learning & Memory', icon: '🧠' },
-                'tech': { name: 'Technical Skills', icon: '💻' },
-                'health': { name: 'Fitness & Health', icon: '💪' },
-                'creative': { name: 'Creative Skills', icon: '🎨' },
-                'finance': { name: 'Financial Skills', icon: '💰' }
+                'memory': { name: 'Memory Techniques', icon: '🧠' },
+                'learning': { name: 'Learning Methods', icon: '📚' },
+                'productivity': { name: 'Productivity', icon: '⚡' },
+                'business': { name: 'Business Skills', icon: '💼' },
+                'technical': { name: 'Technical Skills', icon: '💻' },
+                'wellness': { name: 'Health & Wellness', icon: '💪' },
+                'creative': { name: 'Creative Skills', icon: '🎨' }
             };
             
             return categories[category] || { name: category, icon: '📚' };
@@ -1686,34 +1353,27 @@
         function createSkillCard(skill) {
             // Determine badge color based on level
             let levelBadgeClass = '';
-            if (skill.level === 'quick') levelBadgeClass = 'quick';
-            if (skill.level === 'medium') levelBadgeClass = 'medium';
-            if (skill.level === 'long') levelBadgeClass = 'long';
-            
-            // Check if it's a "feels like cheating" skill
-            const isCheating = skill.tags.includes('cheating');
+            if (skill.level === 'beginner') levelBadgeClass = 'beginner';
+            if (skill.level === 'intermediate') levelBadgeClass = 'intermediate';
+            if (skill.level === 'advanced') levelBadgeClass = 'advanced';
             
             return `
-                <div class="skill-card" data-id="${skill.id}" data-level="${skill.level}" data-tags="${skill.tags.join(',')}">
+                <div class="skill-card" data-id="${skill.id}" data-level="${skill.level}">
                     <div class="skill-header">
                         <h3 class="skill-title">${skill.title}</h3>
                         <div class="skill-badges">
                             <span class="time-badge">${skill.time}</span>
                             <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
-                            ${isCheating ? '<span class="type-badge">Feels Like Cheating</span>' : ''}
                         </div>
                     </div>
                     <p class="skill-description">${skill.description}</p>
                     <div class="skill-meta">
-                        <div class="skill-tags">
-                            ${skill.tags.map(tag => `<span class="tag">#${tag}</span>`).join(' ')}
-                        </div>
                         <div class="skill-actions">
                             <button class="skill-action" onclick="openSkillModal('${skill.id}')">
-                                <i class="fas fa-info-circle"></i>
+                                <i class="fas fa-info-circle"></i> Learn More
                             </button>
                             <button class="skill-action primary" onclick="startSkillSession('${skill.id}')">
-                                <i class="fas fa-play"></i>
+                                <i class="fas fa-play"></i> Start Learning
                             </button>
                         </div>
                     </div>
@@ -1736,17 +1396,6 @@
             if (filter === 'all') {
                 allSkillCards.forEach(card => card.style.display = 'flex');
                 document.querySelectorAll('.category-section').forEach(section => section.style.display = 'block');
-            } else if (filter === 'cheating') {
-                allSkillCards.forEach(card => {
-                    const tags = card.dataset.tags;
-                    card.style.display = tags && tags.includes('cheating') ? 'flex' : 'none';
-                });
-                
-                // Hide empty category sections
-                document.querySelectorAll('.category-section').forEach(section => {
-                    const visibleCards = section.querySelectorAll('.skill-card[style="display: flex;"]');
-                    section.style.display = visibleCards.length > 0 ? 'block' : 'none';
-                });
             } else {
                 allSkillCards.forEach(card => {
                     card.style.display = card.dataset.level === filter ? 'flex' : 'none';
@@ -1778,11 +1427,8 @@
             allSkillCards.forEach(card => {
                 const title = card.querySelector('.skill-title').textContent.toLowerCase();
                 const description = card.querySelector('.skill-description').textContent.toLowerCase();
-                const tags = card.dataset.tags.toLowerCase();
                 
-                const matches = title.includes(searchTerm) || 
-                               description.includes(searchTerm) || 
-                               tags.includes(searchTerm);
+                const matches = title.includes(searchTerm) || description.includes(searchTerm);
                 
                 card.style.display = matches ? 'flex' : 'none';
             });
@@ -1799,122 +1445,46 @@
             const skill = skillsData.find(s => s.id === skillId);
             if (!skill) return;
             
-            // Add to recent skills
-            addToRecentSkills(skillId);
-            
             modalSkillTitle.textContent = skill.title;
             
             // Determine badge color based on level
             let levelBadgeClass = '';
-            if (skill.level === 'quick') levelBadgeClass = 'quick';
-            if (skill.level === 'medium') levelBadgeClass = 'medium';
-            if (skill.level === 'long') levelBadgeClass = 'long';
-            
-            // Check if it's a "feels like cheating" skill
-            const isCheating = skill.tags.includes('cheating');
-            
-            // Build TED section if available
-            let tedSection = '';
-            if (skill.tedLevels) {
-                tedSection = `
-                    <div class="ted-section">
-                        <div class="ted-title"><i class="fas fa-bullseye"></i> TED Practice Sessions</div>
-                        
-                        <div class="ted-levels">
-                            <div class="ted-level" onclick="startTEDSession('${skill.id}', 'quick')">
-                                <h5>⚡ QUICK TED (5 min)</h5>
-                                <p>${skill.tedLevels.quick.trial}</p>
-                            </div>
-                            <div class="ted-level" onclick="startTEDSession('${skill.id}', 'standard')">
-                                <h5>📈 STANDARD TED (15 min)</h5>
-                                <p>${skill.tedLevels.standard.trial}</p>
-                            </div>
-                            <div class="ted-level" onclick="startTEDSession('${skill.id}', 'deep')">
-                                <h5>🎯 DEEP TED (30min+)</h5>
-                                <p>${skill.tedLevels.deep.trial}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Build chunking section if available
-            let chunkingSection = '';
-            if (skill.chunking) {
-                chunkingSection = `
-                    <div class="chunking-section">
-                        <div class="chunking-title"><i class="fas fa-puzzle-piece"></i> Skill Chunking</div>
-                        
-                        <div class="chunking-options">
-                            <div class="chunking-option">
-                                <h5>MICRO-CHUNKS (2-5 min)</h5>
-                                <p>${skill.chunking.micro}</p>
-                            </div>
-                            <div class="chunking-option">
-                                <h5>MINI-CHUNKS (10-15 min)</h5>
-                                <p>${skill.chunking.mini}</p>
-                            </div>
-                            <div class="chunking-option">
-                                <h5>MEGA-CHUNKS (30min+)</h5>
-                                <p>${skill.chunking.mega}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Build recall section if available
-            let recallSection = '';
-            if (skill.recallQuestions) {
-                recallSection = `
-                    <div class="recall-section">
-                        <div class="recall-title"><i class="fas fa-brain"></i> Test Yourself (30 seconds)</div>
-                        
-                        <div class="recall-questions">
-                            ${skill.recallQuestions.map((q, i) => `
-                                <div class="recall-question">
-                                    <p>${i+1}. ${q.question}</p>
-                                    <button class="skill-action" onclick="toggleAnswer(this)">Show Answer</button>
-                                    <div class="recall-answer">
-                                        ${q.answer}
-                                    </div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                `;
-            }
+            if (skill.level === 'beginner') levelBadgeClass = 'beginner';
+            if (skill.level === 'intermediate') levelBadgeClass = 'intermediate';
+            if (skill.level === 'advanced') levelBadgeClass = 'advanced';
             
             modalSkillContent.innerHTML = `
                 <div class="skill-header">
                     <div class="skill-badges">
                         <span class="time-badge">${skill.time}</span>
                         <span class="level-badge ${levelBadgeClass}">${skill.level}</span>
-                        ${isCheating ? '<span class="type-badge">Feels Like Cheating</span>' : ''}
                     </div>
                 </div>
                 
                 <p class="skill-description">${skill.description}</p>
                 
                 <div class="beginner-trap">
-                    <div class="beginner-trap-title"><i class="fas fa-exclamation-triangle"></i> Beginner Trap</div>
+                    <div class="beginner-trap-title"><i class="fas fa-exclamation-triangle"></i> Common Beginner Mistake</div>
                     <p class="beginner-trap-text">${skill.beginnerTrap}</p>
                 </div>
                 
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title"><i class="fas fa-lightbulb"></i> Why Learn This</h3>
+                <div class="tips-section">
+                    <div class="tips-title"><i class="fas fa-lightbulb"></i> Why Learn This</div>
                     <p>${skill.whyLearn}</p>
                 </div>
                 
-                ${tedSection}
-                ${chunkingSection}
-                ${recallSection}
+                <div class="tips-section">
+                    <div class="tips-title"><i class="fas fa-star"></i> Learning Tips</div>
+                    <ul class="tips-list">
+                        ${skill.tips.map(tip => `<li>${tip}</li>`).join('')}
+                    </ul>
+                </div>
                 
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title"><i class="fas fa-book"></i> Resources</h3>
-                    <div class="quick-links">
+                <div class="tips-section">
+                    <h3 class="tips-title"><i class="fas fa-book"></i> Learning Resources</h3>
+                    <div class="resource-links">
                         ${skill.resources.map(resource => `
-                            <a href="${resource.url}" class="quick-link" target="_blank">
+                            <a href="${resource.url}" class="resource-link" target="_blank">
                                 <i class="fas fa-${getResourceIcon(resource.type)}"></i>
                                 <span>${resource.title}</span>
                             </a>
@@ -1922,19 +1492,9 @@
                     </div>
                 </div>
                 
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title"><i class="fas fa-star"></i> Pro Tips</h3>
-                    <ul>
-                        ${skill.tips.map(tip => `<li>${tip}</li>`).join('')}
-                    </ul>
-                </div>
-                
                 <div class="control-buttons mt-20">
                     <button class="control-btn primary" onclick="startSkillSession('${skill.id}')">
-                        <i class="fas fa-play"></i> Start Practice Session
-                    </button>
-                    <button class="control-btn" onclick="addToLearningPlan('${skill.id}')">
-                        <i class="fas fa-plus"></i> Add to Learning Plan
+                        <i class="fas fa-play"></i> Start Learning Path
                     </button>
                 </div>
             `;
@@ -1950,38 +1510,30 @@
         // Get resource icon based on type
         function getResourceIcon(type) {
             const icons = {
-                'guide': 'book-open',
-                'book': 'book',
-                'exercise': 'dumbbell',
-                'technique': 'magic',
-                'tool': 'toolbox',
-                'app': 'mobile-alt',
-                'tip': 'lightbulb',
                 'video': 'video',
                 'course': 'graduation-cap',
-                'formula': 'calculator',
+                'article': 'newspaper',
+                'exercise': 'dumbbell',
+                'book': 'book',
+                'community': 'users',
+                'interactive': 'gamepad',
+                'cheatsheet': 'file-alt',
+                'tool': 'toolbox',
+                'platform': 'laptop-code',
+                'practice': 'code',
+                'methodology': 'project-diagram',
+                'app': 'mobile-alt',
+                'dataset': 'database',
+                'guide': 'book-open',
+                'template': 'file',
                 'rule': 'ruler',
                 'example': 'clone',
-                'essential': 'key',
-                'site': 'globe',
-                'community': 'users',
-                'podcast': 'podcast',
-                'template': 'file',
-                'calculator': 'calculator',
                 'pattern': 'wave-square',
-                'step': 'footsteps',
                 'focus': 'crosshairs',
                 'timing': 'clock',
                 'test': 'vial',
-                'equipment': 'shopping-bag',
-                'program': 'calendar',
-                'interactive': 'gamepad',
-                'path': 'map-signs',
-                'examples': 'images',
                 'tutorials': 'chalkboard-teacher',
-                'templates': 'copy',
-                'challenge': 'trophy',
-                'concept': 'lightbulb'
+                'challenge': 'trophy'
             };
             
             return icons[type] || 'link';
@@ -1995,42 +1547,11 @@
             // Close modal if open
             closeSkillModal();
             
-            // Add to recent skills
-            addToRecentSkills(skillId);
-            
             // Start a 15-minute timer for this skill
             startTimer(15 * 60, skill.title);
             
             // In a real app, you would track progress, show session instructions, etc.
-            console.log(`Starting practice session for: ${skill.title}`);
-        }
-
-        // Start TED session
-        function startTEDSession(skillId, level) {
-            const skill = skillsData.find(s => s.id === skillId);
-            if (!skill || !skill.tedLevels) return;
-            
-            const ted = skill.tedLevels[level];
-            let time = 15 * 60; // Default 15 minutes
-            
-            if (level === 'quick') time = 5 * 60;
-            if (level === 'deep') time = 30 * 60;
-            
-            // Close modal
-            closeSkillModal();
-            
-            // Show TED session instructions
-            alert(`Starting ${level} TED session for ${skill.title}:\n\nTRIAL: ${ted.trial}\nERROR: ${ted.error}\nDOCUMENT: ${ted.document}`);
-            
-            // Start timer
-            startTimer(time, `${skill.title} - TED ${level}`);
-        }
-
-        // Toggle answer visibility
-        function toggleAnswer(button) {
-            const answer = button.nextElementSibling;
-            answer.classList.toggle('active');
-            button.textContent = answer.classList.contains('active') ? 'Hide Answer' : 'Show Answer';
+            console.log(`Starting learning session for: ${skill.title}`);
         }
 
         // Start timer
@@ -2094,13 +1615,6 @@
             }
         }
 
-        // Open framework helper
-        function openFrameworkHelper() {
-            // In a real app, this would open a more detailed framework helper
-            // For now, we'll just scroll to the sidebar
-            document.querySelector('.sidebar').scrollIntoView({ behavior: 'smooth' });
-        }
-
         // Select random skill
         function selectRandomSkill() {
             const skills = document.querySelectorAll('.skill-card');
@@ -2120,150 +1634,6 @@
             // Start a timer for this skill
             const skillId = randomSkill.dataset.id;
             startSkillSession(skillId);
-        }
-
-        // Find recommended skills based on selected options
-        function findRecommendedSkills() {
-            // Check if all options are selected
-            const { time, energy, style } = selectedOptions;
-            if (!time || !energy || !style) {
-                alert('Please select options for all categories to get personalized recommendations.');
-                return;
-            }
-            
-            // Simple recommendation logic (in a real app, this would be more sophisticated)
-            let recommendedSkills = [];
-            
-            // Time-based filtering
-            if (time === '5') {
-                recommendedSkills = skillsData.filter(skill => skill.level === 'quick');
-            } else if (time === '30') {
-                recommendedSkills = skillsData.filter(skill => skill.level === 'quick' || skill.level === 'medium');
-            } else {
-                recommendedSkills = skillsData; // 1hr+ - show all skills
-            }
-            
-            // Energy-based filtering (simplified)
-            if (energy === 'low') {
-                recommendedSkills = recommendedSkills.filter(skill => 
-                    skill.tags.includes('quick-win') || skill.tags.includes('cheating')
-                );
-            } else if (energy === 'high') {
-                // High energy - include all skills
-            }
-            
-            // Style-based filtering (simplified)
-            if (style === 'ted') {
-                // TED method works well with all skills, no filtering needed
-            } else if (style === 'chunked') {
-                // Chunked learning works well with structured skills
-                recommendedSkills = recommendedSkills.filter(skill => 
-                    skill.category !== 'wellness' // Wellness skills are less structured
-                );
-            } else if (style === 'recall') {
-                // Recall-focused works well with knowledge-based skills
-                recommendedSkills = recommendedSkills.filter(skill => 
-                    skill.category === 'learning' || skill.tags.includes('high-impact')
-                );
-            }
-            
-            // If no skills match, fall back to quick wins
-            if (recommendedSkills.length === 0) {
-                recommendedSkills = skillsData.filter(skill => skill.level === 'quick');
-            }
-            
-            // Limit to 3 skills
-            recommendedSkills = recommendedSkills.slice(0, 3);
-            
-            // Show recommendations
-            let message = 'Based on your preferences, we recommend:\n\n';
-            recommendedSkills.forEach(skill => {
-                message += `• ${skill.title} - ${skill.description}\n`;
-            });
-            
-            message += '\nWould you like to focus on these skills?';
-            
-            if (confirm(message)) {
-                // Filter the view to show only recommended skills
-                const recommendedIds = recommendedSkills.map(skill => skill.id);
-                const allSkills = document.querySelectorAll('.skill-card');
-                
-                allSkills.forEach(skillCard => {
-                    if (recommendedIds.includes(skillCard.dataset.id)) {
-                        skillCard.style.display = 'flex';
-                    } else {
-                        skillCard.style.display = 'none';
-                    }
-                });
-                
-                // Hide empty category sections
-                document.querySelectorAll('.category-section').forEach(section => {
-                    const visibleCards = section.querySelectorAll('.skill-card[style="display: flex;"]');
-                    section.style.display = visibleCards.length > 0 ? 'block' : 'none';
-                });
-                
-                // Update filter buttons to reflect this is a custom view
-                filterBtns.forEach(btn => btn.classList.remove('active'));
-            }
-        }
-
-        // Add to learning plan (simplified)
-        function addToLearningPlan(skillId) {
-            const skill = skillsData.find(s => s.id === skillId);
-            if (!skill) return;
-            
-            alert(`"${skill.title}" has been added to your learning plan!`);
-            // In a real app, this would save to local storage or a backend
-        }
-
-        // Add to recent skills
-        function addToRecentSkills(skillId) {
-            // Remove if already exists
-            recentSkills = recentSkills.filter(id => id !== skillId);
-            
-            // Add to beginning
-            recentSkills.unshift(skillId);
-            
-            // Keep only 5 most recent
-            if (recentSkills.length > 5) {
-                recentSkills = recentSkills.slice(0, 5);
-            }
-            
-            // Save to localStorage
-            localStorage.setItem('recentSkills', JSON.stringify(recentSkills));
-            
-            // Update UI
-            updateRecentSkills();
-        }
-
-        // Update recent skills in sidebar
-        function updateRecentSkills() {
-            if (recentSkills.length === 0) {
-                recentSkillsContainer.innerHTML = '<p style="color: var(--gray); text-align: center;">No recent skills yet</p>';
-                return;
-            }
-            
-            recentSkillsContainer.innerHTML = '';
-            
-            recentSkills.forEach(skillId => {
-                const skill = skillsData.find(s => s.id === skillId);
-                if (!skill) return;
-                
-                const link = document.createElement('a');
-                link.href = '#';
-                link.className = 'quick-link';
-                link.innerHTML = `
-                    <i class="fas fa-history"></i>
-                    <span>${skill.title}</span>
-                `;
-                
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    openSkillModal(skillId);
-                });
-                
-                recentSkillsContainer.appendChild(link);
-            });
         }
 
         // Initialize the app when the DOM is loaded
