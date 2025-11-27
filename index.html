@@ -1174,6 +1174,19 @@
         box-shadow: 0 5px 15px rgba(124, 58, 237, 0.2);
       }
     </style>
+    <!-- Web App Manifest -->
+<link rel="manifest" href="manifest.json">
+
+<!-- Theme Color for Mobile Browsers -->
+<meta name="theme-color" content="#7c3aed">
+
+<!-- iOS Safari Support -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Skills Master">
+
+<!-- Icons for iOS -->
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
   </head>
   <body>
     <div class="bg-animation"></div>
@@ -5638,6 +5651,48 @@
 
       // Initialize the app when the DOM is loaded
       document.addEventListener("DOMContentLoaded", init);
+
+      // Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function(registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch(function(error) {
+        console.log('ServiceWorker registration failed: ', error);
+      });
+  });
+}
+
+// Install Prompt Handling (optional)
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the mini-infobar from appearing on mobile
+  e.preventDefault();
+  // Stash the event so it can be triggered later
+  deferredPrompt = e;
+  // Update UI to notify the user they can install the PWA
+  console.log('PWA installable');
+  
+  // You can show your own install button here
+  // showInstallPromotion();
+});
+
+// Function to trigger installation (call this from a button click)
+function installPWA() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User accepted the install prompt');
+      } else {
+        console.log('User dismissed the install prompt');
+      }
+      deferredPrompt = null;
+    });
+  }
+}
     </script>
   </body>
 </html>
