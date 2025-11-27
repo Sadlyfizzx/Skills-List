@@ -1,0 +1,30 @@
+{
+  "lang": "en-us",
+  "name": "Skills Master 2025",
+  "short_name": "Skills Master",
+  "description": "Master essential skills with guided learning paths",
+  "start_url": "/",
+  "background_color": "#0f172a",
+  "theme_color": "#7c3aed",
+  "orientation": "any",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "scope": "/"
+}
